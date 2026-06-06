@@ -1,0 +1,185 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Global Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isVerifiedUser() {
+      return isSignedIn() && (request.auth.token.email_verified == true || request.auth.token.firebase.sign_in_provider == 'google.com');
+    }
+    
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    
+    // Check if user has corresponding role in /users collection
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+    
+    function hasRole(role) {
+      return isVerifiedUser() 
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && getUserRole() == role;
+    }
+    
+    function isAdmin() {
+      return hasRole('admin') || request.auth.token.email == 'memelanaa@gmail.com';
+    }
+    
+    function isStaff() {
+      return hasRole('staff');
+    }
+    
+    function isEmployee() {
+      return isAdmin() || isStaff();
+    }
+    
+    // Entity Schema Validation
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email', 'role'])
+        && data.keys().size() >= 3 
+        && data.keys().size() <= 10
+        && data.uid is string && data.uid.size() <= 128
+        && data.email is string && data.email.size() <= 200
+        && data.role in ['admin', 'staff'];
+    }
+    
+    function isValidInventoryItem(data) {
+      return data.keys().hasAll(['name', 'barcode', 'category', 'quantity', 'unitPrice', 'sellingPrice', 'expiryDate'])
+        && data.keys().size() >= 7
+        && data.keys().size() <= 15
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 200
+        && data.barcode is string && data.barcode.size() <= 50
+        && data.category is string && data.category.size() <= 100
+        && data.quantity is number && data.quantity >= 0
+        && data.unitPrice is number && data.unitPrice >= 0
+        && data.sellingPrice is number && data.sellingPrice >= 0
+        && data.expiryDate is string && data.expiryDate.size() <= 20; 
+    }
+    
+    function isValidKpdnPrice(data) {
+      return data.keys().hasAll(['product', 'maxPrice'])
+        && data.keys().size() == 2
+        && data.product is string && data.product.size() > 0 && data.product.size() <= 200
+        && data.maxPrice is number && data.maxPrice >= 0;
+    }
+    
+    function isValidNotification(data) {
+      return data.keys().hasAll(['type', 'message', 'createdAt', 'read'])
+        && data.keys().size() == 4
+        && data.type in ['expiry', 'low_stock', 'kpdn']
+        && data.message is string && data.message.size() <= 1000
+        && data.read is bool;
+    }
+    
+    function isValidSetting(data) {
+      return data.keys().hasAll(['language', 'mode'])
+        && data.keys().size() == 2
+        && data.language in ['ms', 'en']
+        && data.mode in ['light', 'dark'];
+    }
+    
+    function isValidReport(data) {
+      return data.keys().hasAll(['title', 'summary', 'generatedAt'])
+        && data.keys().size() >= 3
+        && data.keys().size() <= 10
+        && data.title is string && data.title.size() <= 200
+        && data.summary is string && data.summary.size() <= 50000;
+    }
+
+    // ------------------ Collection Enforcers ------------------
+
+    // Users Collection
+    match /users/{userId} {
+      allow get: if isVerifiedUser() && (request.auth.uid == userId || isAdmin());
+      allow list: if isVerifiedUser() && isEmployee();
+      
+      // Creating user profile
+      allow create: if isVerifiedUser() 
+        && request.auth.uid == userId 
+        && isValidUser(request.resource.data)
+        // Self-registered users MUST default to 'staff' unless overridden
+        && (request.resource.data.role == 'staff' || isAdmin());
+        
+      allow update: if isVerifiedUser()
+        && (
+          // Admin can modify anything
+          isAdmin() ||
+          // User themselves can check in but cannot change their privileges
+          (request.auth.uid == userId 
+           && isValidUser(request.resource.data)
+           && request.resource.data.role == resource.data.role)
+        );
+        
+      allow delete: if isVerifiedUser() && isAdmin();
+    }
+
+    // Inventory Collection
+    match /inventory/{productId} {
+      allow get: if isVerifiedUser() && isEmployee() && isValidId(productId);
+      allow list: if isVerifiedUser() && isEmployee();
+      
+      allow create: if isVerifiedUser() 
+        && isEmployee() 
+        && isValidId(productId)
+        && isValidInventoryItem(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+        
+      allow update: if isVerifiedUser() 
+        && isEmployee() 
+        && isValidId(productId)
+        && isValidInventoryItem(request.resource.data);
+        
+      allow delete: if isVerifiedUser() && isAdmin() && isValidId(productId);
+    }
+
+    // KPDN Regulated Prices Collection
+    match /kpdn_prices/{priceId} {
+      allow get: if isVerifiedUser() && isEmployee() && isValidId(priceId);
+      allow list: if isVerifiedUser() && isEmployee();
+      
+      allow create: if isVerifiedUser() && isAdmin() && isValidId(priceId) && isValidKpdnPrice(request.resource.data);
+      allow update: if isVerifiedUser() && isAdmin() && isValidId(priceId) && isValidKpdnPrice(request.resource.data);
+      allow delete: if isVerifiedUser() && isAdmin() && isValidId(priceId);
+    }
+
+    // Notifications Collection
+    match /notifications/{notificationId} {
+      allow get: if isVerifiedUser() && isEmployee() && isValidId(notificationId);
+      allow list: if isVerifiedUser() && isEmployee();
+      
+      allow create: if isVerifiedUser() && isEmployee() && isValidId(notificationId) && isValidNotification(request.resource.data);
+      
+      // Staff/Admins can mark as read
+      allow update: if isVerifiedUser() 
+        && isEmployee() 
+        && isValidId(notificationId) 
+        && isValidNotification(request.resource.data)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+        
+      allow delete: if isVerifiedUser() && isAdmin() && isValidId(notificationId);
+    }
+
+    // User Settings Collection
+    match /settings/{userId} {
+      allow get, write: if isVerifiedUser() && request.auth.uid == userId && isValidId(userId);
+    }
+
+    // AI-generated Reports Collection
+    match /reports/{reportId} {
+      allow get: if isVerifiedUser() && isEmployee() && isValidId(reportId);
+      allow list: if isVerifiedUser() && isEmployee();
+      
+      allow write: if isVerifiedUser() && isAdmin() && isValidId(reportId);
+    }
+  }
+}

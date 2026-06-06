@@ -1,0 +1,6 @@
+{
+  "name": "WrapStock",
+  "description": "Smart, responsive inventory and price compliance assistant designed for cooperative stores and retailers featuring automated barcode camera-scanning, KPDN ceiling price guard tracking, and Gemini AI stock advisory.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

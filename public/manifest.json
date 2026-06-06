@@ -1,0 +1,35 @@
+{
+  "short_name": "WrapStock",
+  "name": "WrapStock Smart Retail & Cooperative Inventory",
+  "description": "Smart, responsive companion tool for school cooperatives, market vendors, and retailers to manage stock, expiry alerts, and KPDN price compliance.",
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=192&h=192",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=512&h=512",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1e293b",
+  "theme_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "shortcuts": [
+    {
+      "name": "Imbas Barkod (Scan Barcode)",
+      "url": "/?tab=scan",
+      "description": "Scan product barcodes instantly using phone camera"
+    },
+    {
+      "name": "KPDN Price Guard",
+      "url": "/?tab=kpdn",
+      "description": "Check ceiling price bounds set by Ministry"
+    }
+  ]
+}

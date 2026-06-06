@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with roles for Admin and Staff permissions",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth unique ID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Display name of the user" },
+        "role": { "type": "string", "enum": ["admin", "staff"], "description": "Access control role" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Profile creation timestamp" },
+        "lastActive": { "type": "string", "format": "date-time", "description": "Last activity timestamp" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "InventoryItem": {
+      "title": "Inventory Item",
+      "description": "Products stocked in the store",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Document ID" },
+        "name": { "type": "string", "description": "Display name of the product" },
+        "barcode": { "type": "string", "description": "EAN/UPC scanned barcode or manual input" },
+        "category": { "type": "string", "description": "Product category e.g., Food, Drink, Stationary" },
+        "quantity": { "type": "number", "description": "Available stock quantity" },
+        "unitPrice": { "type": "number", "description": "Cost price paid to supplier" },
+        "sellingPrice": { "type": "number", "description": "Retail price at checkout" },
+        "supplier": { "type": "string", "description": "Supplier company name" },
+        "dateAdded": { "type": "string", "format": "date-time", "description": "Timestamp when added" },
+        "expiryDate": { "type": "string", "format": "date", "description": "Expiry date of the batch" },
+        "notes": { "type": "string", "description": "Optional notes or shelf location comments" },
+        "imageUrl": { "type": "string", "description": "Product image URL" },
+        "createdBy": { "type": "string", "description": "UID of the staff or admin who created the item" }
+      },
+      "required": ["name", "barcode", "quantity", "unitPrice", "sellingPrice", "expiryDate"]
+    },
+    "KpdnPrice": {
+      "title": "KPDN Price",
+      "description": "Ceiling prices set by the Ministry (KPDN) for price control goods",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Document ID matching lowercase product name or barcode" },
+        "product": { "type": "string", "description": "Controlled item name" },
+        "maxPrice": { "type": "number", "description": "Maximum regulated selling price (ceiling price) in RM" }
+      },
+      "required": ["product", "maxPrice"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "Alert messages for expiry, stock volume, or KPDN price violations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Alert ID" },
+        "type": { "type": "string", "enum": ["expiry", "low_stock", "kpdn"], "description": "Category of the notification" },
+        "message": { "type": "string", "description": "Full notification message text" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when triggered" },
+        "read": { "type": "boolean", "description": "Whether the notification has been read by staff" }
+      },
+      "required": ["type", "message", "createdAt", "read"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "Store and user specific preferences",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Document ID equal to user UID" },
+        "language": { "type": "string", "enum": ["ms", "en"], "description": "Currently active UI language" },
+        "mode": { "type": "string", "enum": ["light", "dark"], "description": "Visual theme preference" }
+      },
+      "required": ["language", "mode"]
+    },
+    "Report": {
+      "title": "Report",
+      "description": "Inventory summaries and AI-generated insights",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Report ID" },
+        "title": { "type": "string", "description": "Title of the report" },
+        "summary": { "type": "string", "description": "AI markdown summary paragraphs" },
+        "fastMoving": { "type": "array", "items": { "type": "string" }, "description": "Fast-moving catalog list" },
+        "slowMoving": { "type": "array", "items": { "type": "string" }, "description": "Slow-moving catalog list" },
+        "highRisk": { "type": "array", "items": { "type": "string" }, "description": "Products near expiry or expired" },
+        "generatedAt": { "type": "string", "format": "date-time", "description": "Report creation timestamp" }
+      },
+      "required": ["title", "summary", "generatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Users holding admin or staff credentials"
+    },
+    "/inventory/{productId}": {
+      "schema": "InventoryItem",
+      "description": "The stock items current listing"
+    },
+    "/kpdn_prices/{priceId}": {
+      "schema": "KpdnPrice",
+      "description": "Ministry price ceilings for price control goods"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "System-wide notification and audit trailing logs"
+    },
+    "/settings/{userId}": {
+      "schema": "Setting",
+      "description": "User preferences for layout, theme and translation"
+    },
+    "/reports/{reportId}": {
+      "schema": "Report",
+      "description": "Periodic store health audits compiled with AI"
+    }
+  }
+}
