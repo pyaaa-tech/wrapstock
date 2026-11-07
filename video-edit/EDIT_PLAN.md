@@ -1,6 +1,6 @@
 # Edit Plan: Healing Facial Cleansing Gel (PREVIEW v3)
 
-**Status:** Preview sahaja (540×960, ada watermark "PREVIEW"). Final belum di-render, tunggu approve.
+**Status:** FINAL di-render (1080×1920, 30 fps, 56.4 s, −14 LUFS, tanpa watermark). Semua ejaan dan hook disahkan oleh client.
 
 | | Asal | Lepas edit |
 |---|---|---|
