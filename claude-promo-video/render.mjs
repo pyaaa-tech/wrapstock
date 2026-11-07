@@ -20,6 +20,8 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((acc, a, i, arr) =>
 }, []));
 const FPS = Number(args.fps || 30);
 const WORKERS = Number(args.workers || 1);
+const PORTRAIT = !!args.portrait;
+const VW = PORTRAIT ? 1080 : 1920, VH = PORTRAIT ? 1920 : 1080;
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.woff2': 'font/woff2', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
@@ -29,11 +31,11 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(p).pipe(res);
 });
 await new Promise((r) => server.listen(0, r));
-const URL_ = `http://127.0.0.1:${server.address().port}/index.html`;
+const URL_ = `http://127.0.0.1:${server.address().port}/index.html${PORTRAIT ? '?v=portrait' : ''}`;
 
 async function openPage() {
   const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-gpu-vsync'] });
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 });
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.log('[page]', m.type(), m.text()); });
   page.on('pageerror', (e) => console.log('[pageerror]', e.message));
   await page.goto(URL_);
@@ -48,7 +50,7 @@ async function frame(page, t, type = 'png') {
 
 if (args.stills) {
   const { browser, page } = await openPage();
-  const dir = path.join(OUT, 'stills'); fs.mkdirSync(dir, { recursive: true });
+  const dir = path.join(OUT, PORTRAIT ? 'stills_portrait' : 'stills'); fs.mkdirSync(dir, { recursive: true });
   for (const s of String(args.stills).split(',').map(Number)) {
     const t0 = Date.now();
     const buf = await frame(page, s, 'jpeg');
@@ -68,7 +70,7 @@ console.log(`Rendering ${total} frames @ ${FPS}fps with ${WORKERS} worker(s)`);
 async function worker(w) {
   const f0 = w * per, f1 = Math.min(total, f0 + per);
   if (f0 >= f1) return null;
-  const file = path.join(OUT, `chunk_${w}.mp4`);
+  const file = path.join(OUT, `chunk_${PORTRAIT ? 'p' : 'l'}${w}.mp4`);
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-',
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '14', '-pix_fmt', 'yuv420p', '-r', String(FPS), file], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise((r, j) => ff.on('close', (c) => (c === 0 ? r() : j(new Error('ffmpeg ' + c)))));
@@ -83,9 +85,9 @@ async function worker(w) {
   return file;
 }
 const files = (await Promise.all([...Array(WORKERS).keys()].map(worker))).filter(Boolean);
-const list = path.join(OUT, 'chunks.txt');
+const list = path.join(OUT, `chunks_${PORTRAIT ? 'p' : 'l'}.txt`);
 fs.writeFileSync(list, files.map((f) => `file '${f}'`).join('\n'));
-const out = path.join(OUT, args.out || 'video_silent.mp4');
+const out = path.join(OUT, args.out || (PORTRAIT ? 'video_silent_portrait.mp4' : 'video_silent.mp4'));
 await new Promise((r, j) => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', '-movflags', '+faststart', out], { stdio: 'inherit' })
   .on('close', (c) => (c === 0 ? r() : j(new Error('concat ' + c)))));
 files.forEach((f) => fs.unlinkSync(f)); fs.unlinkSync(list);

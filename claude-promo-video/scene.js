@@ -7,7 +7,10 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { CONTENT } from './content.js';
 
-const W = 1920, H = 1080;
+const PORTRAIT = new URLSearchParams(location.search).get('v') === 'portrait';
+if (PORTRAIT) document.documentElement.classList.add('portrait');
+const W = PORTRAIT ? 1080 : 1920, H = PORTRAIT ? 1920 : 1080;
+const FOV = PORTRAIT ? 52 : 35;
 export const DURATION = 19.2;
 
 // ───────────────────────── helpers ─────────────────────────
@@ -71,7 +74,7 @@ renderer.toneMapping = THREE.NeutralToneMapping;
 renderer.toneMappingExposure = 1.0;
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(35, W / H, 0.05, 400);
+const camera = new THREE.PerspectiveCamera(FOV, W / H, 0.05, 400);
 
 // Studio environment with coloured soft boxes → warm/cool reflections.
 function makeEnv() {
@@ -147,7 +150,7 @@ function makeParticles() {
   g.setAttribute('aColor', new THREE.BufferAttribute(colr, 3));
   const m = new THREE.ShaderMaterial({
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-    uniforms: { uTime: { value: 0 }, uPx: { value: H / (2 * Math.tan(THREE.MathUtils.degToRad(17.5))) }, uI: { value: 1 } },
+    uniforms: { uTime: { value: 0 }, uPx: { value: H / (2 * Math.tan(THREE.MathUtils.degToRad(FOV / 2))) }, uI: { value: 1 } },
     vertexShader: `
       attribute float aSize, aSeed; attribute vec3 aColor; uniform float uTime, uPx; varying vec3 vC; varying float vA;
       void main(){
@@ -395,7 +398,9 @@ function makeFace(w, h, texture, z, order) {
 
 // ───────────────────────── model cards ─────────────────────────
 const STAGE_CARDS = -14, STAGE_PRO = -28;
-const CARD_X = [-3.9, -1.3, 1.3, 3.9];
+const CARD_POS = PORTRAIT
+  ? [[-1.3, 1.75, 0], [1.3, 1.75, 0], [-1.3, -1.75, 0], [1.3, -1.75, 0]]
+  : [[-3.9, 0, 0.55], [-1.3, 0, 0.08], [1.3, 0, 0.08], [3.9, 0, 0.55]];
 const FOCUS = [5.75, 6.85, 7.95, 9.05];
 const cardsGroup = new THREE.Group(); scene.add(cardsGroup);
 const cards = [];
@@ -432,13 +437,15 @@ function buildCards() {
     const [gx, gy] = px2card(...d.gem); gem.position.set(gx, gy, 0.32); root.add(gem);
 
     cardsGroup.add(root);
-    cards.push({ root, body, face, edge, bars, gem, i, accent: col(card.accent), baseX: CARD_X[i], baseZ: STAGE_CARDS - [0.55, 0.08, 0.08, 0.55][i], baseRY: -CARD_X[i] * 0.055 });
+    cards.push({ root, body, face, edge, bars, gem, i, accent: col(card.accent), baseX: CARD_POS[i][0], baseY: CARD_POS[i][1], baseZ: STAGE_CARDS - CARD_POS[i][2], baseRY: -CARD_POS[i][0] * (PORTRAIT ? 0.05 : 0.055), baseRX: CARD_POS[i][1] * 0.03 });
   });
 }
 
 // ───────────────────────── pro section ─────────────────────────
 const proGroup = new THREE.Group(); proGroup.position.set(0, 0, STAGE_PRO); scene.add(proGroup);
-const PILL_POS = [[-3.3, 0.55], [3.3, 0.55], [-3.3, -0.92], [3.3, -0.92]];
+const PILL_POS = PORTRAIT ? [[0, -0.52], [0, -1.8], [0, -3.08], [0, -4.36]] : [[-3.3, 0.55], [3.3, 0.55], [-3.3, -0.92], [3.3, -0.92]];
+const PRO_SPARK_Y = PORTRAIT ? 1.02 : -0.15, OUTRO_SPARK_Y = PORTRAIT ? 0.5 : -0.15;
+const PRO_SPARK_S = PORTRAIT ? 0.62 : 0.78, RING_S = PORTRAIT ? 0.72 : 1;
 const PILL_T = [12.75, 13.0, 13.25, 13.5];
 const pills = [];
 const rings = [];
@@ -458,7 +465,7 @@ function buildPro() {
     const ring = new THREE.Mesh(new THREE.TorusGeometry(R, tube, 16, 256), ringMat(hex));
     const bead = new THREE.Mesh(new THREE.SphereGeometry(0.045 - k * 0.008, 24, 16), ringMat(hex));
     bead.position.x = R; ring.add(bead);
-    g.add(ring); g.position.y = -0.15; proGroup.add(g);
+    g.add(ring); g.position.y = PRO_SPARK_Y; proGroup.add(g);
     rings.push({ g, ring, k });
   });
 }
@@ -494,7 +501,7 @@ function splitChars(el, text) {
 }
 function splitWords(el, text) {
   el.innerHTML = '';
-  return text.split(' ').map((w, i, arr) => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = w + (i < arr.length - 1 ? ' ' : ''); el.appendChild(s); return s; });
+  return text.split(' ').map((w, i) => { if (i) el.appendChild(document.createTextNode(' ')); const s = document.createElement('span'); s.className = 'ch'; s.textContent = w; el.appendChild(s); return s; });
 }
 const dom = {};
 function buildDom() {
@@ -509,7 +516,7 @@ function buildDom() {
   dom.outroWord = splitChars($('outroWord'), C.outro.word);
   $('outroTag').textContent = C.outro.tagline; dom.outroTag = $('outroTag');
   $('outroUrl').querySelector('.url').textContent = C.outro.url; dom.outroUrl = $('outroUrl');
-  dom.fade = $('fade');
+  dom.fade = $('fade'); dom.scrim = $('scrim');
 }
 function style(el, o, y = 0, s = 1, blur = 0, extra = '') {
   el.style.opacity = o.toFixed(4);
@@ -526,7 +533,7 @@ function reveal(spans, t, start, stagger, dur, outA, outB, rise = 70) {
 }
 
 // ───────────────────────── timeline ─────────────────────────
-const camTrack = track([
+const KEYS_LANDSCAPE = [
   [0.0, [-3.2, 1.3, 14.8], [0, -0.55, 0]],
   [2.4, [-1.1, 0.5, 11.0], [0, -0.6, 0]],
   [4.1, [0.35, 0.15, 9.3], [0, -0.6, 0]],
@@ -547,7 +554,31 @@ const camTrack = track([
   [15.9, [0.2, 0.1, -17.9], [0, -0.05, -28]],
   [17.3, [0.0, 0.05, -18.8], [0, -0.62, -28]],
   [19.2, [0.0, 0.05, -19.3], [0, -0.62, -28]],
-]);
+];
+// Portrait: cards in a 2×2 grid visited in a Z pattern, Pro benefits stacked.
+const KEYS_PORTRAIT = [
+  [0.0, [-1.6, 1.0, 13.5], [0, -1.0, 0]],
+  [2.4, [-0.6, 0.4, 10.2], [0, -1.0, 0]],
+  [4.1, [0.25, 0.1, 8.6], [0, -1.0, 0]],
+  [4.55, [0.05, 0.1, 3.0], [-0.4, 0.8, -14]],
+  [5.1, [-0.9, 1.5, -6.6], [-1.2, 1.9, -14]],
+  [5.75, [-1.2, 1.7, -8.3], [-1.3, 2.05, -14]],
+  [6.3, [-1.1, 1.72, -8.45], [-1.2, 2.0, -14]],
+  [6.85, [1.2, 1.7, -8.35], [1.3, 2.05, -14]],
+  [7.4, [1.1, 1.72, -8.45], [1.2, 2.0, -14]],
+  [7.95, [-1.2, -1.8, -8.35], [-1.3, -1.45, -14]],
+  [8.5, [-1.1, -1.78, -8.45], [-1.2, -1.5, -14]],
+  [9.05, [1.2, -1.8, -8.35], [1.3, -1.45, -14]],
+  [9.5, [1.1, -1.78, -8.45], [1.2, -1.5, -14]],
+  [10.2, [0.0, 0.45, -3.8], [0, 0.25, -14]],
+  [10.95, [0.0, 0.4, -4.3], [0, 0.25, -14]],
+  [11.55, [0.0, 0.1, -10.5], [0, 0.0, -28]],
+  [12.3, [0.0, 0.05, -18.2], [0, -0.6, -28]],
+  [15.9, [0.12, 0.05, -18.9], [0, -0.6, -28]],
+  [17.3, [0.0, 0.05, -19.4], [0, -1.0, -28]],
+  [19.2, [0.0, 0.05, -19.9], [0, -1.0, -28]],
+];
+const camTrack = track(PORTRAIT ? KEYS_PORTRAIT : KEYS_LANDSCAPE);
 const camPos = new THREE.Vector3(), camTgt = new THREE.Vector3();
 const tmpC = new THREE.Color();
 const ACC = { coral: col('#E07B57'), violet: col('#5B3FD6'), teal: col('#1E7F86'), gold: col('#F4B860') };
@@ -559,7 +590,7 @@ function update(t) {
   camera.position.copy(camPos); camera.lookAt(camTgt);
   camera.rotateZ(Math.sin(t * 0.45) * 0.006 + (seg(t, 4.2, 4.9) - seg(t, 4.9, 5.4)) * 0.05);
   const fly1 = win(t, 4.2, 4.5, 4.75, 5.2), fly2 = win(t, 11.0, 11.35, 11.7, 12.2);
-  camera.fov = 35 + fly1 * 10 + fly2 * 8; camera.updateProjectionMatrix();
+  camera.fov = FOV + fly1 * 10 + fly2 * 8; camera.updateProjectionMatrix();
   bg.position.copy(camera.position);
 
   // background tint per section ------------------------------
@@ -588,7 +619,7 @@ function update(t) {
   const sparkVisible = t < 4.95 || t > 11.3;
   spark.group.visible = sparkVisible;
   const pro = t > 8;
-  const sPos = pro ? new THREE.Vector3(0, -0.15, STAGE_PRO) : new THREE.Vector3(0, 0, 0);
+  const sPos = pro ? new THREE.Vector3(0, lerp(PRO_SPARK_Y, OUTRO_SPARK_Y, eio3(seg(t, 16.0, 17.4))), STAGE_PRO) : new THREE.Vector3(0, 0, 0);
   spark.group.position.copy(sPos);
   if (!pro) {
     poseSpark((r) => eo4(seg(t, 0.2 + r.delay, 1.95 + r.delay)), (r) => ei3(seg(t, 4.12 + r.rdelay * 0.3, 4.78 + r.rdelay * 0.3)));
@@ -599,7 +630,7 @@ function update(t) {
     poseSpark((r) => 1, (r) => 1 - eo4(seg(t, 11.35 + r.rdelay, 12.4 + r.rdelay)));
     const spin = eio5(seg(t, 16.15, 17.45));
     spark.group.rotation.set(0.1 * Math.sin(t * 0.6), 0.25 * Math.sin(t * 0.7) + spin * Math.PI * 2, -t * 0.06);
-    spark.group.scale.setScalar(lerp(0.78, 1.0, eio3(seg(t, 16.0, 17.4))));
+    spark.group.scale.setScalar(lerp(PRO_SPARK_S, 1.0, eio3(seg(t, 16.0, 17.4))));
   }
   const impact = pulse(t, 2.3, 0.08, 0.45), impact2 = pulse(t, 17.4, 0.1, 0.5), impactPro = pulse(t, 12.45, 0.1, 0.4);
   spark.mat.emissiveIntensity = 0.06 + impact * 0.8 + impact2 * 0.8 + impactPro * 0.5 + fly1 * 0.6;
@@ -633,16 +664,20 @@ function update(t) {
       const ke = eo4(seg(t, f - 0.62, f + 0.25));
       const foc = win(t, f - 0.45, f, f + 0.55, f + 0.95);
       const glow = Math.max(foc, ovw * 0.65);
+      const other = Math.max(...FOCUS.map((ff, j) => (j === c.i ? 0 : win(t, ff - 0.45, ff, ff + 0.55, ff + 0.95))));
+      const dim = PORTRAIT ? 1 - 0.62 * other * (1 - ovw) : 1;
       const side = c.baseX < 0 ? -1 : 1;
-      const ex = ei3(seg(t, 10.95 + (Math.abs(c.baseX) > 2 ? 0.07 : 0), 11.65 + (Math.abs(c.baseX) > 2 ? 0.07 : 0)));
+      const exd = PORTRAIT ? c.i * 0.04 : Math.abs(c.baseX) > 2 ? 0.07 : 0;
+      const ex = ei3(seg(t, 10.95 + exd, 11.65 + exd));
+      const vside = c.baseY > 0 ? 1 : c.baseY < 0 ? -1 : 0;
       c.root.position.set(
-        c.baseX + side * ex * 7.5,
-        -2.4 * (1 - ke) + Math.sin(t * 1.1 + c.i) * 0.03,
+        c.baseX + side * ex * (PORTRAIT ? 5 : 7.5),
+        c.baseY - 2.4 * (1 - ke) + vside * ex * 3 + Math.sin(t * 1.1 + c.i) * 0.03,
         c.baseZ - 2.8 * (1 - ke) + foc * 0.35 + ex * 2.5,
       );
-      c.root.rotation.set(0.75 * (1 - ke) - foc * 0.02, c.baseRY + side * 0.55 * (1 - ke) + side * ex * 1.1 + Math.sin(t * 0.8 + c.i) * 0.02, -side * 0.12 * (1 - ke));
+      c.root.rotation.set(c.baseRX + 0.75 * (1 - ke) - foc * 0.02 + vside * ex * 0.6, c.baseRY + side * 0.55 * (1 - ke) + side * ex * 1.1 + Math.sin(t * 0.8 + c.i) * 0.02, -side * 0.12 * (1 - ke));
       c.root.scale.setScalar(1 + foc * 0.04);
-      const vis = ke * (1 - seg(t, 11.5, 11.9));
+      const vis = ke * (1 - seg(t, 11.5, 11.9)) * dim;
       c.root.visible = vis > 0.001;
       c.body.material.opacity = 0.9 * vis;
       c.face.material.opacity = vis * (0.82 + 0.18 * Math.max(foc, ovw));
@@ -658,9 +693,9 @@ function update(t) {
       c.gem.material.opacity = vis;
       c.gem.scale.setScalar(ke * (1 + foc * 0.15));
     }
-    const fx = CARD_X[focusIdx];
-    sweep.position.set(fx - 2.0 + 4.0 * seg(t, FOCUS[focusIdx] - 0.3, FOCUS[focusIdx] + 0.8), 2.6, STAGE_CARDS + 4.0);
-    sweep.intensity = 1.6 * inCards;
+    const [fx, fy] = CARD_POS[focusIdx];
+    sweep.position.set(fx - 2.0 + 4.0 * seg(t, FOCUS[focusIdx] - 0.3, FOCUS[focusIdx] + 0.8), fy + 2.6, STAGE_CARDS + 4.0);
+    sweep.intensity = (PORTRAIT ? 0 : 1.6) * inCards;
   }
 
   // pro ------------------------------------------------------
@@ -670,10 +705,10 @@ function update(t) {
       const t0 = PILL_T[p.i];
       const k = eo5(seg(t, t0, t0 + 0.95));
       const back = ei3(seg(t, 15.9 + p.i * 0.06, 16.55 + p.i * 0.06));
-      const side = p.x < 0 ? -1 : 1;
+      const side = PORTRAIT ? (p.i % 2 ? 1 : -1) : p.x < 0 ? -1 : 1;
       const m = k * (1 - back);
-      p.root.position.set(lerp(0, p.x, m), lerp(-0.15, p.y, m) + Math.sin(t * 1.2 + p.i) * 0.025, lerp(-0.6, 0, m) + 0.1 * Math.sin(t + p.i));
-      p.root.rotation.set(0.05 * Math.sin(t + p.i), -side * 0.16 + side * (1 - k) * 1.5 - side * back * 1.0, 0);
+      p.root.position.set(lerp(0, p.x, m), lerp(PRO_SPARK_Y, p.y, m) + Math.sin(t * 1.2 + p.i) * 0.025, lerp(-0.6, 0, m) + 0.1 * Math.sin(t + p.i));
+      p.root.rotation.set(0.05 * Math.sin(t + p.i), (PORTRAIT ? 0 : -side * 0.16) + side * (1 - k) * 1.5 - side * back * 1.0, 0);
       p.root.scale.setScalar(lerp(0.15, 1, m));
       const vis = seg(t, t0, t0 + 0.3) * (1 - seg(t, 16.3, 16.6));
       p.root.visible = vis > 0.001;
@@ -686,13 +721,13 @@ function update(t) {
     }
     const rk = eo4(seg(t, 12.3, 13.3)) * (1 - ei3(seg(t, 15.95, 16.6)));
     for (const r of rings) {
-      r.g.scale.setScalar(lerp(0.4, 1, rk) * (1 + r.k * 0.02));
+      r.g.scale.setScalar(RING_S * lerp(0.4, 1, rk) * (1 + r.k * 0.02));
       r.g.rotation.set([1.22, -1.0, 0.32][r.k] + Math.sin(t * 0.4 + r.k) * 0.12, [0.32, -0.5, 0.15][r.k] + Math.sin(t * 0.3 + r.k * 2) * 0.25, 0);
       r.ring.rotation.z = t * (0.7 - r.k * 0.22) * (r.k % 2 ? -1 : 1);
       r.ring.material.opacity = rk; r.ring.children[0].material.opacity = rk;
       r.g.visible = rk > 0.001;
     }
-    sweep.position.set(Math.cos(t * 1.2) * 3, 1.6, STAGE_PRO + 2.5 + Math.sin(t * 1.2)); sweep.intensity = 1.8 * inPro;
+    sweep.position.set(Math.cos(t * 1.2) * 3, 1.6, STAGE_PRO + 2.5 + Math.sin(t * 1.2)); sweep.intensity = (PORTRAIT ? 0 : 1.8) * inPro;
     coralFill.position.set(0, -1.8, STAGE_PRO + 2.4); coralFill.intensity = 8 * inPro;
   }
   if (t > 16.4) { coralFill.position.set(0, -1.6, STAGE_PRO + 2.6); coralFill.intensity = 7 * smooth(16.4, 17.2, t); }
@@ -705,13 +740,13 @@ function update(t) {
 
   // DOM ------------------------------------------------------
   reveal(dom.introWord, t, 2.45, 0.07, 0.95, 3.95, 4.4);
-  { const k = eo4(seg(t, 2.95, 3.75)), o = eio3(seg(t, 3.9, 4.3)); style(dom.introTag, k * (1 - o), (1 - k) * 26 - o * 20, 1, (1 - k) * 10 + o * 10, ''); dom.introTag.style.letterSpacing = `${lerp(0.55, 0.32, k).toFixed(3)}em`; }
+  { const k = eo4(seg(t, 2.95, 3.75)), o = eio3(seg(t, 3.9, 4.3)); style(dom.introTag, k * (1 - o), (1 - k) * 26 - o * 20, 1, (1 - k) * 10 + o * 10, ''); dom.introTag.style.letterSpacing = `${lerp(PORTRAIT ? 0.36 : 0.55, PORTRAIT ? 0.2 : 0.32, k).toFixed(3)}em`; }
 
-  { const k = eo4(seg(t, 5.05, 5.75)), o = eio3(seg(t, 10.85, 11.2)); style(dom.mLabel, k * (1 - o), (1 - k) * 18, 1, (1 - k) * 8 + o * 8); dom.mLabel.style.letterSpacing = `${lerp(0.7, 0.42, k).toFixed(3)}em`; }
+  { const k = eo4(seg(t, 5.05, 5.75)), o = eio3(seg(t, 10.85, 11.2)); style(dom.mLabel, k * (1 - o), (1 - k) * 18, 1, (1 - k) * 8 + o * 8); dom.mLabel.style.letterSpacing = `${lerp(PORTRAIT ? 0.5 : 0.7, PORTRAIT ? 0.3 : 0.42, k).toFixed(3)}em`; }
   reveal(dom.mTitle, t, 5.2, 0.09, 0.85, 10.85, 11.2, 46);
   { const k = eo4(seg(t, 9.85, 10.45)), o = eio3(seg(t, 10.85, 11.15)); style(dom.mFoot, k * (1 - o), (1 - k) * 30, lerp(0.94, 1, k), (1 - k) * 8 + o * 8); }
 
-  { const k = eo4(seg(t, 12.25, 12.85)), o = eio3(seg(t, 15.75, 16.15)); style(dom.pLabel, k * (1 - o), (1 - k) * 18, 1, (1 - k) * 8 + o * 8); dom.pLabel.style.letterSpacing = `${lerp(0.75, 0.42, k).toFixed(3)}em`; }
+  { const k = eo4(seg(t, 12.25, 12.85)), o = eio3(seg(t, 15.75, 16.15)); style(dom.pLabel, k * (1 - o), (1 - k) * 18, 1, (1 - k) * 8 + o * 8); dom.pLabel.style.letterSpacing = `${lerp(PORTRAIT ? 0.55 : 0.75, PORTRAIT ? 0.32 : 0.42, k).toFixed(3)}em`; }
   { const k = eo5(seg(t, 12.3, 13.3)), o = eio3(seg(t, 15.75, 16.2));
     style(dom.pTitle, k * (1 - o), (1 - k) * 40 - o * 20, lerp(1.12, 1, k) + o * 0.06, (1 - k) * 22 + o * 18);
     dom.pTitle.style.letterSpacing = `${lerp(0.12, -0.005, k).toFixed(3)}em`;
@@ -721,6 +756,7 @@ function update(t) {
   { const k = eo4(seg(t, 17.5, 18.25)); style(dom.outroTag, k, (1 - k) * 24, 1, (1 - k) * 10); }
   { const k = eo4(seg(t, 17.8, 18.45)); style(dom.outroUrl, k, (1 - k) * 20, lerp(0.92, 1, k), (1 - k) * 8); }
 
+  dom.scrim.style.opacity = PORTRAIT ? (win(t, 5.0, 5.5, 9.55, 9.95) * 0.95).toFixed(4) : '0';
   dom.fade.style.opacity = (clamp(1 - smooth(0.0, 0.7, t) + smooth(18.55, 19.15, t))).toFixed(4);
 }
 

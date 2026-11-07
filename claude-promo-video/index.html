@@ -47,6 +47,24 @@
   .grad { background: linear-gradient(100deg, #FFF3E6 0%, #F7C9A6 30%, #E8845F 58%, #F4B860 84%, #FFE3B8 100%);
           background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
 
+  /* ── Portrait 9:16 (1080×1920) ── */
+  html.portrait, html.portrait body { width: 1080px; height: 1920px; }
+  html.portrait canvas#gl { width: 1080px; height: 1920px; }
+  html.portrait .word { font-size: 156px; }
+  html.portrait #introWord { top: 968px; }
+  html.portrait #introTag  { top: 1162px; font-size: 22px; }
+  html.portrait .label { font-size: 21px; }
+  html.portrait #mLabel { top: 118px; }
+  html.portrait #mTitle { top: 158px; font-size: 84px; line-height: 1.02; max-width: 760px; margin: 0 auto; text-wrap: balance; }
+  html.portrait #mFoot  { top: 1748px; }
+  html.portrait #pLabel { top: 112px; }
+  html.portrait #pTitle { top: 148px; font-size: 156px; }
+  html.portrait #outroWord { top: 952px; }
+  html.portrait #outroTag  { top: 1150px; font-size: 42px; }
+  html.portrait #outroUrl  { top: 1240px; }
+
+  #scrim { position: absolute; left: 0; right: 0; top: 0; height: 460px; opacity: 0;
+    background: linear-gradient(to bottom, rgba(6,5,10,.92) 0%, rgba(6,5,10,.75) 45%, rgba(6,5,10,0) 100%); }
   #vignette { position: absolute; inset: 0;
     background: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.5) 100%); }
   #fade { position: absolute; inset: 0; background: #000; opacity: 1; }
@@ -61,6 +79,7 @@
 <body>
 <canvas id="gl" width="1920" height="1080"></canvas>
 <div id="ov">
+  <div id="scrim"></div>
   <div class="abs"><div id="introWord" class="abs word serif" data-split></div></div>
   <div id="introTag" class="abs tag el"></div>
 

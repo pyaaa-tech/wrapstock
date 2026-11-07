@@ -43,7 +43,7 @@ export const CONTENT = {
       { icon: 'bars', title: 'Lebih Banyak Penggunaan', sub: 'Had jauh lebih tinggi berbanding pelan percuma', accent: '#F4B860' },
       { icon: 'spark', title: 'Akses Model Premium', sub: 'Guna model Claude yang paling terkini', accent: '#EE8A63' },
       { icon: 'terminal', title: 'Claude Code', sub: 'Pembantu pengekodan terus di terminal', accent: '#F2A07E' },
-      { icon: 'search', title: 'Projects & Research', sub: 'Susun kerja dan kaji dengan lebih mendalam', accent: '#E9A85C' },
+      { icon: 'search', title: 'Projek & Penyelidikan', sub: 'Susun kerja dan kaji dengan lebih mendalam', accent: '#E9A85C' },
     ],
   },
 
