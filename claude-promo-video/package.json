@@ -1,0 +1,16 @@
+{
+  "name": "claude-promo-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Video promo 3D Claude (Three.js, dirender bingkai demi bingkai)",
+  "type": "module",
+  "scripts": {
+    "stills": "node render.mjs --stills 1.4,3.4,6,10.4,14,18.2",
+    "render": "node render.mjs --fps 60 --workers 3",
+    "audio": "python3 audio.py out/soundtrack.wav"
+  },
+  "dependencies": {
+    "@fontsource/instrument-serif": "^5.1.0",
+    "three": "^0.169.0"
+  }
+}
