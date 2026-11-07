@@ -1,0 +1,185 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 540
+PlayResY: 960
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter Black,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H60000000,0,0,0,0,100,100,0,0,1,4,2,2,30,30,205,1
+Style: Pill,Inter ExtraBold,30,&H00FFFFFF,&H00FFFFFF,&H00A6B814,&H80000000,0,0,0,0,100,100,0,0,3,11,0,8,0,0,0,1
+Style: Head,Inter Black,24,&H0045250B,&H0045250B,&H004DE1FF,&H80000000,0,0,0,0,100,100,2,0,3,8,0,8,0,0,0,1
+Style: Card,Inter Black,34,&H0045250B,&H0045250B,&H00FFFFFF,&H80000000,0,0,0,0,100,100,0,0,3,13,0,8,0,0,0,1
+Style: Sub,Inter ExtraBold,26,&H00FFFFFF,&H00FFFFFF,&H00EB6325,&H80000000,0,0,0,0,100,100,0,0,3,9,0,8,0,0,0,1
+Style: Badge,Inter Black,74,&H00FFFFFF,&H00FFFFFF,&H00EB6325,&H80000000,0,0,0,0,100,100,0,0,3,16,0,8,0,0,0,1
+Style: CTA,Inter Black,46,&H00FFFFFF,&H00FFFFFF,&H00481DE1,&H80000000,0,0,0,0,100,100,0,0,3,16,0,5,0,0,0,1
+Style: Mark,Inter Black,20,&H30FFFFFF,&H00FFFFFF,&H90000000,&HFF000000,0,0,0,0,100,100,3,0,1,2,0,9,16,16,16,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 5,0:00:00.03,0:00:00.59,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}cleanser{\c&H00FFFFFF\fscx100\fscy100} ni sesuai
+Dialogue: 5,0:00:00.59,0:00:00.77,Cap,,0,0,0,,cleanser {\c&H004DE1FF\fscx108\fscy108}ni{\c&H00FFFFFF\fscx100\fscy100} sesuai
+Dialogue: 5,0:00:00.77,0:00:01.39,Cap,,0,0,0,,cleanser ni {\c&H004DE1FF\fscx108\fscy108}sesuai{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:01.39,0:00:01.63,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}untuk{\c&H00FFFFFF\fscx100\fscy100} semua jenis
+Dialogue: 5,0:00:01.63,0:00:02.01,Cap,,0,0,0,,untuk {\c&H004DE1FF\fscx108\fscy108}semua{\c&H00FFFFFF\fscx100\fscy100} jenis
+Dialogue: 5,0:00:02.01,0:00:02.45,Cap,,0,0,0,,untuk semua {\c&H004DE1FF\fscx108\fscy108}jenis{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:02.45,0:00:02.83,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}kulit{\c&H00FFFFFF\fscx100\fscy100} dan formulanya
+Dialogue: 5,0:00:02.83,0:00:03.07,Cap,,0,0,0,,kulit {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100} formulanya
+Dialogue: 5,0:00:03.07,0:00:03.91,Cap,,0,0,0,,kulit dan {\c&H004DE1FF\fscx108\fscy108}formulanya{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:03.91,0:00:04.57,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}bebas{\c&H00FFFFFF\fscx100\fscy100} paraben
+Dialogue: 5,0:00:04.57,0:00:05.31,Cap,,0,0,0,,bebas {\c&H004DE1FF\fscx108\fscy108}paraben{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:05.31,0:00:05.53,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}tahu{\c&H00FFFFFF\fscx100\fscy100} tak apa
+Dialogue: 5,0:00:05.53,0:00:05.73,Cap,,0,0,0,,tahu {\c&H004DE1FF\fscx108\fscy108}tak{\c&H00FFFFFF\fscx100\fscy100} apa
+Dialogue: 5,0:00:05.73,0:00:06.01,Cap,,0,0,0,,tahu tak {\c&H004DE1FF\fscx108\fscy108}apa{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:06.01,0:00:06.27,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}yang{\c&H00FFFFFF\fscx100\fscy100} ada dalam
+Dialogue: 5,0:00:06.27,0:00:06.53,Cap,,0,0,0,,yang {\c&H004DE1FF\fscx108\fscy108}ada{\c&H00FFFFFF\fscx100\fscy100} dalam
+Dialogue: 5,0:00:06.53,0:00:06.87,Cap,,0,0,0,,yang ada {\c&H004DE1FF\fscx108\fscy108}dalam{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:06.87,0:00:07.35,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}pencuci{\c&H00FFFFFF\fscx100\fscy100} muka korang
+Dialogue: 5,0:00:07.35,0:00:07.73,Cap,,0,0,0,,pencuci {\c&H004DE1FF\fscx108\fscy108}muka{\c&H00FFFFFF\fscx100\fscy100} korang
+Dialogue: 5,0:00:07.73,0:00:08.63,Cap,,0,0,0,,pencuci muka {\c&H004DE1FF\fscx108\fscy108}korang{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:08.63,0:00:08.79,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}tu{\c&H00FFFFFF\fscx100\fscy100} penting?
+Dialogue: 5,0:00:08.79,0:00:09.77,Cap,,0,0,0,,tu {\c&H004DE1FF\fscx108\fscy108}penting?{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:09.77,0:00:10.27,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}dalam{\c&H00FFFFFF\fscx100\fscy100} Healing facial
+Dialogue: 5,0:00:10.27,0:00:10.81,Cap,,0,0,0,,dalam {\c&H004DE1FF\fscx108\fscy108}Healing{\c&H00FFFFFF\fscx100\fscy100} facial
+Dialogue: 5,0:00:10.81,0:00:11.11,Cap,,0,0,0,,dalam Healing {\c&H004DE1FF\fscx108\fscy108}facial{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:11.11,0:00:11.57,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}cleansing{\c&H00FFFFFF\fscx100\fscy100} gel ni
+Dialogue: 5,0:00:11.57,0:00:11.95,Cap,,0,0,0,,cleansing {\c&H004DE1FF\fscx108\fscy108}gel{\c&H00FFFFFF\fscx100\fscy100} ni
+Dialogue: 5,0:00:11.95,0:00:12.19,Cap,,0,0,0,,cleansing gel {\c&H004DE1FF\fscx108\fscy108}ni{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:12.19,0:00:12.55,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}bahan{\c&H00FFFFFF\fscx100\fscy100} utamanya ada
+Dialogue: 5,0:00:12.55,0:00:13.05,Cap,,0,0,0,,bahan {\c&H004DE1FF\fscx108\fscy108}utamanya{\c&H00FFFFFF\fscx100\fscy100} ada
+Dialogue: 5,0:00:13.05,0:00:13.41,Cap,,0,0,0,,bahan utamanya {\c&H004DE1FF\fscx108\fscy108}ada{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:13.41,0:00:13.77,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Sodium{\c&H00FFFFFF\fscx100\fscy100} Cocoyl
+Dialogue: 5,0:00:13.77,0:00:14.17,Cap,,0,0,0,,Sodium {\c&H004DE1FF\fscx108\fscy108}Cocoyl{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:14.17,0:00:14.91,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Isethionate{\c&H00FFFFFF\fscx100\fscy100} dan
+Dialogue: 5,0:00:14.91,0:00:15.19,Cap,,0,0,0,,Isethionate {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:15.19,0:00:16.13,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Decyl Glucoside{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:16.13,0:00:16.37,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}iaitu{\c&H00FFFFFF\fscx100\fscy100} pembersih
+Dialogue: 5,0:00:16.37,0:00:16.89,Cap,,0,0,0,,iaitu {\c&H004DE1FF\fscx108\fscy108}pembersih{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:16.89,0:00:17.21,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}lembut{\c&H00FFFFFF\fscx100\fscy100} yang berasal
+Dialogue: 5,0:00:17.21,0:00:17.37,Cap,,0,0,0,,lembut {\c&H004DE1FF\fscx108\fscy108}yang{\c&H00FFFFFF\fscx100\fscy100} berasal
+Dialogue: 5,0:00:17.37,0:00:17.85,Cap,,0,0,0,,lembut yang {\c&H004DE1FF\fscx108\fscy108}berasal{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:17.85,0:00:18.05,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}dari{\c&H00FFFFFF\fscx100\fscy100} kelapa dan
+Dialogue: 5,0:00:18.05,0:00:18.59,Cap,,0,0,0,,dari {\c&H004DE1FF\fscx108\fscy108}kelapa{\c&H00FFFFFF\fscx100\fscy100} dan
+Dialogue: 5,0:00:18.59,0:00:19.03,Cap,,0,0,0,,dari kelapa {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:19.03,0:00:19.83,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}tumbuhan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:19.83,0:00:20.47,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Lepas{\c&H00FFFFFF\fscx100\fscy100} tu ada
+Dialogue: 5,0:00:20.47,0:00:20.59,Cap,,0,0,0,,Lepas {\c&H004DE1FF\fscx108\fscy108}tu{\c&H00FFFFFF\fscx100\fscy100} ada
+Dialogue: 5,0:00:20.59,0:00:20.83,Cap,,0,0,0,,Lepas tu {\c&H004DE1FF\fscx108\fscy108}ada{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:20.83,0:00:21.69,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Glycerin{\c&H00FFFFFF\fscx100\fscy100} dan
+Dialogue: 5,0:00:21.69,0:00:21.91,Cap,,0,0,0,,Glycerin {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:21.91,0:00:22.61,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Panthenol{\c&H00FFFFFF\fscx100\fscy100} atau
+Dialogue: 5,0:00:22.61,0:00:22.93,Cap,,0,0,0,,Panthenol {\c&H004DE1FF\fscx108\fscy108}atau{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:22.93,0:00:23.47,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}vitamin{\c&H00FFFFFF\fscx100\fscy100} B5
+Dialogue: 5,0:00:23.47,0:00:24.34,Cap,,0,0,0,,vitamin {\c&H004DE1FF\fscx108\fscy108}B5{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:24.34,0:00:24.94,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}membantu{\c&H00FFFFFF\fscx100\fscy100} kulit kekal
+Dialogue: 5,0:00:24.94,0:00:25.30,Cap,,0,0,0,,membantu {\c&H004DE1FF\fscx108\fscy108}kulit{\c&H00FFFFFF\fscx100\fscy100} kekal
+Dialogue: 5,0:00:25.30,0:00:25.56,Cap,,0,0,0,,membantu kulit {\c&H004DE1FF\fscx108\fscy108}kekal{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:25.56,0:00:26.03,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}lembab{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:26.03,0:00:26.13,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100} alga ekstrak
+Dialogue: 5,0:00:26.13,0:00:26.85,Cap,,0,0,0,,dan {\c&H004DE1FF\fscx108\fscy108}alga{\c&H00FFFFFF\fscx100\fscy100} ekstrak
+Dialogue: 5,0:00:26.85,0:00:27.19,Cap,,0,0,0,,dan alga {\c&H004DE1FF\fscx108\fscy108}ekstrak{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:27.19,0:00:27.35,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}sekali{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:27.77,0:00:28.28,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Cara{\c&H00FFFFFF\fscx100\fscy100} guna senang
+Dialogue: 5,0:00:28.28,0:00:28.84,Cap,,0,0,0,,Cara {\c&H004DE1FF\fscx108\fscy108}guna{\c&H00FFFFFF\fscx100\fscy100} senang
+Dialogue: 5,0:00:28.84,0:00:29.24,Cap,,0,0,0,,Cara guna {\c&H004DE1FF\fscx108\fscy108}senang{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:29.24,0:00:29.48,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}je{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:29.48,0:00:30.08,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}pagi{\c&H00FFFFFF\fscx100\fscy100} dan malam
+Dialogue: 5,0:00:30.08,0:00:30.20,Cap,,0,0,0,,pagi {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100} malam
+Dialogue: 5,0:00:30.20,0:00:30.68,Cap,,0,0,0,,pagi dan {\c&H004DE1FF\fscx108\fscy108}malam{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:30.68,0:00:31.10,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}ambil{\c&H00FFFFFF\fscx100\fscy100} sedikit
+Dialogue: 5,0:00:31.10,0:00:31.70,Cap,,0,0,0,,ambil {\c&H004DE1FF\fscx108\fscy108}sedikit{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:31.70,0:00:32.06,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}gosok{\c&H00FFFFFF\fscx100\fscy100} sampai
+Dialogue: 5,0:00:32.06,0:00:32.28,Cap,,0,0,0,,gosok {\c&H004DE1FF\fscx108\fscy108}sampai{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:32.28,0:00:32.86,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}berbuih{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:32.86,0:00:33.18,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}urut{\c&H00FFFFFF\fscx100\fscy100} lembut dekat
+Dialogue: 5,0:00:33.18,0:00:33.54,Cap,,0,0,0,,urut {\c&H004DE1FF\fscx108\fscy108}lembut{\c&H00FFFFFF\fscx100\fscy100} dekat
+Dialogue: 5,0:00:33.54,0:00:33.72,Cap,,0,0,0,,urut lembut {\c&H004DE1FF\fscx108\fscy108}dekat{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:33.72,0:00:34.32,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}muka{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:34.32,0:00:34.86,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}bilas{\c&H00FFFFFF\fscx100\fscy100} air dan
+Dialogue: 5,0:00:34.86,0:00:35.26,Cap,,0,0,0,,bilas {\c&H004DE1FF\fscx108\fscy108}air{\c&H00FFFFFF\fscx100\fscy100} dan
+Dialogue: 5,0:00:35.26,0:00:35.50,Cap,,0,0,0,,bilas air {\c&H004DE1FF\fscx108\fscy108}dan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:35.50,0:00:36.30,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}tepuk-tepuk{\c&H00FFFFFF\fscx100\fscy100} sampai
+Dialogue: 5,0:00:36.30,0:00:36.52,Cap,,0,0,0,,tepuk-tepuk {\c&H004DE1FF\fscx108\fscy108}sampai{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:36.52,0:00:37.26,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}kering{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:37.26,0:00:37.47,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Saiz{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:37.47,0:00:38.15,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}50ml{\c&H00FFFFFF\fscx100\fscy100} ni pun
+Dialogue: 5,0:00:38.15,0:00:38.37,Cap,,0,0,0,,50ml {\c&H004DE1FF\fscx108\fscy108}ni{\c&H00FFFFFF\fscx100\fscy100} pun
+Dialogue: 5,0:00:38.37,0:00:38.47,Cap,,0,0,0,,50ml ni {\c&H004DE1FF\fscx108\fscy108}pun{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:38.47,0:00:38.97,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}padu{\c&H00FFFFFF\fscx100\fscy100} tau
+Dialogue: 5,0:00:38.97,0:00:39.35,Cap,,0,0,0,,padu {\c&H004DE1FF\fscx108\fscy108}tau{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:39.35,0:00:39.87,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}senang{\c&H00FFFFFF\fscx100\fscy100} bawa
+Dialogue: 5,0:00:39.87,0:00:40.23,Cap,,0,0,0,,senang {\c&H004DE1FF\fscx108\fscy108}bawa{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:40.23,0:00:40.71,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}mana-mana{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:40.71,0:00:41.41,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Produk{\c&H00FFFFFF\fscx100\fscy100} buatan
+Dialogue: 5,0:00:41.41,0:00:41.71,Cap,,0,0,0,,Produk {\c&H004DE1FF\fscx108\fscy108}buatan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:41.71,0:00:41.97,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Malaysia{\c&H00FFFFFF\fscx100\fscy100} diedarkan
+Dialogue: 5,0:00:41.97,0:00:42.79,Cap,,0,0,0,,Malaysia {\c&H004DE1FF\fscx108\fscy108}diedarkan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:42.79,0:00:43.21,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}oleh{\c&H00FFFFFF\fscx100\fscy100} Hillwell
+Dialogue: 5,0:00:43.21,0:00:43.65,Cap,,0,0,0,,oleh {\c&H004DE1FF\fscx108\fscy108}Hillwell{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:43.65,0:00:44.25,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Pharmaceutical{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:44.25,0:00:45.04,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Kami{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:45.04,0:00:45.34,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}dari{\c&H00FFFFFF\fscx100\fscy100} Seri Lestari
+Dialogue: 5,0:00:45.34,0:00:45.76,Cap,,0,0,0,,dari {\c&H004DE1FF\fscx108\fscy108}Seri{\c&H00FFFFFF\fscx100\fscy100} Lestari
+Dialogue: 5,0:00:45.76,0:00:46.44,Cap,,0,0,0,,dari Seri {\c&H004DE1FF\fscx108\fscy108}Lestari{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:46.44,0:00:47.02,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}pengedar{\c&H00FFFFFF\fscx100\fscy100} House of
+Dialogue: 5,0:00:47.02,0:00:47.54,Cap,,0,0,0,,pengedar {\c&H004DE1FF\fscx108\fscy108}House{\c&H00FFFFFF\fscx100\fscy100} of
+Dialogue: 5,0:00:47.54,0:00:47.78,Cap,,0,0,0,,pengedar House {\c&H004DE1FF\fscx108\fscy108}of{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:47.78,0:00:48.06,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Healing{\c&H00FFFFFF\fscx100\fscy100} di kawasan
+Dialogue: 5,0:00:48.06,0:00:48.34,Cap,,0,0,0,,Healing {\c&H004DE1FF\fscx108\fscy108}di{\c&H00FFFFFF\fscx100\fscy100} kawasan
+Dialogue: 5,0:00:48.34,0:00:48.78,Cap,,0,0,0,,Healing di {\c&H004DE1FF\fscx108\fscy108}kawasan{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:48.78,0:00:49.20,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Batu{\c&H00FFFFFF\fscx100\fscy100} Pahat
+Dialogue: 5,0:00:49.20,0:00:49.59,Cap,,0,0,0,,Batu {\c&H004DE1FF\fscx108\fscy108}Pahat{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:49.59,0:00:49.93,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}korang{\c&H00FFFFFF\fscx100\fscy100} nak order
+Dialogue: 5,0:00:49.93,0:00:50.05,Cap,,0,0,0,,korang {\c&H004DE1FF\fscx108\fscy108}nak{\c&H00FFFFFF\fscx100\fscy100} order
+Dialogue: 5,0:00:50.05,0:00:50.31,Cap,,0,0,0,,korang nak {\c&H004DE1FF\fscx108\fscy108}order{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:50.31,0:00:50.61,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}boleh{\c&H00FFFFFF\fscx100\fscy100} datang terus
+Dialogue: 5,0:00:50.61,0:00:51.09,Cap,,0,0,0,,boleh {\c&H004DE1FF\fscx108\fscy108}datang{\c&H00FFFFFF\fscx100\fscy100} terus
+Dialogue: 5,0:00:51.09,0:00:51.25,Cap,,0,0,0,,boleh datang {\c&H004DE1FF\fscx108\fscy108}terus{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:51.25,0:00:51.41,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}ke{\c&H00FFFFFF\fscx100\fscy100} kedai atau
+Dialogue: 5,0:00:51.41,0:00:51.85,Cap,,0,0,0,,ke {\c&H004DE1FF\fscx108\fscy108}kedai{\c&H00FFFFFF\fscx100\fscy100} atau
+Dialogue: 5,0:00:51.85,0:00:52.07,Cap,,0,0,0,,ke kedai {\c&H004DE1FF\fscx108\fscy108}atau{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:52.07,0:00:52.39,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}kami{\c&H00FFFFFF\fscx100\fscy100} boleh post
+Dialogue: 5,0:00:52.39,0:00:52.63,Cap,,0,0,0,,kami {\c&H004DE1FF\fscx108\fscy108}boleh{\c&H00FFFFFF\fscx100\fscy100} post
+Dialogue: 5,0:00:52.63,0:00:52.99,Cap,,0,0,0,,kami boleh {\c&H004DE1FF\fscx108\fscy108}post{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:52.99,0:00:53.23,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}ke{\c&H00FFFFFF\fscx100\fscy100} seluruh Malaysia
+Dialogue: 5,0:00:53.23,0:00:53.73,Cap,,0,0,0,,ke {\c&H004DE1FF\fscx108\fscy108}seluruh{\c&H00FFFFFF\fscx100\fscy100} Malaysia
+Dialogue: 5,0:00:53.73,0:00:53.95,Cap,,0,0,0,,ke seluruh {\c&H004DE1FF\fscx108\fscy108}Malaysia{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:54.37,0:00:54.62,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}Terus{\c&H00FFFFFF\fscx100\fscy100} PM kami
+Dialogue: 5,0:00:54.62,0:00:54.82,Cap,,0,0,0,,Terus {\c&H004DE1FF\fscx108\fscy108}PM{\c&H00FFFFFF\fscx100\fscy100} kami
+Dialogue: 5,0:00:54.82,0:00:55.06,Cap,,0,0,0,,Terus PM {\c&H004DE1FF\fscx108\fscy108}kami{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 5,0:00:55.06,0:00:55.28,Cap,,0,0,0,,{\fad(60,0)}{\c&H004DE1FF\fscx108\fscy108}okey?{\c&H00FFFFFF\fscx100\fscy100}
+Dialogue: 2,0:00:00.00,0:00:05.26,Card,,0,0,0,,{\an8\pos(270,70)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}Facial Cleansing Gel
+Dialogue: 2,0:00:01.63,0:00:05.26,Pill,,0,0,0,,{\an8\pos(270,140)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}{\fnDejaVu Sans\c&H004DE1FF}✓{\fnInter ExtraBold\c&H00FFFFFF} SEMUA JENIS KULIT
+Dialogue: 2,0:00:03.91,0:00:05.26,Pill,,0,0,0,,{\an8\pos(270,206)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}{\fnDejaVu Sans\c&H004DE1FF}✓{\fnInter ExtraBold\c&H00FFFFFF} BEBAS PARABEN
+Dialogue: 2,0:00:08.38,0:00:09.63,Badge,,0,0,0,,{\an8\pos(270,110)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}?
+Dialogue: 2,0:00:12.19,0:00:27.75,Head,,0,0,0,,{\an8\pos(270,78)\fad(150,150)}BAHAN UTAMA
+Dialogue: 3,0:00:13.41,0:00:15.19,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Sodium Cocoyl Isethionate
+Dialogue: 3,0:00:15.19,0:00:16.35,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Decyl Glucoside
+Dialogue: 3,0:00:16.37,0:00:19.83,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Pembersih lembut
+Dialogue: 3,0:00:16.52,0:00:19.83,Sub,,0,0,0,,{\an8\move(110,182,270,182,0,180)\fad(120,140)}dari kelapa & tumbuhan
+Dialogue: 3,0:00:20.59,0:00:21.91,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Glycerin
+Dialogue: 3,0:00:21.91,0:00:24.25,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Panthenol
+Dialogue: 3,0:00:22.06,0:00:24.25,Sub,,0,0,0,,{\an8\move(110,182,270,182,0,180)\fad(120,140)}Vitamin B5
+Dialogue: 3,0:00:24.34,0:00:26.03,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Kulit kekal lembab
+Dialogue: 3,0:00:26.13,0:00:27.75,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Alga Ekstrak
+Dialogue: 2,0:00:27.78,0:00:37.35,Head,,0,0,0,,{\an8\pos(270,78)\fad(150,150)}CARA GUNA
+Dialogue: 3,0:00:29.48,0:00:30.68,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}Pagi & malam
+Dialogue: 3,0:00:30.68,0:00:31.70,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}1  Ambil sedikit
+Dialogue: 3,0:00:31.70,0:00:32.86,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}2  Gosok sampai berbuih
+Dialogue: 3,0:00:32.86,0:00:34.32,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}3  Urut lembut
+Dialogue: 3,0:00:34.32,0:00:35.50,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}4  Bilas dengan air
+Dialogue: 3,0:00:35.50,0:00:37.35,Card,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}5  Tepuk sampai kering
+Dialogue: 2,0:00:37.43,0:00:39.35,Badge,,0,0,0,,{\an8\pos(270,96)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}50ml
+Dialogue: 2,0:00:37.73,0:00:39.35,Sub,,0,0,0,,{\an8\pos(270,214)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}Padu & travel-friendly
+Dialogue: 2,0:00:39.35,0:00:40.71,Card,,0,0,0,,{\an8\move(110,122,270,122,0,180)\fad(120,140)}Senang bawa ke mana-mana
+Dialogue: 2,0:00:40.71,0:00:42.79,Pill,,0,0,0,,{\an8\pos(270,122)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)\3c&H00481DE1}BUATAN MALAYSIA
+Dialogue: 2,0:00:42.79,0:00:44.86,Sub,,0,0,0,,{\an8\move(110,100,270,100,0,180)\fad(120,140)}Diedarkan oleh
+Dialogue: 2,0:00:42.89,0:00:44.86,Card,,0,0,0,,{\an8\move(110,150,270,150,0,180)\fad(120,140)}Hillwell Pharmaceutical
+Dialogue: 2,0:00:44.87,0:00:49.53,Card,,0,0,0,,{\an8\move(110,112,270,112,0,180)\fad(120,140)}Seri Lestari
+Dialogue: 2,0:00:45.10,0:00:49.53,Sub,,0,0,0,,{\an8\move(110,176,270,176,0,180)\fad(120,140)}Pengedar House of Healing
+Dialogue: 2,0:00:48.20,0:00:49.53,Pill,,0,0,0,,{\an8\pos(270,236)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}Batu Pahat
+Dialogue: 2,0:00:50.61,0:00:54.37,Pill,,0,0,0,,{\an8\pos(270,112)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)}Datang terus ke kedai
+Dialogue: 2,0:00:52.63,0:00:54.37,Pill,,0,0,0,,{\an8\pos(270,176)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\fad(0,140)\3c&H00EB6325}Pos seluruh Malaysia
+Dialogue: 4,0:00:54.37,0:00:56.37,CTA,,0,0,0,,{\an5\pos(270,150)\fscx40\fscy40\t(0,110,\fscx112\fscy112)\t(110,200,\fscx100\fscy100)\t(350,650,\fscx108\fscy108)\t(650,950,\fscx100\fscy100)\t(950,1250,\fscx108\fscy108)}PM KAMI SEKARANG!
+Dialogue: 9,0:00:00.00,0:00:56.37,Mark,,0,0,0,,PREVIEW
