@@ -1,0 +1,1069 @@
+[
+ {
+  "start": 0.0,
+  "end": 11.06,
+  "text": "Hi everyone! Hari ini kita bercakap tentang Gamogen daripada House of Healin, supplement berasaskan gamat yang dirumus untuk menyokong kesihatan harian anda.",
+  "words": [
+   {
+    "w": "Hi",
+    "s": 0.0,
+    "e": 0.72
+   },
+   {
+    "w": "everyone!",
+    "s": 0.72,
+    "e": 1.38
+   },
+   {
+    "w": "Hari",
+    "s": 1.56,
+    "e": 1.74
+   },
+   {
+    "w": "ini",
+    "s": 1.74,
+    "e": 2.06
+   },
+   {
+    "w": "kita",
+    "s": 2.06,
+    "e": 2.3
+   },
+   {
+    "w": "bercakap",
+    "s": 2.3,
+    "e": 2.98
+   },
+   {
+    "w": "tentang",
+    "s": 2.98,
+    "e": 3.48
+   },
+   {
+    "w": "Gamogen",
+    "s": 3.48,
+    "e": 4.1
+   },
+   {
+    "w": "daripada",
+    "s": 4.1,
+    "e": 4.96
+   },
+   {
+    "w": "House",
+    "s": 4.96,
+    "e": 5.36
+   },
+   {
+    "w": "of",
+    "s": 5.36,
+    "e": 5.62
+   },
+   {
+    "w": "Healin,",
+    "s": 5.62,
+    "e": 6.14
+   },
+   {
+    "w": "supplement",
+    "s": 6.4,
+    "e": 6.76
+   },
+   {
+    "w": "berasaskan",
+    "s": 6.76,
+    "e": 7.32
+   },
+   {
+    "w": "gamat",
+    "s": 7.32,
+    "e": 7.82
+   },
+   {
+    "w": "yang",
+    "s": 7.82,
+    "e": 8.16
+   },
+   {
+    "w": "dirumus",
+    "s": 8.16,
+    "e": 8.74
+   },
+   {
+    "w": "untuk",
+    "s": 8.74,
+    "e": 9.1
+   },
+   {
+    "w": "menyokong",
+    "s": 9.1,
+    "e": 9.58
+   },
+   {
+    "w": "kesihatan",
+    "s": 9.58,
+    "e": 10.18
+   },
+   {
+    "w": "harian",
+    "s": 10.18,
+    "e": 10.5
+   },
+   {
+    "w": "anda.",
+    "s": 10.5,
+    "e": 11.06
+   }
+  ]
+ },
+ {
+  "start": 11.58,
+  "end": 26.26,
+  "text": "Gamogen menggabungkan estrak gamat Stichopus horrens yang dikenali sebagai Gamodulin bersama omega-3 dan omega-6 daripada minyak flaxseed, vitamin E, vitamin B, chlorella serta beta-karotena.",
+  "words": [
+   {
+    "w": "Gamogen",
+    "s": 11.58,
+    "e": 12.16
+   },
+   {
+    "w": "menggabungkan",
+    "s": 12.16,
+    "e": 13.0
+   },
+   {
+    "w": "estrak",
+    "s": 13.0,
+    "e": 13.34
+   },
+   {
+    "w": "gamat",
+    "s": 13.34,
+    "e": 13.72
+   },
+   {
+    "w": "Stichopus",
+    "s": 13.72,
+    "e": 14.3
+   },
+   {
+    "w": "horrens",
+    "s": 14.3,
+    "e": 14.92
+   },
+   {
+    "w": "yang",
+    "s": 14.92,
+    "e": 15.18
+   },
+   {
+    "w": "dikenali",
+    "s": 15.18,
+    "e": 15.7
+   },
+   {
+    "w": "sebagai",
+    "s": 15.7,
+    "e": 16.16
+   },
+   {
+    "w": "Gamodulin",
+    "s": 16.16,
+    "e": 16.9
+   },
+   {
+    "w": "bersama",
+    "s": 16.9,
+    "e": 17.6
+   },
+   {
+    "w": "omega",
+    "s": 17.6,
+    "e": 17.98
+   },
+   {
+    "w": "-3",
+    "s": 17.98,
+    "e": 18.36
+   },
+   {
+    "w": "dan",
+    "s": 18.36,
+    "e": 18.58
+   },
+   {
+    "w": "omega",
+    "s": 18.58,
+    "e": 18.96
+   },
+   {
+    "w": "-6",
+    "s": 18.96,
+    "e": 19.54
+   },
+   {
+    "w": "daripada",
+    "s": 19.54,
+    "e": 20.18
+   },
+   {
+    "w": "minyak",
+    "s": 20.18,
+    "e": 20.72
+   },
+   {
+    "w": "flaxseed,",
+    "s": 20.72,
+    "e": 21.4
+   },
+   {
+    "w": "vitamin",
+    "s": 21.58,
+    "e": 21.9
+   },
+   {
+    "w": "E,",
+    "s": 21.9,
+    "e": 22.36
+   },
+   {
+    "w": "vitamin",
+    "s": 22.5,
+    "e": 22.92
+   },
+   {
+    "w": "B,",
+    "s": 22.92,
+    "e": 23.46
+   },
+   {
+    "w": "chlorella",
+    "s": 23.68,
+    "e": 24.24
+   },
+   {
+    "w": "serta",
+    "s": 24.24,
+    "e": 24.72
+   },
+   {
+    "w": "beta",
+    "s": 24.72,
+    "e": 25.18
+   },
+   {
+    "w": "-karotena.",
+    "s": 25.18,
+    "e": 26.26
+   }
+  ]
+ },
+ {
+  "start": 26.26,
+  "end": 33.38,
+  "text": "Formula ini dipasarkan sebagai sokongan untuk tenaga harian, keseimbangan nutrisi dan kesejahteraan umum.",
+  "words": [
+   {
+    "w": "Formula",
+    "s": 26.26,
+    "e": 27.14
+   },
+   {
+    "w": "ini",
+    "s": 27.14,
+    "e": 27.52
+   },
+   {
+    "w": "dipasarkan",
+    "s": 27.52,
+    "e": 28.26
+   },
+   {
+    "w": "sebagai",
+    "s": 28.26,
+    "e": 28.76
+   },
+   {
+    "w": "sokongan",
+    "s": 28.76,
+    "e": 29.4
+   },
+   {
+    "w": "untuk",
+    "s": 29.4,
+    "e": 29.68
+   },
+   {
+    "w": "tenaga",
+    "s": 29.68,
+    "e": 29.96
+   },
+   {
+    "w": "harian,",
+    "s": 29.96,
+    "e": 30.38
+   },
+   {
+    "w": "keseimbangan",
+    "s": 30.56,
+    "e": 31.06
+   },
+   {
+    "w": "nutrisi",
+    "s": 31.06,
+    "e": 31.68
+   },
+   {
+    "w": "dan",
+    "s": 31.68,
+    "e": 31.88
+   },
+   {
+    "w": "kesejahteraan",
+    "s": 31.88,
+    "e": 32.76
+   },
+   {
+    "w": "umum.",
+    "s": 32.76,
+    "e": 33.38
+   }
+  ]
+ },
+ {
+  "start": 33.68,
+  "end": 38.260000000000005,
+  "text": "Estrak gamat juga telah lama menjadi sebahagian daripada tradisi kesihatan di Asia Tenggara.",
+  "words": [
+   {
+    "w": "Estrak",
+    "s": 33.68,
+    "e": 33.86
+   },
+   {
+    "w": "gamat",
+    "s": 33.86,
+    "e": 34.2
+   },
+   {
+    "w": "juga",
+    "s": 34.2,
+    "e": 34.54
+   },
+   {
+    "w": "telah",
+    "s": 34.54,
+    "e": 34.84
+   },
+   {
+    "w": "lama",
+    "s": 34.84,
+    "e": 35.14
+   },
+   {
+    "w": "menjadi",
+    "s": 35.14,
+    "e": 35.62
+   },
+   {
+    "w": "sebahagian",
+    "s": 35.62,
+    "e": 36.24
+   },
+   {
+    "w": "daripada",
+    "s": 36.24,
+    "e": 36.68
+   },
+   {
+    "w": "tradisi",
+    "s": 36.68,
+    "e": 37.1
+   },
+   {
+    "w": "kesihatan",
+    "s": 37.1,
+    "e": 37.7
+   },
+   {
+    "w": "di",
+    "s": 37.7,
+    "e": 37.94
+   },
+   {
+    "w": "Asia",
+    "s": 37.94,
+    "e": 38.16
+   },
+   {
+    "w": "Tenggara.",
+    "s": 38.16,
+    "e": 38.58
+   }
+  ]
+ },
+ {
+  "start": 39.36,
+  "end": 54.16,
+  "text": "Dari segi penyelidikan, kajian oleh penyelidik Universiti Sains Malaysia pada 2025 mendapati estrak Stichopus horrens menunjukkan trend penurunan paraskulukosa darah dan peningkatan toleransi senaman dalam model kajian haiwan.",
+  "words": [
+   {
+    "w": "Dari",
+    "s": 39.36,
+    "e": 39.68
+   },
+   {
+    "w": "segi",
+    "s": 39.68,
+    "e": 40.0
+   },
+   {
+    "w": "penyelidikan,",
+    "s": 40.0,
+    "e": 40.78
+   },
+   {
+    "w": "kajian",
+    "s": 41.04,
+    "e": 41.18
+   },
+   {
+    "w": "oleh",
+    "s": 41.18,
+    "e": 41.48
+   },
+   {
+    "w": "penyelidik",
+    "s": 41.48,
+    "e": 42.24
+   },
+   {
+    "w": "Universiti",
+    "s": 42.24,
+    "e": 42.82
+   },
+   {
+    "w": "Sains",
+    "s": 42.82,
+    "e": 43.08
+   },
+   {
+    "w": "Malaysia",
+    "s": 43.08,
+    "e": 43.46
+   },
+   {
+    "w": "pada",
+    "s": 43.46,
+    "e": 43.9
+   },
+   {
+    "w": "2025",
+    "s": 43.9,
+    "e": 44.8
+   },
+   {
+    "w": "mendapati",
+    "s": 44.8,
+    "e": 45.6
+   },
+   {
+    "w": "estrak",
+    "s": 45.6,
+    "e": 46.06
+   },
+   {
+    "w": "Stichopus",
+    "s": 46.06,
+    "e": 46.66
+   },
+   {
+    "w": "horrens",
+    "s": 46.66,
+    "e": 47.14
+   },
+   {
+    "w": "menunjukkan",
+    "s": 47.14,
+    "e": 47.94
+   },
+   {
+    "w": "trend",
+    "s": 47.94,
+    "e": 48.22
+   },
+   {
+    "w": "penurunan",
+    "s": 48.22,
+    "e": 48.82
+   },
+   {
+    "w": "paraskulukosa",
+    "s": 48.82,
+    "e": 49.84
+   },
+   {
+    "w": "darah",
+    "s": 49.84,
+    "e": 50.48
+   },
+   {
+    "w": "dan",
+    "s": 50.48,
+    "e": 50.84
+   },
+   {
+    "w": "peningkatan",
+    "s": 50.84,
+    "e": 51.48
+   },
+   {
+    "w": "toleransi",
+    "s": 51.48,
+    "e": 52.18
+   },
+   {
+    "w": "senaman",
+    "s": 52.18,
+    "e": 52.64
+   },
+   {
+    "w": "dalam",
+    "s": 52.64,
+    "e": 53.0
+   },
+   {
+    "w": "model",
+    "s": 53.0,
+    "e": 53.38
+   },
+   {
+    "w": "kajian",
+    "s": 53.38,
+    "e": 53.76
+   },
+   {
+    "w": "haiwan.",
+    "s": 53.76,
+    "e": 54.16
+   }
+  ]
+ },
+ {
+  "start": 54.16,
+  "end": 64.16,
+  "text": "Namun, kajian ini adalah kajian awal pada haiwan. Bagi manusia, gamogen perlu dilihat sebagai supplement sokongan, bukan pengganti ubat atau rawatan dokter.",
+  "words": [
+   {
+    "w": "Namun,",
+    "s": 54.16,
+    "e": 55.24
+   },
+   {
+    "w": "kajian",
+    "s": 55.52,
+    "e": 55.7
+   },
+   {
+    "w": "ini",
+    "s": 55.7,
+    "e": 56.06
+   },
+   {
+    "w": "adalah",
+    "s": 56.06,
+    "e": 56.48
+   },
+   {
+    "w": "kajian",
+    "s": 56.48,
+    "e": 56.88
+   },
+   {
+    "w": "awal",
+    "s": 56.88,
+    "e": 57.22
+   },
+   {
+    "w": "pada",
+    "s": 57.22,
+    "e": 57.52
+   },
+   {
+    "w": "haiwan.",
+    "s": 57.52,
+    "e": 58.14
+   },
+   {
+    "w": "Bagi",
+    "s": 58.24,
+    "e": 58.52
+   },
+   {
+    "w": "manusia,",
+    "s": 58.52,
+    "e": 59.1
+   },
+   {
+    "w": "gamogen",
+    "s": 59.3,
+    "e": 59.64
+   },
+   {
+    "w": "perlu",
+    "s": 59.64,
+    "e": 59.94
+   },
+   {
+    "w": "dilihat",
+    "s": 59.94,
+    "e": 60.42
+   },
+   {
+    "w": "sebagai",
+    "s": 60.42,
+    "e": 60.92
+   },
+   {
+    "w": "supplement",
+    "s": 60.92,
+    "e": 61.42
+   },
+   {
+    "w": "sokongan,",
+    "s": 61.42,
+    "e": 62.12
+   },
+   {
+    "w": "bukan",
+    "s": 62.26,
+    "e": 62.52
+   },
+   {
+    "w": "pengganti",
+    "s": 62.52,
+    "e": 63.02
+   },
+   {
+    "w": "ubat",
+    "s": 63.02,
+    "e": 63.42
+   },
+   {
+    "w": "atau",
+    "s": 63.42,
+    "e": 63.72
+   },
+   {
+    "w": "rawatan",
+    "s": 63.72,
+    "e": 64.14
+   },
+   {
+    "w": "dokter.",
+    "s": 64.14,
+    "e": 64.58
+   }
+  ]
+ },
+ {
+  "start": 65.42,
+  "end": 70.12,
+  "text": "Gamogen sesuai bagi orang dewasa yang ingin menabah sokongan nutrisi harian.",
+  "words": [
+   {
+    "w": "Gamogen",
+    "s": 65.42,
+    "e": 65.96
+   },
+   {
+    "w": "sesuai",
+    "s": 65.96,
+    "e": 66.44
+   },
+   {
+    "w": "bagi",
+    "s": 66.44,
+    "e": 66.78
+   },
+   {
+    "w": "orang",
+    "s": 66.78,
+    "e": 67.0
+   },
+   {
+    "w": "dewasa",
+    "s": 67.0,
+    "e": 67.5
+   },
+   {
+    "w": "yang",
+    "s": 67.5,
+    "e": 67.72
+   },
+   {
+    "w": "ingin",
+    "s": 67.72,
+    "e": 67.96
+   },
+   {
+    "w": "menabah",
+    "s": 67.96,
+    "e": 68.48
+   },
+   {
+    "w": "sokongan",
+    "s": 68.48,
+    "e": 69.06
+   },
+   {
+    "w": "nutrisi",
+    "s": 69.06,
+    "e": 69.56
+   },
+   {
+    "w": "harian.",
+    "s": 69.56,
+    "e": 70.12
+   }
+  ]
+ },
+ {
+  "start": 70.28,
+  "end": 80.9,
+  "text": "Bagi individu yang mengambil ubat, mengandung, menyusuh atau mempunyai keadaan kesihatan khusus, berbincanglah dengan dokter atau farmasis sebelum memulakan sebarang supplement.",
+  "words": [
+   {
+    "w": "Bagi",
+    "s": 70.28,
+    "e": 70.56
+   },
+   {
+    "w": "individu",
+    "s": 70.56,
+    "e": 71.06
+   },
+   {
+    "w": "yang",
+    "s": 71.06,
+    "e": 71.32
+   },
+   {
+    "w": "mengambil",
+    "s": 71.32,
+    "e": 71.64
+   },
+   {
+    "w": "ubat,",
+    "s": 71.64,
+    "e": 72.12
+   },
+   {
+    "w": "mengandung,",
+    "s": 72.28,
+    "e": 72.8
+   },
+   {
+    "w": "menyusuh",
+    "s": 73.0,
+    "e": 73.44
+   },
+   {
+    "w": "atau",
+    "s": 73.44,
+    "e": 73.74
+   },
+   {
+    "w": "mempunyai",
+    "s": 73.74,
+    "e": 74.28
+   },
+   {
+    "w": "keadaan",
+    "s": 74.28,
+    "e": 74.88
+   },
+   {
+    "w": "kesihatan",
+    "s": 74.88,
+    "e": 75.38
+   },
+   {
+    "w": "khusus,",
+    "s": 75.38,
+    "e": 76.18
+   },
+   {
+    "w": "berbincanglah",
+    "s": 76.36,
+    "e": 76.96
+   },
+   {
+    "w": "dengan",
+    "s": 76.96,
+    "e": 77.24
+   },
+   {
+    "w": "dokter",
+    "s": 77.24,
+    "e": 77.7
+   },
+   {
+    "w": "atau",
+    "s": 77.7,
+    "e": 78.02
+   },
+   {
+    "w": "farmasis",
+    "s": 78.02,
+    "e": 78.58
+   },
+   {
+    "w": "sebelum",
+    "s": 78.58,
+    "e": 79.3
+   },
+   {
+    "w": "memulakan",
+    "s": 79.3,
+    "e": 79.96
+   },
+   {
+    "w": "sebarang",
+    "s": 79.96,
+    "e": 80.46
+   },
+   {
+    "w": "supplement.",
+    "s": 80.46,
+    "e": 80.9
+   }
+  ]
+ },
+ {
+  "start": 80.9,
+  "end": 89.8,
+  "text": "Kesihatan bermula dengan pilihan harian, pemakanan seimbang, rehat mencukupi, aktiviti fizikal dan sokongan nutrisi yang sesuai.",
+  "words": [
+   {
+    "w": "Kesihatan",
+    "s": 80.9,
+    "e": 82.26
+   },
+   {
+    "w": "bermula",
+    "s": 82.26,
+    "e": 82.88
+   },
+   {
+    "w": "dengan",
+    "s": 82.88,
+    "e": 83.22
+   },
+   {
+    "w": "pilihan",
+    "s": 83.22,
+    "e": 83.7
+   },
+   {
+    "w": "harian,",
+    "s": 83.7,
+    "e": 84.22
+   },
+   {
+    "w": "pemakanan",
+    "s": 84.42,
+    "e": 84.98
+   },
+   {
+    "w": "seimbang,",
+    "s": 84.98,
+    "e": 85.48
+   },
+   {
+    "w": "rehat",
+    "s": 85.68,
+    "e": 85.78
+   },
+   {
+    "w": "mencukupi,",
+    "s": 85.78,
+    "e": 86.54
+   },
+   {
+    "w": "aktiviti",
+    "s": 86.6,
+    "e": 87.06
+   },
+   {
+    "w": "fizikal",
+    "s": 87.06,
+    "e": 87.62
+   },
+   {
+    "w": "dan",
+    "s": 87.62,
+    "e": 87.9
+   },
+   {
+    "w": "sokongan",
+    "s": 87.9,
+    "e": 88.4
+   },
+   {
+    "w": "nutrisi",
+    "s": 88.4,
+    "e": 88.88
+   },
+   {
+    "w": "yang",
+    "s": 88.88,
+    "e": 89.04
+   },
+   {
+    "w": "sesuai.",
+    "s": 89.04,
+    "e": 89.8
+   }
+  ]
+ },
+ {
+  "start": 90.0,
+  "end": 96.94,
+  "text": "Jika anda ingin mencuba gamogen, dapatkan nasihat profesional dan gunakannya sebagai sebahagian daripada gaya hidup sihat.",
+  "words": [
+   {
+    "w": "Jika",
+    "s": 90.0,
+    "e": 90.22
+   },
+   {
+    "w": "anda",
+    "s": 90.22,
+    "e": 90.48
+   },
+   {
+    "w": "ingin",
+    "s": 90.48,
+    "e": 90.72
+   },
+   {
+    "w": "mencuba",
+    "s": 90.72,
+    "e": 91.2
+   },
+   {
+    "w": "gamogen,",
+    "s": 91.2,
+    "e": 91.68
+   },
+   {
+    "w": "dapatkan",
+    "s": 91.96,
+    "e": 92.28
+   },
+   {
+    "w": "nasihat",
+    "s": 92.28,
+    "e": 92.68
+   },
+   {
+    "w": "profesional",
+    "s": 92.68,
+    "e": 93.3
+   },
+   {
+    "w": "dan",
+    "s": 93.3,
+    "e": 93.62
+   },
+   {
+    "w": "gunakannya",
+    "s": 93.62,
+    "e": 94.22
+   },
+   {
+    "w": "sebagai",
+    "s": 94.22,
+    "e": 94.76
+   },
+   {
+    "w": "sebahagian",
+    "s": 94.76,
+    "e": 95.32
+   },
+   {
+    "w": "daripada",
+    "s": 95.32,
+    "e": 95.88
+   },
+   {
+    "w": "gaya",
+    "s": 95.88,
+    "e": 96.2
+   },
+   {
+    "w": "hidup",
+    "s": 96.2,
+    "e": 96.56
+   },
+   {
+    "w": "sihat.",
+    "s": 96.56,
+    "e": 96.94
+   }
+  ]
+ },
+ {
+  "start": 97.44,
+  "end": 101.66,
+  "text": "Gamogen house all feeling, sokongan untuk kesejahteraan harian anda.",
+  "words": [
+   {
+    "w": "Gamogen",
+    "s": 97.44,
+    "e": 97.9
+   },
+   {
+    "w": "house",
+    "s": 97.9,
+    "e": 98.26
+   },
+   {
+    "w": "all",
+    "s": 98.26,
+    "e": 98.52
+   },
+   {
+    "w": "feeling,",
+    "s": 98.52,
+    "e": 98.88
+   },
+   {
+    "w": "sokongan",
+    "s": 99.3,
+    "e": 99.78
+   },
+   {
+    "w": "untuk",
+    "s": 99.78,
+    "e": 100.04
+   },
+   {
+    "w": "kesejahteraan",
+    "s": 100.04,
+    "e": 100.96
+   },
+   {
+    "w": "harian",
+    "s": 100.96,
+    "e": 101.28
+   },
+   {
+    "w": "anda.",
+    "s": 101.28,
+    "e": 101.66
+   }
+  ]
+ }
+]

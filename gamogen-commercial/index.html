@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>HEALIN GAMOGEN — Premium Wellness Commercial (9:16)</title>
+  <!-- HEALIN GAMOGEN animated commercial — HyperFrames composition.
+       Voice-over (original Malay narration) and the music/SFX mix are added by FFmpeg
+       (scripts/mix_audio.sh) so the narration is never re-encoded inside the browser. -->
+  <script src="components/vendor/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-display: block; src: url(assets/fonts/montserrat-latin-600-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 700; font-display: block; src: url(assets/fonts/montserrat-latin-700-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-display: block; src: url(assets/fonts/montserrat-latin-800-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 900; font-display: block; src: url(assets/fonts/montserrat-latin-900-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Plus Jakarta Sans"; font-weight: 500; font-display: block; src: url(assets/fonts/plus-jakarta-sans-latin-500-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Plus Jakarta Sans"; font-weight: 600; font-display: block; src: url(assets/fonts/plus-jakarta-sans-latin-600-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Plus Jakarta Sans"; font-weight: 700; font-display: block; src: url(assets/fonts/plus-jakarta-sans-latin-700-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Plus Jakarta Sans"; font-weight: 800; font-display: block; src: url(assets/fonts/plus-jakarta-sans-latin-800-normal.woff2) format("woff2"); }
+    @font-face { font-family: "DM Sans"; font-weight: 400; font-display: block; src: url(assets/fonts/dm-sans-latin-400-normal.woff2) format("woff2"); }
+    @font-face { font-family: "DM Sans"; font-weight: 500; font-display: block; src: url(assets/fonts/dm-sans-latin-500-normal.woff2) format("woff2"); }
+    @font-face { font-family: "DM Sans"; font-weight: 600; font-display: block; src: url(assets/fonts/dm-sans-latin-600-normal.woff2) format("woff2"); }
+    @font-face { font-family: "DM Sans"; font-weight: 700; font-display: block; src: url(assets/fonts/dm-sans-latin-700-normal.woff2) format("woff2"); }
+    @font-face { font-family: "Playfair Display"; font-weight: 500; font-style: italic; font-display: block; src: url(assets/fonts/playfair-display-latin-500-italic.woff2) format("woff2"); }
+    @font-face { font-family: "Playfair Display"; font-weight: 600; font-style: italic; font-display: block; src: url(assets/fonts/playfair-display-latin-600-italic.woff2) format("woff2"); }
+
+    :root {
+      --gold: #D6B878; --burg: #641D2B; --cream: #F7F1E7; --ivory: #FFFDF8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); font-family: "DM Sans", sans-serif; }
+    .clip { position: absolute; inset: 0; overflow: hidden; }
+    .scene { width: 1080px; height: 1920px; }
+    .stage { overflow: hidden; }
+    #s01 { z-index: 1 } #s02 { z-index: 2 } #s03 { z-index: 3 } #s04 { z-index: 4 }
+    #s05 { z-index: 5 } #s06 { z-index: 6 } #s07 { z-index: 7 } #s08 { z-index: 8 }
+
+    /* persistent overlays */
+    #vignette { position: absolute; inset: 0; z-index: 90; pointer-events: none;
+      background: radial-gradient(ellipse 80% 65% at 50% 48%, rgba(0,0,0,0) 60%, rgba(69,18,29,.16) 100%); }
+    #brand { position: absolute; z-index: 95; left: 0; top: 70px; width: 1080px; display: flex; justify-content: center; align-items: center; gap: 14px;
+      font: 700 24px "Plus Jakarta Sans"; letter-spacing: .32em; color: #8A6A3A; }
+    #brand img { width: 52px; height: 52px; border-radius: 50%; box-shadow: 0 0 0 2px var(--gold); }
+
+    /* subtitles — separate from the headline system */
+    #subs { position: absolute; inset: 0; z-index: 100; pointer-events: none; }
+    .sub { position: absolute; left: 0; right: 0; bottom: 268px; text-align: center; visibility: hidden; }
+    .sub span { display: inline-block; max-width: 940px; padding: 14px 32px 16px; border-radius: 24px;
+      background: rgba(58,15,25,.86); color: #FFFDF8; font: 600 44px/1.28 "Plus Jakarta Sans"; letter-spacing: .005em;
+      box-shadow: 0 12px 30px -12px rgba(0,0,0,.45); border: 1.5px solid rgba(214,184,120,.45); text-wrap: balance; }
+    .sub b { color: #EBD8A8; font-weight: 800; }
+    .sub i { font-style: italic; color: #F3E3BC; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="107.5" data-width="1080" data-height="1920" data-fps="30">
+    <!-- scenes: windows overlap so transitions can cross between them -->
+    <div id="s01" class="clip scene" data-start="0" data-duration="12.0" data-track-index="1"></div>
+    <div id="s02" class="clip scene" data-start="11.1" data-duration="15.8" data-track-index="2"></div>
+    <div id="s03" class="clip scene" data-start="26.0" data-duration="13.6" data-track-index="3"></div>
+    <div id="s04" class="clip scene" data-start="38.7" data-duration="16.1" data-track-index="4"></div>
+    <div id="s05" class="clip scene" data-start="53.9" data-duration="11.7" data-track-index="5"></div>
+    <div id="s06" class="clip scene" data-start="64.8" data-duration="17.4" data-track-index="6"></div>
+    <div id="s07" class="clip scene" data-start="81.2" data-duration="16.4" data-track-index="7"></div>
+    <div id="s08" class="clip scene" data-start="96.7" data-duration="10.8" data-track-index="8"></div>
+
+    <div id="vignette" class="clip" data-start="0" data-duration="107.5" data-track-index="9"></div>
+    <div id="brand" class="clip" data-start="11.8" data-duration="84.9" data-track-index="10" style="inset:auto;height:60px">
+      <img src="assets/product-images/healin_logo_circle.png" alt="" /><span>HOUSE OF HEALIN</span>
+    </div>
+    <div id="subs" class="clip" data-start="0" data-duration="101.9" data-track-index="11"></div>
+  </div>
+
+  <!-- reusable animation components -->
+  <script src="components/core.js"></script>
+  <script src="components/kinetic.js"></script>
+  <script src="components/fx.js"></script>
+  <script src="components/icons.js"></script>
+  <script src="components/illustrations.js"></script>
+  <script src="components/figures.js"></script>
+  <script src="components/subtitles.js"></script>
+  <script>window.SCENES = [];</script>
+  <!-- scenes (each builds its DOM and adds tweens at absolute narration times) -->
+  <script src="scenes/s01-opening.js"></script>
+  <script src="scenes/s02-ingredients.js"></script>
+  <script src="scenes/s03-wellness.js"></script>
+  <script src="scenes/s04-research.js"></script>
+  <script src="scenes/s05-disclaimer.js"></script>
+  <script src="scenes/s06-advice.js"></script>
+  <script src="scenes/s07-lifestyle.js"></script>
+  <script src="scenes/s08-closing.js"></script>
+  <script>
+    (function () {
+      const TOTAL = 107.5;
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      SCENES.forEach(s => s.build(tl, document.getElementById(s.id)));
+      // brand bug fades with the scene flow
+      tl.fromTo("#brand", { opacity: 0, y: -10 }, { opacity: 0.9, y: 0, duration: 0.8 }, 12.0);
+      tl.to("#brand", { opacity: 0, duration: 0.4 }, 96.2);
+      SUBS.build(document.getElementById("subs"), tl);
+      tl.set({}, {}, TOTAL); // pin timeline length
+      tl.seek(0);
+    })();
+  </script>
+</body>
+</html>

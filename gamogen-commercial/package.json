@@ -1,0 +1,22 @@
+{
+  "name": "healin-gamogen-commercial",
+  "version": "1.0.0",
+  "description": "HEALIN GAMOGEN premium wellness animated commercial (HyperFrames + FFmpeg)",
+  "scripts": {
+    "preview": "npx hyperframes preview",
+    "check": "npx hyperframes lint .",
+    "render": "./scripts/render.sh",
+    "remix": "SKIP_VIDEO=1 ./scripts/render.sh"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "gsap": "^3.13.0",
+    "hyperframes": "^0.9.26"
+  },
+  "private": true
+}
