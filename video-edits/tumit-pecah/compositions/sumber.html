@@ -1,0 +1,46 @@
+<template>
+  <style>
+
+    #root { position: absolute; inset: 0; overflow: visible; font-family: 'Montserrat', sans-serif; color: #fff; }
+    .abs { position: absolute; }
+    .glass { background: rgba(9, 36, 34, 0.84); border: 2px solid rgba(159, 216, 200, 0.35); border-radius: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+    .hdr { position: absolute; left: 54px; right: 54px; top: 186px; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 30px 0 22px; }
+    .hdr .num { flex: none; width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(140deg, #ffd978, #e9a92a); color: #1b1405; font-weight: 900; font-size: 58px; display: flex; align-items: center; justify-content: center; }
+    .hdr .ttl { font-weight: 900; font-size: 52px; line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+    .hdr .ttl em { font-style: normal; color: #ffd36b; }
+    .chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 0 30px; height: 92px; border-radius: 46px; font-weight: 900; font-size: 44px; text-transform: uppercase; white-space: nowrap; }
+    .chip svg { width: 46px; height: 46px; flex: none; }
+    .card { position: absolute; border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.4); border: 5px solid #fff; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 0 12px; text-align: center; font-weight: 900; font-size: 30px; text-transform: uppercase; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.78), rgba(0,0,0,0)); }
+    .badge { position: absolute; width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid #fff; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+    .badge svg { width: 52px; height: 52px; }
+    .ok { background: #22c27d; } .no { background: #ef3b3b; }
+    .chip span svg, .ico svg { width: 100%; height: 100%; display: block; }
+    .scrim { position: absolute; left: 0; right: 0; top: 0; height: 760px; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,0) 100%); }
+
+
+  </style>
+  <div id="root" data-composition-id="sumber" data-width="1080" data-height="1920">
+    <div class="scrim"></div>
+    <div id="cc-card" class="card" style="left:150px; top:196px; width:780px; height:360px;">
+      <img src="assets/img/cleveland.jpg" alt="Cleveland Clinic" style="object-position:50% 72%;" />
+    </div>
+    <div id="cc-lbl" class="chip glass" style="left:0; right:0; margin:0 auto; width:max-content; top:586px; height:80px; font-size:38px;">PAKAR CLEVELAND CLINIC, AS <span id="cc-yr" style="color:#ffd36b">· 2025</span></div>
+
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const q = (s) => document.querySelectorAll(s.split(',').map((p) => '[data-composition-id="sumber"] ' + p.trim()).join(','));
+      tl.fromTo(q('.scrim'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.77);
+      tl.fromTo(q('#cc-card'), { y: -60, rotation: -6, opacity: 0, filter: 'blur(12px)' }, { y: 0, rotation: -2, opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 0.77);
+      tl.fromTo(q('#cc-lbl'), { y: 40, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.35, ease: 'expo.out' }, 1.22);
+      tl.fromTo(q('#cc-yr'), { opacity: 0 }, { opacity: 1, duration: 0.15 }, 3.1);
+      tl.fromTo(q('#cc-yr'), { opacity: 0 }, { opacity: 0 }, 0);
+      tl.to(q('#cc-card, #cc-lbl, .scrim'), { opacity: 0, filter: 'blur(10px)', duration: 0.22, ease: 'power2.in' }, 3.769);
+
+      window.__timelines["sumber"] = tl;
+    })();
+  </script>
+</template>

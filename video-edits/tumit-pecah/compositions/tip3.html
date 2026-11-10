@@ -1,0 +1,47 @@
+<template>
+  <style>
+
+    #root { position: absolute; inset: 0; overflow: visible; font-family: 'Montserrat', sans-serif; color: #fff; }
+    .abs { position: absolute; }
+    .glass { background: rgba(9, 36, 34, 0.84); border: 2px solid rgba(159, 216, 200, 0.35); border-radius: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+    .hdr { position: absolute; left: 54px; right: 54px; top: 186px; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 30px 0 22px; }
+    .hdr .num { flex: none; width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(140deg, #ffd978, #e9a92a); color: #1b1405; font-weight: 900; font-size: 58px; display: flex; align-items: center; justify-content: center; }
+    .hdr .ttl { font-weight: 900; font-size: 52px; line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+    .hdr .ttl em { font-style: normal; color: #ffd36b; }
+    .chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 0 30px; height: 92px; border-radius: 46px; font-weight: 900; font-size: 44px; text-transform: uppercase; white-space: nowrap; }
+    .chip svg { width: 46px; height: 46px; flex: none; }
+    .card { position: absolute; border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.4); border: 5px solid #fff; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 0 12px; text-align: center; font-weight: 900; font-size: 30px; text-transform: uppercase; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.78), rgba(0,0,0,0)); }
+    .badge { position: absolute; width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid #fff; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+    .badge svg { width: 52px; height: 52px; }
+    .ok { background: #22c27d; } .no { background: #ef3b3b; }
+    .chip span svg, .ico svg { width: 100%; height: 100%; display: block; }
+    .scrim { position: absolute; left: 0; right: 0; top: 0; height: 760px; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,0) 100%); }
+
+
+  </style>
+  <div id="root" data-composition-id="tip3" data-width="1080" data-height="1920">
+    <div class="scrim"></div>
+    <div id="hdr3" class="hdr glass"><div class="num">3</div><div class="ttl">RENDAM KAKI <em>AIR SUAM</em></div></div>
+    <div id="t3-time" class="chip" style="left:80px; top:400px; height:120px; border-radius:60px; font-size:64px; background:linear-gradient(140deg,#ffd978,#e9a92a); color:#1b1405;"><span style="width:62px;height:62px;display:inline-block"><svg viewBox="0 0 24 24" fill="none" stroke="#1b1405" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg></span>5–10 MINIT</div>
+    <div id="t3-salt" class="card" style="left:620px; top:340px; width:330px; height:300px;"><img src="assets/img/epsom.jpg" alt="Garam" style="object-position:55% 60%;" /><div class="lbl">GARAM</div></div>
+    <div id="t3-stamp" class="abs" style="left:560px; top:450px; width:450px; text-align:center; font-weight:900; font-size:46px; color:#fff; background:#ef3b3b; border:5px solid #fff; border-radius:14px; padding:8px 0 10px; box-shadow:0 12px 28px rgba(0,0,0,.4);">BELUM TERBUKTI</div>
+
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const q = (s) => document.querySelectorAll(s.split(',').map((p) => '[data-composition-id="tip3"] ' + p.trim()).join(','));
+      tl.fromTo(q('.scrim'), { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+      tl.fromTo(q('#hdr3'), { x: -140, opacity: 0, filter: 'blur(14px)' }, { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.42, ease: 'expo.out' }, 0.0);
+      tl.fromTo(q('#hdr3 .num'), { scale: 0.3, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0.08);
+      tl.fromTo(q('#t3-time'), { scale: 0.5, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.4, ease: 'back.out(1.7)' }, 2.1);
+      tl.fromTo(q('#t3-salt'), { x: 120, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 3.73);
+      tl.fromTo(q('#t3-stamp'), { scale: 2.4, rotation: -19, opacity: 0 }, { scale: 1, rotation: -9, opacity: 1, duration: 0.26, ease: 'power4.out' }, 6.79);
+      tl.to(q('#hdr3, #t3-time, #t3-salt, #t3-stamp, .scrim'), { opacity: 0, filter: 'blur(10px)', duration: 0.2, ease: 'power2.in' }, 9.52);
+
+      window.__timelines["tip3"] = tl;
+    })();
+  </script>
+</template>

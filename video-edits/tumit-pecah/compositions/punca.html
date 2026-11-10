@@ -1,0 +1,46 @@
+<template>
+  <style>
+
+    #root { position: absolute; inset: 0; overflow: visible; font-family: 'Montserrat', sans-serif; color: #fff; }
+    .abs { position: absolute; }
+    .glass { background: rgba(9, 36, 34, 0.84); border: 2px solid rgba(159, 216, 200, 0.35); border-radius: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+    .hdr { position: absolute; left: 54px; right: 54px; top: 186px; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 30px 0 22px; }
+    .hdr .num { flex: none; width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(140deg, #ffd978, #e9a92a); color: #1b1405; font-weight: 900; font-size: 58px; display: flex; align-items: center; justify-content: center; }
+    .hdr .ttl { font-weight: 900; font-size: 52px; line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+    .hdr .ttl em { font-style: normal; color: #ffd36b; }
+    .chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 0 30px; height: 92px; border-radius: 46px; font-weight: 900; font-size: 44px; text-transform: uppercase; white-space: nowrap; }
+    .chip svg { width: 46px; height: 46px; flex: none; }
+    .card { position: absolute; border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.4); border: 5px solid #fff; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 0 12px; text-align: center; font-weight: 900; font-size: 30px; text-transform: uppercase; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.78), rgba(0,0,0,0)); }
+    .badge { position: absolute; width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid #fff; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+    .badge svg { width: 52px; height: 52px; }
+    .ok { background: #22c27d; } .no { background: #ef3b3b; }
+    .chip span svg, .ico svg { width: 100%; height: 100%; display: block; }
+    .scrim { position: absolute; left: 0; right: 0; top: 0; height: 760px; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,0) 100%); }
+
+
+  </style>
+  <div id="root" data-composition-id="punca" data-width="1080" data-height="1920">
+    <div class="scrim"></div>
+    <div id="pc-kick" class="chip" style="left:0; right:0; margin:0 auto; width:max-content; top:196px; height:70px; font-size:36px; background:#ffd36b; color:#1b1405; letter-spacing:.06em;">PUNCA SEBENAR</div>
+    <div id="pc-main" class="glass abs" style="left:90px; right:90px; top:296px; height:150px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:96px; letter-spacing:-0.01em;">KULIT <span style="color:#ffd36b; margin-left:24px;">KERING</span></div>
+    <div id="pc-c1" class="chip glass" style="left:120px; top:480px; border-radius:46px;"><span style="color:#ffd36b">+</span>TEKANAN</div>
+    <div id="pc-c2" class="chip glass" style="right:120px; top:480px; border-radius:46px;"><span style="color:#ffd36b">+</span>GESERAN</div>
+
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const q = (s) => document.querySelectorAll(s.split(',').map((p) => '[data-composition-id="punca"] ' + p.trim()).join(','));
+      tl.fromTo(q('.scrim'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+      tl.fromTo(q('#pc-kick'), { y: -30, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.35, ease: 'expo.out' }, 0.31);
+      tl.fromTo(q('#pc-main'), { scale: 0.7, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.64);
+      tl.fromTo(q('#pc-c1'), { x: -80, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.36, ease: 'expo.out' }, 3.91);
+      tl.fromTo(q('#pc-c2'), { x: 80, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.36, ease: 'expo.out' }, 4.54);
+      tl.to(q('#pc-kick, #pc-main, #pc-c1, #pc-c2, .scrim'), { opacity: 0, filter: 'blur(10px)', duration: 0.22, ease: 'power2.in' }, 5.92);
+
+      window.__timelines["punca"] = tl;
+    })();
+  </script>
+</template>

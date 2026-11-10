@@ -1,0 +1,50 @@
+<template>
+  <style>
+
+    #root { position: absolute; inset: 0; overflow: visible; font-family: 'Montserrat', sans-serif; color: #fff; }
+    .abs { position: absolute; }
+    .glass { background: rgba(9, 36, 34, 0.84); border: 2px solid rgba(159, 216, 200, 0.35); border-radius: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+    .hdr { position: absolute; left: 54px; right: 54px; top: 186px; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 30px 0 22px; }
+    .hdr .num { flex: none; width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(140deg, #ffd978, #e9a92a); color: #1b1405; font-weight: 900; font-size: 58px; display: flex; align-items: center; justify-content: center; }
+    .hdr .ttl { font-weight: 900; font-size: 52px; line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+    .hdr .ttl em { font-style: normal; color: #ffd36b; }
+    .chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 0 30px; height: 92px; border-radius: 46px; font-weight: 900; font-size: 44px; text-transform: uppercase; white-space: nowrap; }
+    .chip svg { width: 46px; height: 46px; flex: none; }
+    .card { position: absolute; border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.4); border: 5px solid #fff; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 0 12px; text-align: center; font-weight: 900; font-size: 30px; text-transform: uppercase; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.78), rgba(0,0,0,0)); }
+    .badge { position: absolute; width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid #fff; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+    .badge svg { width: 52px; height: 52px; }
+    .ok { background: #22c27d; } .no { background: #ef3b3b; }
+    .chip span svg, .ico svg { width: 100%; height: 100%; display: block; }
+    .scrim { position: absolute; left: 0; right: 0; top: 0; height: 760px; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,0) 100%); }
+
+
+  </style>
+  <div id="root" data-composition-id="tip4" data-width="1080" data-height="1920">
+    <div class="scrim"></div>
+    <div id="hdr4" class="hdr glass"><div class="num">4</div><div class="ttl">GOSOK GUNA <em>BATU APUNG</em></div></div>
+    <div id="t4-img" class="card" style="left:66px; top:350px; width:330px; height:290px;"><img src="assets/img/batu-apung.jpg" alt="Batu apung" style="object-position:55% 60%;" /><div class="lbl">PERLAHAN-LAHAN</div></div>
+    <div id="t4-c1" class="chip glass" style="left:430px; top:356px; height:96px; font-size:40px;">JANGAN KUAT SANGAT!</div>
+    <div id="t4-warn" class="abs" style="left:430px; top:476px; width:584px; height:164px; border-radius:26px; background:#ffc93c; color:#2a1a00; display:flex; align-items:center; gap:20px; padding:0 26px; box-shadow:0 14px 34px rgba(0,0,0,.35);">
+      <span style="width:84px; height:84px; flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#2a1a00" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3L2 21h20L12 3z"/><path d="M12 10v5"/><path d="M12 18.2v.1"/></svg></span>
+      <div style="font-weight:900; font-size:40px; line-height:1.08;">ADA DIABETES?<br/><span style="font-size:34px; font-weight:800;">TANYA DOKTOR DULU</span></div>
+    </div>
+
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const q = (s) => document.querySelectorAll(s.split(',').map((p) => '[data-composition-id="tip4"] ' + p.trim()).join(','));
+      tl.fromTo(q('.scrim'), { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+      tl.fromTo(q('#hdr4'), { x: -140, opacity: 0, filter: 'blur(14px)' }, { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.42, ease: 'expo.out' }, 0.0);
+      tl.fromTo(q('#hdr4 .num'), { scale: 0.3, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0.08);
+      tl.fromTo(q('#t4-img'), { y: 60, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 2.22);
+      tl.fromTo(q('#t4-c1'), { x: 80, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.36, ease: 'expo.out' }, 3.22);
+      tl.fromTo(q('#t4-warn'), { scale: 0.6, opacity: 0 }, { scale: 1, x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: 'back.out(1.6)' }, 4.89);
+      tl.to(q('#hdr4, #t4-img, #t4-c1, #t4-warn, .scrim'), { opacity: 0, filter: 'blur(10px)', duration: 0.2, ease: 'power2.in' }, 6.76);
+
+      window.__timelines["tip4"] = tl;
+    })();
+  </script>
+</template>
