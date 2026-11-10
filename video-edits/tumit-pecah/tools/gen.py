@@ -446,6 +446,21 @@ for i, (name, t, vol) in enumerate(sorted(sfx, key=lambda x: x[1])):
         lanes.append(0); lane = len(lanes) - 1
     lanes[lane] = t + d
     aud.append(f'    <audio id="sfx{i:02d}" class="clip" src="assets/sfx/{name}.mp3" data-start="{t:.3f}" data-duration="{d:.3f}" data-track-index="{5 + lane}" data-volume="{round(vol * 0.6, 3)}"></audio>')
+# background music: one catalog track (90 bpm, bar = 2.667 s) looped on downbeats.
+# seg = (out_start, media_start, out_end); each seam rings 0.6 s under the next downbeat.
+BGM_VOL = 0.26
+BAR0, BAR = 0.04, 4 * 0.6667
+def bar(k): return round(BAR0 + k * BAR, 3)
+seam1 = round(bar(15) - bar(4), 3)          # 29.32: media 10.71 -> 40.03
+seam2 = round(seam1 + bar(15) - bar(4), 3)  # 58.64
+bgm_segs = [(0.0, bar(4), seam1), (seam1, bar(4), seam2), (seam2, bar(8), TOTAL)]
+bgm = []
+for j, (a, m, b) in enumerate(bgm_segs):
+    last = j == len(bgm_segs) - 1
+    dur = round((b - a) + (0 if last else 0.6), 3)
+    fin = 0.4 if j == 0 else 0.02
+    fout = 1.2 if last else 0.6
+    bgm.append(f'    <audio id="bgm{j+1}" class="clip" src="assets/bgm/track.mp3" data-start="{a:.3f}" data-duration="{dur:.3f}" data-media-start="{m:.3f}" data-track-index="{9 + j % 2}" data-volume="{BGM_VOL}" data-fade-in="{fin}" data-fade-out="{fout}"></audio>')
 host_html = []
 for k, (cid, st, du) in enumerate(hosts):
     host_html.append(f'    <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st:.3f}" data-duration="{du:.3f}" data-track-index="{2 + k % 2}" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:{10 + k}"></div>')
@@ -477,6 +492,7 @@ index = f"""<!doctype html>
 {chr(10).join(host_html)}
     <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="{cap_start:.3f}" data-duration="{TOTAL - cap_start:.3f}" data-track-index="4" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:40"></div>
 {chr(10).join(aud)}
+{chr(10).join(bgm)}
     </div>
     <script>
       const tl = gsap.timeline({{ paused: true }});

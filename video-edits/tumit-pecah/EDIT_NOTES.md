@@ -54,8 +54,10 @@ pada "**bukan**" (113%), "**tak cukup**" (120%) dan "**Seri Lestari**" (108%).
 bertukar emas bila disebut. Caption mula selepas hook, sebab tajuk hook dah tulis ayat yang sama.
 Ejaan dibetulkan: "selipar", "air suam", "perlahan-lahan", nombor ditulis sebagai angka (5–10, 6–8).
 
-## 4. Belum ada / perlu keputusan
-- **Muzik latar: belum ada.** Akaun HeyGen belum sign-in, jadi katalog muzik tak boleh diakses. Pilihan: (a) sign in HeyGen dalam Hyperframes,
-  (b) letak track muzik sendiri dalam folder Drive tu, atau (c) teruskan tanpa muzik.
+## 4. Audio & perlu semakan
+- **Muzik latar:** track dari katalog muzik HeyGen ("Astral Generated Music 1701dd87": gitar akustik, 90 BPM, instrumental),
+  `assets/bgm/track.mp3`. Track asal hanya 44 s, jadi ia disambung 3 bahagian pada downbeat (0 s, 29.3 s, 58.7 s) dengan
+  crossfade pendek. Muzik bermula pada bar yang lebih bertenaga (10.7 s dalam track) dan fade-out pada 1.2 s terakhir.
+  Volume 0.26 di bawah suara (~14 dB lebih perlahan dari suara) (suara 0.6, SFX ×0.6). Penggunaan tertakluk pada terma lesen HeyGen.
 - SFX diambil dari pustaka Hyperframes (lesen Pixabay, bebas guna komersial).
 - Klaim "Cleveland Clinic 2025" dan "AAD" dipaparkan sebagaimana disebut penyampai. Sila sahkan sumbernya sebelum post.
