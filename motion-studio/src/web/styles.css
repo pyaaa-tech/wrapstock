@@ -1,0 +1,75 @@
+/* Site chrome around the film. Colours + fonts arrive as CSS variables from core/tokens.ts */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--ink); color: var(--ivory); }
+body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.site { --accent: var(--vermilion); min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); }
+
+/* ── theatre ── */
+.theatre { position: sticky; top: 0; height: 100dvh; display: flex; flex-direction: column; padding: 28px 28px 18px; gap: 14px; background: radial-gradient(120% 80% at 50% 40%, color-mix(in srgb, var(--burgundy) 55%, transparent), transparent 70%), var(--ink); }
+.stage-wrap { flex: 1; min-height: 0; display: grid; place-items: center; }
+.stage-box { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px color-mix(in srgb, var(--ivory) 14%, transparent); }
+.stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; cursor: pointer; user-select: none; -webkit-user-select: none; }
+
+.cover { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(180deg, transparent 30%, color-mix(in srgb, var(--ink) 78%, transparent)); }
+.cover__inner { display: grid; justify-items: center; gap: 18px; }
+.cover__btn { position: relative; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: var(--ivory); color: var(--ink); }
+.cover__btn svg { position: relative; translate: 2px 0; }
+.cover__ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--ivory); }
+.cover__label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+.resume { position: absolute; left: 50%; bottom: 7%; translate: -50% 0; padding: 12px 20px; border-radius: 999px; background: var(--ivory); color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+
+.transport { display: flex; align-items: center; gap: 14px; width: min(100%, 560px); margin: 0 auto; }
+.transport__play { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--ivory); color: var(--ink); }
+.transport__bar { position: relative; flex: 1; height: 44px; cursor: pointer; touch-action: none; }
+.transport__track, .transport__fill { position: absolute; left: 0; right: 0; top: 50%; height: 4px; margin-top: -2px; border-radius: 2px; }
+.transport__track { background: color-mix(in srgb, var(--ivory) 22%, transparent); }
+.transport__fill { background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); transition: background 0.4s; }
+.transport__tick { position: absolute; top: 50%; width: 2px; height: 12px; margin: -6px 0 0 -1px; background: var(--ink); }
+.transport__time, .transport__sfx { flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; opacity: 0.8; white-space: nowrap; }
+.transport__sfx { padding: 8px 10px; border: 1px solid color-mix(in srgb, var(--ivory) 35%, transparent); border-radius: 999px; text-transform: uppercase; }
+.transport__sfx[aria-pressed="false"] { opacity: 0.45; }
+
+/* ── editorial panel ── */
+.panel { padding: clamp(28px, 4.5vw, 72px); display: flex; flex-direction: column; gap: clamp(26px, 3.4vh, 44px); border-left: 1px solid color-mix(in srgb, var(--ivory) 12%, transparent); min-width: 0; }
+.eyebrow { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.62; margin-bottom: 14px; }
+h1 { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.16em; line-height: 0.86; font-weight: 400; }
+.h1__a { font-family: var(--font-display); font-variation-settings: "wdth" 118, "wght" 900; font-size: clamp(52px, 6.6vw, 104px); text-transform: uppercase; color: var(--vermilion); letter-spacing: -0.01em; }
+.h1__arrow { font-family: var(--font-mono); font-size: clamp(34px, 4vw, 60px); align-self: center; color: var(--accent); transition: color 0.4s; }
+.h1__b { font-family: var(--font-serif); font-size: clamp(64px, 8vw, 128px); color: var(--sage); letter-spacing: -0.02em; }
+.lede { margin: 20px 0 0; max-width: 34ch; font-size: clamp(16px, 1.25vw, 19px); line-height: 1.45; opacity: 0.82; }
+
+.caption { border-top: 1px solid color-mix(in srgb, var(--ivory) 16%, transparent); padding-top: 18px; min-height: 7.2em; }
+.caption p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: clamp(24px, 2.3vw, 36px); line-height: 1.12; text-wrap: balance; }
+
+.chapters__scroll { position: relative; }
+.chapters ol { list-style: none; margin: 0; padding: 0; position: relative; }
+.chapters__marker { position: absolute; left: 0; right: 0; top: 0; height: 0; background: color-mix(in srgb, var(--accent) 16%, transparent); border-left: 3px solid var(--accent); pointer-events: none; transition: background 0.4s, border-color 0.4s; }
+.chapters button { width: 100%; display: grid; grid-template-columns: 2.4em 1fr auto 3em; gap: 12px; align-items: baseline; padding: 9px 12px; text-align: left; border-top: 1px solid color-mix(in srgb, var(--ivory) 9%, transparent); opacity: 0.6; transition: opacity 0.2s; }
+.chapters li:first-child button { border-top: 0; }
+.chapters button:hover, .chapters .is-active button { opacity: 1; }
+.chapters__n, .chapters__s, .chapters__a { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+.chapters__a { text-transform: uppercase; opacity: 0.6; }
+.chapters__s { text-align: right; opacity: 0.6; }
+.chapters__t { font-size: 15px; font-weight: 500; }
+
+footer { margin-top: auto; border-top: 1px solid color-mix(in srgb, var(--ivory) 16%, transparent); padding-top: 18px; display: grid; gap: 12px; }
+.note { margin: 0; font-size: 13px; line-height: 1.5; opacity: 0.62; max-width: 60ch; }
+.cta { margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+.cta strong { font-weight: 700; }
+
+/* ── phones / narrow windows: film first, panel underneath ── */
+@media (max-width: 900px) {
+  .site { grid-template-columns: 1fr; }
+  .theatre { position: relative; height: 100dvh; padding: 12px 12px 10px; gap: 8px; }
+  .stage-box { border-radius: 12px; }
+  .panel { border-left: 0; padding: 32px 20px 44px; }
+  .transport { gap: 10px; }
+  .transport__time { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transport__fill, .h1__arrow, .chapters__marker { transition: none; }
+}

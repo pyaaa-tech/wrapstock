@@ -1,0 +1,8 @@
+node_modules/
+dist-web/
+out/*
+!out/.gitkeep
+!out/seri-lestari-migrain.mp4
+.remotion/
+*.log
+.DS_Store
