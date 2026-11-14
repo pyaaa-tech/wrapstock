@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Voiceover -> ~-16 LUFS (gain tetap + limiter puncak sahaja; tempoh & kandungan tidak diubah).
+# Voiceover -> ~-19 LUFS mono = ~-16 LUFS dalam fail stereo akhir (gain tetap + limiter puncak sahaja;
+# tempoh & kandungan tidak diubah).
 # Bunyi tekan UI disintesis (klik lembut ~45 ms, puncak ~-30 dBFS).
 set -euo pipefail
 cd "$(dirname "$0")/.."
-GAIN=${GAIN:-7.8}
+GAIN=${GAIN:-4.4}
 ffmpeg -y -v error -i assets/voiceover.mp3 -af "volume=${GAIN}dB,alimiter=limit=0.84:attack=3:release=60:level=disabled" -ar 48000 -ac 1 -c:a pcm_s16le public/voiceover.wav
 ffmpeg -hide_banner -i public/voiceover.wav -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I:|Peak:)" 
 ffprobe -v error -show_entries format=duration -of csv=p=0 public/voiceover.wav
