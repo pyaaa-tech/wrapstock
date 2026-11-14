@@ -16,6 +16,7 @@
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@gsap/react": "^2.1.2",
+    "@react-three/fiber": "^9.8.2",
     "@remotion/cli": "4.0.543",
     "@remotion/player": "4.0.543",
     "@tailwindcss/vite": "^4.1.14",
