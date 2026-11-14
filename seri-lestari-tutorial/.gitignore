@@ -1,0 +1,24 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Output render
+out
+
+# Sumber asal: rakaman mengandungi data peribadi pelanggan — JANGAN commit
+assets/*.mp4
+assets/*.mp3
+
+# Media terbitan yang besar (jana semula dengan scripts/, lihat README)
+public/rec*.mp4
+public/bg*.mp4
+public/voiceover.wav
+
+# Whisper
+whisper.cpp
+scripts/*.wav
+scripts/*.npy
+scripts/*.log
+scripts/whisper_full.json
+scripts/whisper_raw.json

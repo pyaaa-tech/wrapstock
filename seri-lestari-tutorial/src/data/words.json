@@ -1,0 +1,1964 @@
+[
+  {
+    "i": 0,
+    "t": "Nak",
+    "s": 0.075,
+    "e": 0.19,
+    "pill": null,
+    "page": 0,
+    "line": 0
+  },
+  {
+    "i": 1,
+    "t": "tempah",
+    "s": 0.19,
+    "e": 0.53,
+    "pill": null,
+    "page": 0,
+    "line": 0
+  },
+  {
+    "i": 2,
+    "t": "rawatan",
+    "s": 0.53,
+    "e": 0.93,
+    "pill": null,
+    "page": 0,
+    "line": 0
+  },
+  {
+    "i": 3,
+    "t": "di",
+    "s": 0.93,
+    "e": 1.15,
+    "pill": null,
+    "page": 0,
+    "line": 1
+  },
+  {
+    "i": 4,
+    "t": "Seri",
+    "s": 1.15,
+    "e": 1.35,
+    "pill": null,
+    "page": 0,
+    "line": 1
+  },
+  {
+    "i": 5,
+    "t": "Lestari",
+    "s": 1.35,
+    "e": 1.65,
+    "pill": null,
+    "page": 0,
+    "line": 1
+  },
+  {
+    "i": 6,
+    "t": "Spa?",
+    "s": 1.65,
+    "e": 1.97,
+    "pill": null,
+    "page": 0,
+    "line": 1
+  },
+  {
+    "i": 7,
+    "t": "Mudah",
+    "s": 2.49,
+    "e": 2.89,
+    "pill": null,
+    "page": 1,
+    "line": 0
+  },
+  {
+    "i": 8,
+    "t": "saja.",
+    "s": 2.89,
+    "e": 3.38,
+    "pill": null,
+    "page": 1,
+    "line": 0
+  },
+  {
+    "i": 9,
+    "t": "Ikut",
+    "s": 3.76,
+    "e": 4.075,
+    "pill": null,
+    "page": 2,
+    "line": 0
+  },
+  {
+    "i": 10,
+    "t": "enam",
+    "s": 4.19,
+    "e": 4.47,
+    "pill": null,
+    "page": 2,
+    "line": 0
+  },
+  {
+    "i": 11,
+    "t": "langkah",
+    "s": 4.47,
+    "e": 4.77,
+    "pill": null,
+    "page": 2,
+    "line": 0
+  },
+  {
+    "i": 12,
+    "t": "ini.",
+    "s": 4.77,
+    "e": 5.135,
+    "pill": null,
+    "page": 2,
+    "line": 0
+  },
+  {
+    "i": 13,
+    "t": "Tekan",
+    "s": 6.045,
+    "e": 6.41,
+    "pill": null,
+    "page": 3,
+    "line": 0
+  },
+  {
+    "i": 14,
+    "t": "Book",
+    "s": 6.41,
+    "e": 6.69,
+    "pill": 1,
+    "page": 3,
+    "line": 0
+  },
+  {
+    "i": 15,
+    "t": "now",
+    "s": 6.69,
+    "e": 7.09,
+    "pill": 1,
+    "page": 3,
+    "line": 0
+  },
+  {
+    "i": 16,
+    "t": "atau",
+    "s": 7.305,
+    "e": 7.71,
+    "pill": null,
+    "page": 3,
+    "line": 0
+  },
+  {
+    "i": 17,
+    "t": "Book",
+    "s": 7.71,
+    "e": 8.23,
+    "pill": 2,
+    "page": 3,
+    "line": 1
+  },
+  {
+    "i": 18,
+    "t": "an",
+    "s": 8.23,
+    "e": 8.49,
+    "pill": 2,
+    "page": 3,
+    "line": 1
+  },
+  {
+    "i": 19,
+    "t": "Appointment.",
+    "s": 8.49,
+    "e": 8.975,
+    "pill": 2,
+    "page": 3,
+    "line": 1
+  },
+  {
+    "i": 20,
+    "t": "Langkah",
+    "s": 9.67,
+    "e": 10.05,
+    "pill": null,
+    "page": 4,
+    "line": 0
+  },
+  {
+    "i": 21,
+    "t": "satu,",
+    "s": 10.05,
+    "e": 10.565,
+    "pill": null,
+    "page": 4,
+    "line": 0
+  },
+  {
+    "i": 22,
+    "t": "pilih",
+    "s": 10.96,
+    "e": 11.29,
+    "pill": null,
+    "page": 4,
+    "line": 0
+  },
+  {
+    "i": 23,
+    "t": "untuk",
+    "s": 11.29,
+    "e": 11.55,
+    "pill": null,
+    "page": 4,
+    "line": 1
+  },
+  {
+    "i": 24,
+    "t": "berapa",
+    "s": 11.55,
+    "e": 11.83,
+    "pill": null,
+    "page": 4,
+    "line": 1
+  },
+  {
+    "i": 25,
+    "t": "orang.",
+    "s": 11.83,
+    "e": 12.22,
+    "pill": null,
+    "page": 4,
+    "line": 1
+  },
+  {
+    "i": 26,
+    "t": "Untuk",
+    "s": 12.645,
+    "e": 12.83,
+    "pill": null,
+    "page": 5,
+    "line": 0
+  },
+  {
+    "i": 27,
+    "t": "diri",
+    "s": 12.83,
+    "e": 13.15,
+    "pill": null,
+    "page": 5,
+    "line": 0
+  },
+  {
+    "i": 28,
+    "t": "sendiri,",
+    "s": 13.15,
+    "e": 13.635,
+    "pill": null,
+    "page": 5,
+    "line": 0
+  },
+  {
+    "i": 29,
+    "t": "pilih",
+    "s": 13.835,
+    "e": 14.27,
+    "pill": null,
+    "page": 5,
+    "line": 1
+  },
+  {
+    "i": 30,
+    "t": "One",
+    "s": 14.27,
+    "e": 14.53,
+    "pill": 3,
+    "page": 5,
+    "line": 1
+  },
+  {
+    "i": 31,
+    "t": "Pax",
+    "s": 14.53,
+    "e": 14.81,
+    "pill": 3,
+    "page": 5,
+    "line": 1
+  },
+  {
+    "i": 32,
+    "t": "Only.",
+    "s": 14.81,
+    "e": 15.325,
+    "pill": 3,
+    "page": 5,
+    "line": 1
+  },
+  {
+    "i": 33,
+    "t": "Untuk",
+    "s": 15.77,
+    "e": 15.95,
+    "pill": null,
+    "page": 6,
+    "line": 0
+  },
+  {
+    "i": 34,
+    "t": "berkumpulan,",
+    "s": 15.95,
+    "e": 16.655,
+    "pill": null,
+    "page": 6,
+    "line": 0
+  },
+  {
+    "i": 35,
+    "t": "pilih",
+    "s": 16.885,
+    "e": 17.25,
+    "pill": null,
+    "page": 6,
+    "line": 1
+  },
+  {
+    "i": 36,
+    "t": "Multi",
+    "s": 17.25,
+    "e": 17.71,
+    "pill": 4,
+    "page": 6,
+    "line": 1
+  },
+  {
+    "i": 37,
+    "t": "Pax.",
+    "s": 17.71,
+    "e": 18.09,
+    "pill": 4,
+    "page": 6,
+    "line": 1
+  },
+  {
+    "i": 38,
+    "t": "Langkah",
+    "s": 18.7,
+    "e": 19.11,
+    "pill": null,
+    "page": 7,
+    "line": 0
+  },
+  {
+    "i": 39,
+    "t": "dua,",
+    "s": 19.11,
+    "e": 19.485,
+    "pill": null,
+    "page": 7,
+    "line": 0
+  },
+  {
+    "i": 40,
+    "t": "pilih",
+    "s": 19.855,
+    "e": 20.17,
+    "pill": null,
+    "page": 7,
+    "line": 1
+  },
+  {
+    "i": 41,
+    "t": "rawatan.",
+    "s": 20.17,
+    "e": 20.775,
+    "pill": null,
+    "page": 7,
+    "line": 1
+  },
+  {
+    "i": 42,
+    "t": "Ada",
+    "s": 21.155,
+    "e": 21.31,
+    "pill": null,
+    "page": 8,
+    "line": 0
+  },
+  {
+    "i": 43,
+    "t": "lebih",
+    "s": 21.31,
+    "e": 21.63,
+    "pill": null,
+    "page": 8,
+    "line": 0
+  },
+  {
+    "i": 44,
+    "t": "seratus",
+    "s": 21.63,
+    "e": 22.15,
+    "pill": null,
+    "page": 8,
+    "line": 1
+  },
+  {
+    "i": 45,
+    "t": "pilihan",
+    "s": 22.15,
+    "e": 22.73,
+    "pill": null,
+    "page": 8,
+    "line": 1
+  },
+  {
+    "i": 46,
+    "t": "daripada",
+    "s": 22.96,
+    "e": 23.31,
+    "pill": null,
+    "page": 9,
+    "line": 0
+  },
+  {
+    "i": 47,
+    "t": "facial,",
+    "s": 23.31,
+    "e": 23.83,
+    "pill": null,
+    "page": 9,
+    "line": 0
+  },
+  {
+    "i": 48,
+    "t": "bath",
+    "s": 23.83,
+    "e": 24.35,
+    "pill": null,
+    "page": 9,
+    "line": 1
+  },
+  {
+    "i": 49,
+    "t": "therapy",
+    "s": 24.445,
+    "e": 24.98,
+    "pill": null,
+    "page": 9,
+    "line": 1
+  },
+  {
+    "i": 50,
+    "t": "hingga",
+    "s": 25.21,
+    "e": 25.47,
+    "pill": null,
+    "page": 10,
+    "line": 0
+  },
+  {
+    "i": 51,
+    "t": "rawatan",
+    "s": 25.47,
+    "e": 25.87,
+    "pill": null,
+    "page": 10,
+    "line": 0
+  },
+  {
+    "i": 52,
+    "t": "rambut",
+    "s": 25.87,
+    "e": 26.23,
+    "pill": null,
+    "page": 10,
+    "line": 1
+  },
+  {
+    "i": 53,
+    "t": "dan",
+    "s": 26.23,
+    "e": 26.43,
+    "pill": null,
+    "page": 10,
+    "line": 1
+  },
+  {
+    "i": 54,
+    "t": "kuku.",
+    "s": 26.43,
+    "e": 26.89,
+    "pill": null,
+    "page": 10,
+    "line": 1
+  },
+  {
+    "i": 55,
+    "t": "Guna",
+    "s": 27.305,
+    "e": 27.57,
+    "pill": null,
+    "page": 11,
+    "line": 0
+  },
+  {
+    "i": 56,
+    "t": "penapis",
+    "s": 27.57,
+    "e": 27.95,
+    "pill": null,
+    "page": 11,
+    "line": 0
+  },
+  {
+    "i": 57,
+    "t": "di",
+    "s": 27.95,
+    "e": 28.21,
+    "pill": null,
+    "page": 11,
+    "line": 1
+  },
+  {
+    "i": 58,
+    "t": "atas",
+    "s": 28.21,
+    "e": 28.53,
+    "pill": null,
+    "page": 11,
+    "line": 1
+  },
+  {
+    "i": 59,
+    "t": "untuk",
+    "s": 28.53,
+    "e": 28.79,
+    "pill": null,
+    "page": 12,
+    "line": 0
+  },
+  {
+    "i": 60,
+    "t": "cari",
+    "s": 28.79,
+    "e": 29.13,
+    "pill": null,
+    "page": 12,
+    "line": 0
+  },
+  {
+    "i": 61,
+    "t": "dengan",
+    "s": 29.13,
+    "e": 29.37,
+    "pill": null,
+    "page": 12,
+    "line": 0
+  },
+  {
+    "i": 62,
+    "t": "lebih",
+    "s": 29.37,
+    "e": 29.67,
+    "pill": null,
+    "page": 12,
+    "line": 1
+  },
+  {
+    "i": 63,
+    "t": "cepat.",
+    "s": 29.67,
+    "e": 29.95,
+    "pill": null,
+    "page": 12,
+    "line": 1
+  },
+  {
+    "i": 64,
+    "t": "Dah",
+    "s": 30.555,
+    "e": 30.69,
+    "pill": null,
+    "page": 13,
+    "line": 0
+  },
+  {
+    "i": 65,
+    "t": "jumpa?",
+    "s": 30.69,
+    "e": 31.07,
+    "pill": null,
+    "page": 13,
+    "line": 0
+  },
+  {
+    "i": 66,
+    "t": "Pilih",
+    "s": 31.575,
+    "e": 31.81,
+    "pill": null,
+    "page": 14,
+    "line": 0
+  },
+  {
+    "i": 67,
+    "t": "rawatan",
+    "s": 31.81,
+    "e": 32.17,
+    "pill": null,
+    "page": 14,
+    "line": 0
+  },
+  {
+    "i": 68,
+    "t": "itu,",
+    "s": 32.17,
+    "e": 32.61,
+    "pill": null,
+    "page": 14,
+    "line": 0
+  },
+  {
+    "i": 69,
+    "t": "kemudian",
+    "s": 32.805,
+    "e": 33.27,
+    "pill": null,
+    "page": 15,
+    "line": 0
+  },
+  {
+    "i": 70,
+    "t": "tekan",
+    "s": 33.27,
+    "e": 33.71,
+    "pill": null,
+    "page": 15,
+    "line": 0
+  },
+  {
+    "i": 71,
+    "t": "Continue.",
+    "s": 33.71,
+    "e": 34.39,
+    "pill": 5,
+    "page": 15,
+    "line": 1
+  },
+  {
+    "i": 72,
+    "t": "Langkah",
+    "s": 35.07,
+    "e": 35.43,
+    "pill": null,
+    "page": 16,
+    "line": 0
+  },
+  {
+    "i": 73,
+    "t": "tiga,",
+    "s": 35.43,
+    "e": 35.915,
+    "pill": null,
+    "page": 16,
+    "line": 0
+  },
+  {
+    "i": 74,
+    "t": "pilih",
+    "s": 36.32,
+    "e": 36.59,
+    "pill": null,
+    "page": 16,
+    "line": 0
+  },
+  {
+    "i": 75,
+    "t": "terapis",
+    "s": 36.59,
+    "e": 37.05,
+    "pill": null,
+    "page": 16,
+    "line": 1
+  },
+  {
+    "i": 76,
+    "t": "pilihan",
+    "s": 37.05,
+    "e": 37.39,
+    "pill": null,
+    "page": 16,
+    "line": 1
+  },
+  {
+    "i": 77,
+    "t": "anda.",
+    "s": 37.39,
+    "e": 37.805,
+    "pill": null,
+    "page": 16,
+    "line": 1
+  },
+  {
+    "i": 78,
+    "t": "Atau",
+    "s": 38.17,
+    "e": 38.59,
+    "pill": null,
+    "page": 17,
+    "line": 0
+  },
+  {
+    "i": 79,
+    "t": "pilih",
+    "s": 38.59,
+    "e": 38.9,
+    "pill": null,
+    "page": 17,
+    "line": 0
+  },
+  {
+    "i": 80,
+    "t": "Any",
+    "s": 39.01,
+    "e": 39.27,
+    "pill": 6,
+    "page": 17,
+    "line": 0
+  },
+  {
+    "i": 81,
+    "t": "staff",
+    "s": 39.27,
+    "e": 39.6,
+    "pill": 6,
+    "page": 17,
+    "line": 0
+  },
+  {
+    "i": 82,
+    "t": "dan",
+    "s": 39.76,
+    "e": 39.97,
+    "pill": null,
+    "page": 18,
+    "line": 0
+  },
+  {
+    "i": 83,
+    "t": "sistem",
+    "s": 39.97,
+    "e": 40.35,
+    "pill": null,
+    "page": 18,
+    "line": 0
+  },
+  {
+    "i": 84,
+    "t": "akan",
+    "s": 40.35,
+    "e": 40.63,
+    "pill": null,
+    "page": 18,
+    "line": 1
+  },
+  {
+    "i": 85,
+    "t": "pilihkan",
+    "s": 40.63,
+    "e": 41.09,
+    "pill": null,
+    "page": 18,
+    "line": 1
+  },
+  {
+    "i": 86,
+    "t": "yang",
+    "s": 41.09,
+    "e": 41.27,
+    "pill": null,
+    "page": 19,
+    "line": 0
+  },
+  {
+    "i": 87,
+    "t": "paling",
+    "s": 41.27,
+    "e": 41.63,
+    "pill": null,
+    "page": 19,
+    "line": 0
+  },
+  {
+    "i": 88,
+    "t": "awal",
+    "s": 41.63,
+    "e": 41.91,
+    "pill": null,
+    "page": 19,
+    "line": 1
+  },
+  {
+    "i": 89,
+    "t": "tersedia.",
+    "s": 41.91,
+    "e": 42.445,
+    "pill": null,
+    "page": 19,
+    "line": 1
+  },
+  {
+    "i": 90,
+    "t": "Langkah",
+    "s": 43.1,
+    "e": 43.49,
+    "pill": null,
+    "page": 20,
+    "line": 0
+  },
+  {
+    "i": 91,
+    "t": "empat,",
+    "s": 43.49,
+    "e": 43.86,
+    "pill": null,
+    "page": 20,
+    "line": 0
+  },
+  {
+    "i": 92,
+    "t": "pilih",
+    "s": 44.29,
+    "e": 44.63,
+    "pill": null,
+    "page": 20,
+    "line": 1
+  },
+  {
+    "i": 93,
+    "t": "tarikh",
+    "s": 44.63,
+    "e": 44.95,
+    "pill": null,
+    "page": 20,
+    "line": 1
+  },
+  {
+    "i": 94,
+    "t": "dan",
+    "s": 44.95,
+    "e": 45.13,
+    "pill": null,
+    "page": 20,
+    "line": 1
+  },
+  {
+    "i": 95,
+    "t": "masa.",
+    "s": 45.13,
+    "e": 45.58,
+    "pill": null,
+    "page": 20,
+    "line": 1
+  },
+  {
+    "i": 96,
+    "t": "Kalau",
+    "s": 45.99,
+    "e": 46.19,
+    "pill": null,
+    "page": 21,
+    "line": 0
+  },
+  {
+    "i": 97,
+    "t": "tarikh",
+    "s": 46.19,
+    "e": 46.49,
+    "pill": null,
+    "page": 21,
+    "line": 0
+  },
+  {
+    "i": 98,
+    "t": "itu",
+    "s": 46.49,
+    "e": 46.69,
+    "pill": null,
+    "page": 21,
+    "line": 0
+  },
+  {
+    "i": 99,
+    "t": "tiada",
+    "s": 46.69,
+    "e": 46.93,
+    "pill": null,
+    "page": 21,
+    "line": 1
+  },
+  {
+    "i": 100,
+    "t": "slot,",
+    "s": 46.93,
+    "e": 47.265,
+    "pill": null,
+    "page": 21,
+    "line": 1
+  },
+  {
+    "i": 101,
+    "t": "cuba",
+    "s": 47.6,
+    "e": 47.79,
+    "pill": null,
+    "page": 22,
+    "line": 0
+  },
+  {
+    "i": 102,
+    "t": "tarikh",
+    "s": 47.79,
+    "e": 48.01,
+    "pill": null,
+    "page": 22,
+    "line": 0
+  },
+  {
+    "i": 103,
+    "t": "lain.",
+    "s": 48.01,
+    "e": 48.375,
+    "pill": null,
+    "page": 22,
+    "line": 0
+  },
+  {
+    "i": 104,
+    "t": "Masa",
+    "s": 48.945,
+    "e": 49.35,
+    "pill": null,
+    "page": 23,
+    "line": 0
+  },
+  {
+    "i": 105,
+    "t": "dibahagikan",
+    "s": 49.35,
+    "e": 49.95,
+    "pill": null,
+    "page": 23,
+    "line": 0
+  },
+  {
+    "i": 106,
+    "t": "kepada",
+    "s": 49.95,
+    "e": 50.31,
+    "pill": null,
+    "page": 23,
+    "line": 1
+  },
+  {
+    "i": 107,
+    "t": "pagi,",
+    "s": 50.31,
+    "e": 50.845,
+    "pill": null,
+    "page": 23,
+    "line": 1
+  },
+  {
+    "i": 108,
+    "t": "tengah",
+    "s": 51.035,
+    "e": 51.29,
+    "pill": null,
+    "page": 24,
+    "line": 0
+  },
+  {
+    "i": 109,
+    "t": "hari",
+    "s": 51.29,
+    "e": 51.55,
+    "pill": null,
+    "page": 24,
+    "line": 0
+  },
+  {
+    "i": 110,
+    "t": "dan",
+    "s": 51.55,
+    "e": 51.81,
+    "pill": null,
+    "page": 24,
+    "line": 1
+  },
+  {
+    "i": 111,
+    "t": "petang.",
+    "s": 51.81,
+    "e": 52.285,
+    "pill": null,
+    "page": 24,
+    "line": 1
+  },
+  {
+    "i": 112,
+    "t": "Pilih",
+    "s": 52.72,
+    "e": 52.97,
+    "pill": null,
+    "page": 25,
+    "line": 0
+  },
+  {
+    "i": 113,
+    "t": "yang",
+    "s": 52.97,
+    "e": 53.07,
+    "pill": null,
+    "page": 25,
+    "line": 0
+  },
+  {
+    "i": 114,
+    "t": "sesuai,",
+    "s": 53.07,
+    "e": 53.62,
+    "pill": null,
+    "page": 25,
+    "line": 0
+  },
+  {
+    "i": 115,
+    "t": "kemudian",
+    "s": 53.78,
+    "e": 54.21,
+    "pill": null,
+    "page": 26,
+    "line": 0
+  },
+  {
+    "i": 116,
+    "t": "tekan",
+    "s": 54.21,
+    "e": 54.61,
+    "pill": null,
+    "page": 26,
+    "line": 0
+  },
+  {
+    "i": 117,
+    "t": "Continue.",
+    "s": 54.61,
+    "e": 55.27,
+    "pill": 7,
+    "page": 26,
+    "line": 1
+  },
+  {
+    "i": 118,
+    "t": "Langkah",
+    "s": 55.875,
+    "e": 56.25,
+    "pill": null,
+    "page": 27,
+    "line": 0
+  },
+  {
+    "i": 119,
+    "t": "lima,",
+    "s": 56.25,
+    "e": 56.695,
+    "pill": null,
+    "page": 27,
+    "line": 0
+  },
+  {
+    "i": 120,
+    "t": "isi",
+    "s": 57.105,
+    "e": 57.37,
+    "pill": null,
+    "page": 27,
+    "line": 1
+  },
+  {
+    "i": 121,
+    "t": "nombor",
+    "s": 57.37,
+    "e": 57.63,
+    "pill": null,
+    "page": 27,
+    "line": 1
+  },
+  {
+    "i": 122,
+    "t": "telefon",
+    "s": 57.63,
+    "e": 58.09,
+    "pill": null,
+    "page": 27,
+    "line": 1
+  },
+  {
+    "i": 123,
+    "t": "dan",
+    "s": 58.09,
+    "e": 58.29,
+    "pill": null,
+    "page": 28,
+    "line": 0
+  },
+  {
+    "i": 124,
+    "t": "nama",
+    "s": 58.29,
+    "e": 58.53,
+    "pill": null,
+    "page": 28,
+    "line": 0
+  },
+  {
+    "i": 125,
+    "t": "penuh.",
+    "s": 58.53,
+    "e": 58.875,
+    "pill": null,
+    "page": 28,
+    "line": 0
+  },
+  {
+    "i": 126,
+    "t": "Dua-dua",
+    "s": 59.205,
+    "e": 59.73,
+    "pill": null,
+    "page": 29,
+    "line": 0
+  },
+  {
+    "i": 127,
+    "t": "wajib,",
+    "s": 59.73,
+    "e": 60.165,
+    "pill": null,
+    "page": 29,
+    "line": 0
+  },
+  {
+    "i": 128,
+    "t": "emel",
+    "s": 60.595,
+    "e": 60.87,
+    "pill": null,
+    "page": 30,
+    "line": 0
+  },
+  {
+    "i": 129,
+    "t": "pula",
+    "s": 60.87,
+    "e": 61.29,
+    "pill": null,
+    "page": 30,
+    "line": 0
+  },
+  {
+    "i": 130,
+    "t": "pilihan",
+    "s": 61.525,
+    "e": 61.83,
+    "pill": null,
+    "page": 30,
+    "line": 1
+  },
+  {
+    "i": 131,
+    "t": "saja.",
+    "s": 61.83,
+    "e": 62.185,
+    "pill": null,
+    "page": 30,
+    "line": 1
+  },
+  {
+    "i": 132,
+    "t": "Langkah",
+    "s": 62.815,
+    "e": 63.19,
+    "pill": null,
+    "page": 31,
+    "line": 0
+  },
+  {
+    "i": 133,
+    "t": "terakhir,",
+    "s": 63.19,
+    "e": 63.77,
+    "pill": null,
+    "page": 31,
+    "line": 0
+  },
+  {
+    "i": 134,
+    "t": "semak",
+    "s": 64.175,
+    "e": 64.53,
+    "pill": null,
+    "page": 32,
+    "line": 0
+  },
+  {
+    "i": 135,
+    "t": "semula",
+    "s": 64.53,
+    "e": 64.87,
+    "pill": null,
+    "page": 32,
+    "line": 0
+  },
+  {
+    "i": 136,
+    "t": "tarikh,",
+    "s": 64.87,
+    "e": 65.345,
+    "pill": null,
+    "page": 32,
+    "line": 1
+  },
+  {
+    "i": 137,
+    "t": "masa,",
+    "s": 65.58,
+    "e": 66.205,
+    "pill": null,
+    "page": 32,
+    "line": 1
+  },
+  {
+    "i": 138,
+    "t": "rawatan,",
+    "s": 66.36,
+    "e": 67.01,
+    "pill": null,
+    "page": 33,
+    "line": 0
+  },
+  {
+    "i": 139,
+    "t": "terapis",
+    "s": 67.01,
+    "e": 67.73,
+    "pill": null,
+    "page": 33,
+    "line": 0
+  },
+  {
+    "i": 140,
+    "t": "dan",
+    "s": 67.73,
+    "e": 67.97,
+    "pill": null,
+    "page": 33,
+    "line": 1
+  },
+  {
+    "i": 141,
+    "t": "jumlah",
+    "s": 67.97,
+    "e": 68.29,
+    "pill": null,
+    "page": 33,
+    "line": 1
+  },
+  {
+    "i": 142,
+    "t": "harga.",
+    "s": 68.29,
+    "e": 68.705,
+    "pill": null,
+    "page": 33,
+    "line": 1
+  },
+  {
+    "i": 143,
+    "t": "Nak",
+    "s": 69.135,
+    "e": 69.23,
+    "pill": null,
+    "page": 34,
+    "line": 0
+  },
+  {
+    "i": 144,
+    "t": "tinggalkan",
+    "s": 69.23,
+    "e": 69.61,
+    "pill": null,
+    "page": 34,
+    "line": 0
+  },
+  {
+    "i": 145,
+    "t": "pesanan?",
+    "s": 69.61,
+    "e": 70.1,
+    "pill": null,
+    "page": 34,
+    "line": 1
+  },
+  {
+    "i": 146,
+    "t": "Tulis",
+    "s": 70.465,
+    "e": 70.75,
+    "pill": null,
+    "page": 35,
+    "line": 0
+  },
+  {
+    "i": 147,
+    "t": "di",
+    "s": 70.75,
+    "e": 70.95,
+    "pill": null,
+    "page": 35,
+    "line": 0
+  },
+  {
+    "i": 148,
+    "t": "Booking",
+    "s": 70.95,
+    "e": 71.35,
+    "pill": 8,
+    "page": 35,
+    "line": 1
+  },
+  {
+    "i": 149,
+    "t": "note.",
+    "s": 71.35,
+    "e": 71.49,
+    "pill": 8,
+    "page": 35,
+    "line": 1
+  },
+  {
+    "i": 150,
+    "t": "Semua",
+    "s": 72.11,
+    "e": 72.35,
+    "pill": null,
+    "page": 36,
+    "line": 0
+  },
+  {
+    "i": 151,
+    "t": "betul?",
+    "s": 72.35,
+    "e": 72.69,
+    "pill": null,
+    "page": 36,
+    "line": 0
+  },
+  {
+    "i": 152,
+    "t": "Tekan",
+    "s": 73.11,
+    "e": 73.51,
+    "pill": null,
+    "page": 37,
+    "line": 0
+  },
+  {
+    "i": 153,
+    "t": "Confirm",
+    "s": 73.51,
+    "e": 74.05,
+    "pill": 9,
+    "page": 37,
+    "line": 0
+  },
+  {
+    "i": 154,
+    "t": "Booking.",
+    "s": 74.05,
+    "e": 74.585,
+    "pill": 9,
+    "page": 37,
+    "line": 0
+  },
+  {
+    "i": 155,
+    "t": "Siap!",
+    "s": 75.07,
+    "e": 75.625,
+    "pill": null,
+    "page": 38,
+    "line": 0
+  },
+  {
+    "i": 156,
+    "t": "Tempahan",
+    "s": 75.955,
+    "e": 76.31,
+    "pill": null,
+    "page": 39,
+    "line": 0
+  },
+  {
+    "i": 157,
+    "t": "anda",
+    "s": 76.31,
+    "e": 76.67,
+    "pill": null,
+    "page": 39,
+    "line": 0
+  },
+  {
+    "i": 158,
+    "t": "berjaya!",
+    "s": 76.67,
+    "e": 77.53,
+    "pill": null,
+    "page": 39,
+    "line": 1
+  },
+  {
+    "i": 159,
+    "t": "Tekan",
+    "s": 77.93,
+    "e": 78.29,
+    "pill": null,
+    "page": 40,
+    "line": 0
+  },
+  {
+    "i": 160,
+    "t": "Add",
+    "s": 78.29,
+    "e": 78.55,
+    "pill": 10,
+    "page": 40,
+    "line": 0
+  },
+  {
+    "i": 161,
+    "t": "to",
+    "s": 78.55,
+    "e": 78.77,
+    "pill": 10,
+    "page": 40,
+    "line": 0
+  },
+  {
+    "i": 162,
+    "t": "Calendar",
+    "s": 78.77,
+    "e": 79.11,
+    "pill": 10,
+    "page": 40,
+    "line": 0
+  },
+  {
+    "i": 163,
+    "t": "untuk",
+    "s": 79.11,
+    "e": 79.49,
+    "pill": null,
+    "page": 41,
+    "line": 0
+  },
+  {
+    "i": 164,
+    "t": "simpan",
+    "s": 79.49,
+    "e": 79.89,
+    "pill": null,
+    "page": 41,
+    "line": 0
+  },
+  {
+    "i": 165,
+    "t": "dalam",
+    "s": 79.89,
+    "e": 80.17,
+    "pill": null,
+    "page": 41,
+    "line": 0
+  },
+  {
+    "i": 166,
+    "t": "kalendar",
+    "s": 80.17,
+    "e": 80.49,
+    "pill": null,
+    "page": 41,
+    "line": 1
+  },
+  {
+    "i": 167,
+    "t": "telefon.",
+    "s": 80.49,
+    "e": 81.02,
+    "pill": null,
+    "page": 41,
+    "line": 1
+  },
+  {
+    "i": 168,
+    "t": "Nombor",
+    "s": 81.39,
+    "e": 81.63,
+    "pill": null,
+    "page": 42,
+    "line": 0
+  },
+  {
+    "i": 169,
+    "t": "rujukan",
+    "s": 81.63,
+    "e": 81.97,
+    "pill": null,
+    "page": 42,
+    "line": 0
+  },
+  {
+    "i": 170,
+    "t": "tempahan",
+    "s": 81.97,
+    "e": 82.45,
+    "pill": null,
+    "page": 42,
+    "line": 1
+  },
+  {
+    "i": 171,
+    "t": "pun",
+    "s": 82.45,
+    "e": 82.67,
+    "pill": null,
+    "page": 42,
+    "line": 1
+  },
+  {
+    "i": 172,
+    "t": "ada",
+    "s": 82.67,
+    "e": 82.99,
+    "pill": null,
+    "page": 42,
+    "line": 1
+  },
+  {
+    "i": 173,
+    "t": "dalam",
+    "s": 82.99,
+    "e": 83.25,
+    "pill": null,
+    "page": 43,
+    "line": 0
+  },
+  {
+    "i": 174,
+    "t": "nota",
+    "s": 83.25,
+    "e": 83.45,
+    "pill": null,
+    "page": 43,
+    "line": 0
+  },
+  {
+    "i": 175,
+    "t": "kalendar",
+    "s": 83.45,
+    "e": 83.83,
+    "pill": null,
+    "page": 43,
+    "line": 1
+  },
+  {
+    "i": 176,
+    "t": "itu.",
+    "s": 83.83,
+    "e": 84.2,
+    "pill": null,
+    "page": 43,
+    "line": 1
+  },
+  {
+    "i": 177,
+    "t": "Tak",
+    "s": 84.795,
+    "e": 84.89,
+    "pill": null,
+    "page": 44,
+    "line": 0
+  },
+  {
+    "i": 178,
+    "t": "pasti",
+    "s": 84.89,
+    "e": 85.21,
+    "pill": null,
+    "page": 44,
+    "line": 0
+  },
+  {
+    "i": 179,
+    "t": "jalan",
+    "s": 85.21,
+    "e": 85.47,
+    "pill": null,
+    "page": 44,
+    "line": 1
+  },
+  {
+    "i": 180,
+    "t": "ke",
+    "s": 85.47,
+    "e": 85.67,
+    "pill": null,
+    "page": 44,
+    "line": 1
+  },
+  {
+    "i": 181,
+    "t": "spa?",
+    "s": 85.67,
+    "e": 85.96,
+    "pill": null,
+    "page": 44,
+    "line": 1
+  },
+  {
+    "i": 182,
+    "t": "Tekan",
+    "s": 86.355,
+    "e": 86.57,
+    "pill": null,
+    "page": 45,
+    "line": 0
+  },
+  {
+    "i": 183,
+    "t": "Location",
+    "s": 86.57,
+    "e": 87.27,
+    "pill": 11,
+    "page": 45,
+    "line": 0
+  },
+  {
+    "i": 184,
+    "t": "dan",
+    "s": 87.27,
+    "e": 87.51,
+    "pill": null,
+    "page": 46,
+    "line": 0
+  },
+  {
+    "i": 185,
+    "t": "Google",
+    "s": 87.51,
+    "e": 87.85,
+    "pill": null,
+    "page": 46,
+    "line": 0
+  },
+  {
+    "i": 186,
+    "t": "Maps",
+    "s": 87.85,
+    "e": 88.07,
+    "pill": null,
+    "page": 46,
+    "line": 0
+  },
+  {
+    "i": 187,
+    "t": "akan",
+    "s": 88.07,
+    "e": 88.43,
+    "pill": null,
+    "page": 46,
+    "line": 1
+  },
+  {
+    "i": 188,
+    "t": "terbuka.",
+    "s": 88.43,
+    "e": 88.965,
+    "pill": null,
+    "page": 46,
+    "line": 1
+  },
+  {
+    "i": 189,
+    "t": "Nak",
+    "s": 89.435,
+    "e": 89.55,
+    "pill": null,
+    "page": 47,
+    "line": 0
+  },
+  {
+    "i": 190,
+    "t": "bertanya",
+    "s": 89.55,
+    "e": 90.07,
+    "pill": null,
+    "page": 47,
+    "line": 0
+  },
+  {
+    "i": 191,
+    "t": "atau",
+    "s": 90.07,
+    "e": 90.27,
+    "pill": null,
+    "page": 47,
+    "line": 0
+  },
+  {
+    "i": 192,
+    "t": "ubah",
+    "s": 90.27,
+    "e": 90.55,
+    "pill": null,
+    "page": 47,
+    "line": 1
+  },
+  {
+    "i": 193,
+    "t": "tempahan?",
+    "s": 90.55,
+    "e": 91.065,
+    "pill": null,
+    "page": 47,
+    "line": 1
+  },
+  {
+    "i": 194,
+    "t": "Tekan",
+    "s": 91.45,
+    "e": 91.81,
+    "pill": null,
+    "page": 48,
+    "line": 0
+  },
+  {
+    "i": 195,
+    "t": "Contact",
+    "s": 91.81,
+    "e": 92.25,
+    "pill": 12,
+    "page": 48,
+    "line": 0
+  },
+  {
+    "i": 196,
+    "t": "Outlet",
+    "s": 92.25,
+    "e": 92.645,
+    "pill": 12,
+    "page": 48,
+    "line": 0
+  },
+  {
+    "i": 197,
+    "t": "atau",
+    "s": 92.79,
+    "e": 93.03,
+    "pill": null,
+    "page": 49,
+    "line": 0
+  },
+  {
+    "i": 198,
+    "t": "WhatsApp",
+    "s": 93.03,
+    "e": 93.41,
+    "pill": null,
+    "page": 49,
+    "line": 0
+  },
+  {
+    "i": 199,
+    "t": "kami.",
+    "s": 93.41,
+    "e": 93.795,
+    "pill": null,
+    "page": 49,
+    "line": 0
+  },
+  {
+    "i": 200,
+    "t": "Mudah",
+    "s": 94.38,
+    "e": 94.79,
+    "pill": null,
+    "page": 50,
+    "line": 0
+  },
+  {
+    "i": 201,
+    "t": "kan?",
+    "s": 94.79,
+    "e": 95.005,
+    "pill": null,
+    "page": 50,
+    "line": 0
+  },
+  {
+    "i": 202,
+    "t": "Klik",
+    "s": 95.47,
+    "e": 95.63,
+    "pill": null,
+    "page": 51,
+    "line": 0
+  },
+  {
+    "i": 203,
+    "t": "pautan",
+    "s": 95.63,
+    "e": 96.01,
+    "pill": null,
+    "page": 51,
+    "line": 0
+  },
+  {
+    "i": 204,
+    "t": "tempahan",
+    "s": 96.01,
+    "e": 96.39,
+    "pill": null,
+    "page": 51,
+    "line": 1
+  },
+  {
+    "i": 205,
+    "t": "di",
+    "s": 96.39,
+    "e": 96.61,
+    "pill": null,
+    "page": 51,
+    "line": 1
+  },
+  {
+    "i": 206,
+    "t": "bio",
+    "s": 96.61,
+    "e": 96.95,
+    "pill": null,
+    "page": 51,
+    "line": 1
+  },
+  {
+    "i": 207,
+    "t": "dan",
+    "s": 96.95,
+    "e": 97.27,
+    "pill": null,
+    "page": 52,
+    "line": 0
+  },
+  {
+    "i": 208,
+    "t": "jumpa",
+    "s": 97.27,
+    "e": 97.63,
+    "pill": null,
+    "page": 52,
+    "line": 0
+  },
+  {
+    "i": 209,
+    "t": "kami",
+    "s": 97.63,
+    "e": 97.93,
+    "pill": null,
+    "page": 52,
+    "line": 0
+  },
+  {
+    "i": 210,
+    "t": "di",
+    "s": 97.93,
+    "e": 98.19,
+    "pill": null,
+    "page": 52,
+    "line": 1
+  },
+  {
+    "i": 211,
+    "t": "Seri",
+    "s": 98.19,
+    "e": 98.49,
+    "pill": null,
+    "page": 52,
+    "line": 1
+  },
+  {
+    "i": 212,
+    "t": "Lestari",
+    "s": 98.49,
+    "e": 98.85,
+    "pill": null,
+    "page": 52,
+    "line": 1
+  },
+  {
+    "i": 213,
+    "t": "Spa",
+    "s": 98.85,
+    "e": 99.17,
+    "pill": null,
+    "page": 52,
+    "line": 1
+  },
+  {
+    "i": 214,
+    "t": "Batu",
+    "s": 99.17,
+    "e": 99.67,
+    "pill": null,
+    "page": 53,
+    "line": 0
+  },
+  {
+    "i": 215,
+    "t": "Pahat.",
+    "s": 99.67,
+    "e": 99.93,
+    "pill": null,
+    "page": 53,
+    "line": 0
+  },
+  {
+    "i": 216,
+    "t": "Jumpa",
+    "s": 100.26,
+    "e": 100.59,
+    "pill": null,
+    "page": 54,
+    "line": 0
+  },
+  {
+    "i": 217,
+    "t": "nanti!",
+    "s": 100.59,
+    "e": 101.1,
+    "pill": null,
+    "page": 54,
+    "line": 0
+  }
+]
