@@ -9,10 +9,14 @@
     "start": "node dist/server.cjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "remotion:studio": "remotion studio remotion/index.ts",
+    "remotion:render": "remotion render remotion/index.ts MyComp out/video.mp4"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
+    "@remotion/cli": "4.0.543",
+    "@remotion/player": "4.0.543",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "dotenv": "^17.2.3",
@@ -22,6 +26,7 @@
     "motion": "^12.23.24",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
+    "remotion": "4.0.543",
     "vite": "^6.2.3"
   },
   "devDependencies": {
