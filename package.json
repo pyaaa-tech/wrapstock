@@ -16,6 +16,7 @@
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@gsap/react": "^2.1.2",
+    "@lottiefiles/dotlottie-react": "^0.22.2",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",
     "@remotion/cli": "4.0.543",
