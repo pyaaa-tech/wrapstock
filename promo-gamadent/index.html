@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamadent Motion Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Palet — diambil terus dari warna produk */
+  :root{
+    --teal:#007E8E;        /* utama: badan tiub & kotak */
+    --teal-hi:#0B93A4;     /* sorotan pada tiub (gradien lembut sahaja) */
+    --deep:#04434B;        /* neutral gelap: teks & latar CTA */
+    --cream:#FDF8E2;       /* neutral cerah: penutup tiub / label */
+    --white:#FFFFFF;
+    --gold:#D9B86A;        /* aksen: jalur emas pada kotak */
+    --ui:#0d1416;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--ui);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+
+  #viewport{position:relative;flex:1 1 auto;width:100%;display:flex;align-items:center;justify-content:center;min-height:0}
+  #frame{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  #stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;overflow:hidden;background:var(--deep)}
+
+  .scene{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+  .pad{position:absolute;left:96px;right:96px}
+  .display{font-family:'Unbounded',sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  .body{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;line-height:1.3}
+  .center{text-align:center}
+
+  /* word masks */
+  .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.08em .02em .14em;margin:-.08em 0 -.14em}
+  .wi{display:inline-block;will-change:transform}
+  .ch{display:inline-block;will-change:transform}
+
+  .on-teal{color:var(--white)}
+  .on-deep .acc{color:var(--gold)}
+  .on-light{color:var(--deep)}
+  .on-light .acc{color:var(--teal)}
+
+  /* S1 — hook video */
+  #s1 video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  #s1 .shade{position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(4,67,75,.94) 0%,rgba(4,67,75,.82) 30%,rgba(4,67,75,0) 62%),
+               linear-gradient(to bottom,rgba(4,67,75,.7) 0%,rgba(4,67,75,0) 16%)}
+  .wm{position:absolute;top:120px;left:96px;display:flex;align-items:center;gap:22px}
+  .wm b{font-family:'Unbounded';font-weight:600;font-size:34px;letter-spacing:.28em}
+  .wm i{font-style:normal;font-size:24px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;font-weight:600}
+  .wm .bar{width:2px;height:30px;background:var(--gold)}
+  #s1 .grp{bottom:330px}
+  #s1 .k{font-size:50px;margin-bottom:22px}
+  #s1 .h{font-size:76px}
+
+  /* S2 — intro */
+  #s2{background:radial-gradient(120% 70% at 50% 20%,var(--teal-hi) 0%,var(--teal) 60%)}
+  #s2 .k{top:230px;font-size:46px}
+  #s2 .logo{top:320px;font-family:'Unbounded';font-weight:700;font-size:96px;letter-spacing:.05em;line-height:1.1;white-space:nowrap}
+  #s2 .sub{top:470px;font-size:44px;font-weight:500}
+  .panel{position:absolute;left:60px;right:60px;top:700px;height:1000px;background:var(--white);border-radius:56px;overflow:hidden}
+  .panel .rule{position:absolute;left:0;right:0;top:0;height:10px;background:var(--gold)}
+  .panel img{position:absolute;left:50%;top:50%;width:900px;margin-left:-450px;margin-top:-330px;mix-blend-mode:multiply}
+
+  /* S3 — bukan sekadar */
+  #s3{background:var(--cream)}
+  #s3 .slot{top:190px}
+  #s3 .h{font-size:78px}
+  #s3 .k{font-size:44px;margin-bottom:20px;color:var(--deep);opacity:.9}
+  #s3 .h2{font-size:78px}
+  .card{position:absolute;overflow:hidden;border-radius:48px;box-shadow:0 30px 70px rgba(4,67,75,.18)}
+  #s3 .card{left:160px;top:720px;width:760px;height:826px}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* S4 — senyum */
+  #s4{background:var(--white)}
+  #s4 .k{top:250px;font-size:48px}
+  #s4 .band{position:absolute;left:0;right:0;top:470px;height:600px;overflow:hidden}
+  #s4 .band img{position:absolute;left:-60px;top:-30px;width:1200px;mix-blend-mode:multiply}
+  #s4 .h{top:1150px;font-size:96px}
+
+  /* S5 — setiap hari */
+  #s5{background:var(--deep)}
+  #s5 .a{top:470px;font-size:88px}
+  #s5 .div{position:absolute;left:96px;top:1030px;width:140px;height:6px;background:var(--gold);transform-origin:0 50%}
+  #s5 .b{top:1110px;font-size:56px;font-weight:600}
+  #s5 .b .acc{font-family:'Unbounded';font-weight:600;font-size:96px;display:inline-block;margin-top:10px}
+
+  /* S6 — dapatkan */
+  #s6{background:var(--cream)}
+  #s6 .imgwrap{position:absolute;left:90px;right:90px;top:170px;height:600px;overflow:hidden}
+  #s6 .imgwrap img{position:absolute;left:0;top:0;width:900px;mix-blend-mode:multiply}
+  #s6 .k{top:860px;font-size:46px}
+  #s6 .k2{top:940px;font-size:46px;font-weight:500}
+  #s6 .h{top:1030px;font-size:92px;color:var(--teal)}
+  .pill{display:inline-flex;align-items:center;gap:18px;border-radius:999px;padding:24px 44px;font-family:'Plus Jakarta Sans';font-weight:700}
+  #s6 .pillwrap{top:1340px}
+  #s6 .pill{background:var(--deep);color:var(--cream);font-size:40px}
+  #s6 .pill .dot{width:16px;height:16px;border-radius:50%;background:var(--gold)}
+
+  /* S7 — original */
+  #s7{background:var(--deep)}
+  #s7 .h{top:660px;font-size:96px}
+  #s7 .badgewrap{top:1060px}
+  .badge{background:var(--gold);color:var(--deep);font-size:52px;letter-spacing:.12em;text-transform:uppercase;padding:30px 56px}
+  .badge svg{width:46px;height:46px}
+
+  /* S8 — soalan / CTA */
+  #s8{background:radial-gradient(120% 70% at 50% 15%,var(--teal-hi) 0%,var(--teal) 60%)}
+  #s8 .h{top:660px;font-size:92px;white-space:nowrap}
+  #s8 .k{top:820px;font-size:52px;font-weight:500}
+  #s8 .ctawrap{top:1060px}
+  #s8 .cta{background:var(--deep);color:var(--gold);font-family:'Unbounded';font-weight:600;font-size:72px;padding:34px 64px}
+  #s8 .k2{top:1270px;font-size:52px}
+
+  /* S9 — penutup */
+  #s9{background:var(--cream)}
+  #s9 .logo{top:240px;font-family:'Unbounded';font-weight:700;font-size:96px;letter-spacing:.05em;color:var(--teal);white-space:nowrap}
+  #s9 .rule{position:absolute;left:470px;width:140px;top:400px;height:6px;background:var(--gold);transform-origin:50% 50%}
+  #s9 .imgwrap{position:absolute;left:90px;right:90px;top:450px;height:640px;overflow:hidden}
+  #s9 .imgwrap img{position:absolute;left:0;top:0;width:900px;mix-blend-mode:multiply}
+  #s9 .h{top:1130px;font-size:74px}
+  #s9 .ctawrap{top:1420px}
+  #s9 .cta{background:var(--deep);color:var(--cream);font-size:44px;padding:26px 56px}
+  #s9 .foot{top:1640px;font-size:28px;letter-spacing:.3em;text-transform:uppercase;color:var(--deep);opacity:.75;font-weight:600}
+
+  /* overlay & controls */
+  #startOverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(4,67,75,.35);cursor:pointer;z-index:5}
+  #startOverlay span{width:200px;height:200px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+  #startOverlay svg{width:80px;height:80px;margin-left:12px}
+  #controls{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:12px 16px 16px;width:100%;max-width:560px}
+  #controls button{flex:0 0 auto;font:600 14px 'Plus Jakarta Sans',sans-serif;color:var(--deep);background:var(--cream);border:0;border-radius:999px;padding:10px 18px;cursor:pointer}
+  #controls button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  #bar{flex:1;height:8px;border-radius:99px;background:rgba(253,248,226,.18);cursor:pointer;position:relative}
+  #fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:99px;background:var(--gold)}
+  #time{font:500 13px 'Plus Jakarta Sans',sans-serif;color:var(--cream);opacity:.8;font-variant-numeric:tabular-nums;min-width:84px;text-align:right}
+</style>
+</head>
+<body>
+<div id="viewport">
+  <div id="frame">
+    <div id="stage">
+
+      <!-- S1 0–10.2s : hook -->
+      <section class="scene on-deep" id="s1">
+        <video id="clip" src="assets/klip-gosok.mp4" muted playsinline preload="auto"></video>
+        <div class="shade"></div>
+        <div class="wm on-teal"><b>GAMADENT</b><span class="bar"></span><i>Premium Gamat Toothgel</i></div>
+        <div class="pad grp g1">
+          <p class="body k" data-t="1.60 2.18 2.46 3.06 3.38">Pernah tak lepas gosok gigi,</p>
+          <h2 class="display h" data-t="4.24 4.42 4.88 5.58 5.74 6.02">rasa macam masih tak cukup *bersih?*</h2>
+        </div>
+        <div class="pad grp g2">
+          <p class="body k" data-t="6.62 7.08 7.40 7.54 7.70">Atau nafas tu rasa macam</p>
+          <h2 class="display h" data-t="8.06 8.92 9.06 9.30">cepat je hilang *segarnya?*</h2>
+        </div>
+      </section>
+
+      <!-- S2 10.2–14.9s : kenalkan produk -->
+      <section class="scene on-teal" id="s2">
+        <p class="pad body k center" data-t="11.18 11.42 11.78">Jom kenal dengan</p>
+        <h1 class="pad logo center" data-chars="11.98">GAMADENT</h1>
+        <p class="pad body sub center" data-t="12.76 13.00 13.40 13.80 14.12 14.32">Ubat gigi daripada House of Healin</p>
+        <div class="panel"><div class="rule"></div><img src="assets/kotak.jpg" alt="Kotak dan tiub Gamadent oleh Healin"></div>
+      </section>
+
+      <!-- S3 14.9–20.8s : manfaat 1 -->
+      <section class="scene on-light" id="s3">
+        <div class="pad slot sa"><h2 class="display h" data-t="15.00 15.32 15.64 15.92 16.34 16.46">Bukan sekadar gosok gigi je tau.</h2></div>
+        <div class="pad slot sb">
+          <p class="body k" data-t="17.02 17.72 18.34">Gamadent dihasilkan untuk</p>
+          <h2 class="display h2" data-t="18.56 19.14 19.52 20.12">membantu menjaga *kebersihan* *mulut*</h2>
+        </div>
+        <div class="card"><img src="assets/tiub.jpg" alt="Tiub Gamadent bersama berus gigi"></div>
+      </section>
+
+      <!-- S4 20.8–23.8s : senyum yakin -->
+      <section class="scene on-light" id="s4">
+        <p class="pad body k center" data-t="20.80 21.30 21.74">Supaya setiap kali</p>
+        <div class="band"><img src="assets/senyum.jpg" alt="Senyuman dengan gigi bersih"></div>
+        <h2 class="pad display h center" data-t="21.96 22.34 22.80 23.06">senyum rasa lebih *yakin.*</h2>
+      </section>
+
+      <!-- S5 23.8–29.2s : guna setiap hari -->
+      <section class="scene on-deep" id="s5">
+        <h2 class="pad display a" data-t="24.76 25.08 25.22 25.42 25.68 25.88 26.14">Gigi ni kita guna *setiap* *hari,* kan?</h2>
+        <div class="div"></div>
+        <p class="pad body b" data-t="27.60 27.84 28.02 28.32 28.38 28.56">Pilih ubat gigi yang kita *percaya.*</p>
+      </section>
+
+      <!-- S6 29.2–34.5s : di mana nak dapatkan -->
+      <section class="scene on-light" id="s6">
+        <div class="imgwrap"><img src="assets/kotak.jpg" alt=""></div>
+        <p class="pad body k" data-t="29.52 30.00">Nak dapatkan Gamadent?</p>
+        <p class="pad body k2" data-t="30.60 30.84 31.06 31.62">Boleh terus dapatkan di</p>
+        <h2 class="pad display h" data-t="31.72 32.04 32.38">Seri Lestari Healin</h2>
+        <div class="pad pillwrap"><span class="pill"><span class="dot"></span><span data-t="32.66 33.00 33.24 33.76 34.04">Pengedar sah House of Healin</span></span></div>
+      </section>
+
+      <!-- S7 34.5–37.6s : original -->
+      <section class="scene on-deep" id="s7">
+        <h2 class="pad display h center" data-t="34.64 35.24 35.46 35.56 35.76">Jadi, korang tak perlu *risau.*</h2>
+        <div class="pad badgewrap center"><span class="pill badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 5-5"/></svg>
+          Produk Original</span></div>
+      </section>
+
+      <!-- S8 37.6–42.4s : soalan & CTA -->
+      <section class="scene on-teal" id="s8">
+        <h2 class="pad display h center" data-t="37.72 37.90">Ada soalan?</h2>
+        <p class="pad body k center" data-t="38.58 39.00 39.10 39.28 39.46">Atau nak tahu lebih lanjut?</p>
+        <div class="pad ctawrap center"><span class="pill cta" data-t="40.00 40.24 40.54 40.74">PM kami je ye</span></div>
+        <p class="pad body k2 center" data-t="41.12 41.32 41.76">Kami sedia membantu.</p>
+      </section>
+
+      <!-- S9 42.4–46s : penutup -->
+      <section class="scene on-light" id="s9">
+        <h1 class="pad logo center" data-chars="42.58">GAMADENT</h1>
+        <div class="rule"></div>
+        <div class="imgwrap"><img src="assets/kotak.jpg" alt="Kotak dan tiub Gamadent"></div>
+        <h2 class="pad display h center" data-t="43.60 43.90 44.06 44.48 45.26">Senyum lebih *yakin* setiap hari.</h2>
+        <div class="pad ctawrap center"><span class="pill cta">PM kami</span></div>
+        <p class="pad foot center">House of Healin</p>
+      </section>
+
+      <audio id="vo" src="assets/voiceover.mp3" preload="auto"></audio>
+    </div>
+    <div id="startOverlay" role="button" aria-label="Main video"><span><svg viewBox="0 0 24 24" fill="#04434B"><path d="M6 4l14 8-14 8z"/></svg></span></div>
+  </div>
+</div>
+<div id="controls">
+  <button id="playBtn" aria-label="Main atau jeda">Main</button>
+  <button id="replayBtn" aria-label="Ulang dari awal">Ulang</button>
+  <div id="bar" aria-label="Kedudukan video"><div id="fill"></div></div>
+  <span id="time">0.0 / 46.0s</span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(() => {
+  const DUR = 46;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ---------- split text into timed word masks ---------- */
+  const words = new Map(); // el -> [{inner, t}]
+  $$('[data-t]').forEach(el => {
+    const times = el.dataset.t.trim().split(/\s+/).map(Number);
+    const toks = el.textContent.trim().split(/\s+/);
+    el.textContent = '';
+    const list = [];
+    toks.forEach((tok, i) => {
+      const acc = /^\*.*\*$/.test(tok);
+      const w = document.createElement('span'); w.className = 'w' + (acc ? ' acc' : '');
+      const inner = document.createElement('span'); inner.className = 'wi';
+      inner.textContent = acc ? tok.slice(1, -1) : tok;
+      w.appendChild(inner); el.appendChild(w);
+      if (i < toks.length - 1) el.appendChild(document.createTextNode(' '));
+      const t = times[i] ?? (times[times.length - 1] + 0.12 * (i - times.length + 1));
+      list.push({ inner, t });
+    });
+    words.set(el, list);
+  });
+  const chars = new Map();
+  $$('[data-chars]').forEach(el => {
+    const t0 = Number(el.dataset.chars);
+    const txt = el.textContent.trim(); el.textContent = '';
+    const list = [...txt].map((c, i) => {
+      const w = document.createElement('span'); w.className = 'w';
+      const s = document.createElement('span'); s.className = 'ch'; s.textContent = c;
+      w.appendChild(s); el.appendChild(w); return { inner: s, t: t0 + i * 0.035 };
+    });
+    chars.set(el, list);
+  });
+
+  /* ---------- timeline ---------- */
+  const tl = gsap.timeline({ paused: true });
+  const E = 'expo.out', P = 'power3.out', IO = 'expo.inOut';
+
+  const show = (sc, a, b) => { tl.set(sc, { visibility: 'visible' }, a); if (b != null) tl.set(sc, { visibility: 'hidden' }, b); };
+  const reveal = (el, d = 0.7) => (words.get(el) || chars.get(el)).forEach(({ inner, t }) =>
+    tl.fromTo(inner, { yPercent: 115 }, { yPercent: 0, duration: d, ease: E }, t));
+  const out = (el, t, d = 0.45) => tl.fromTo(el, { y: 0, autoAlpha: 1 }, { y: -40, autoAlpha: 0, duration: d, ease: 'power2.in' }, t);
+  const fadeUp = (el, t, d = 0.9, y = 60) => tl.fromTo(el, { y, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: d, ease: P }, t);
+
+  // S1 hook (0–10.24)
+  const s1 = $('#s1');
+  show(s1, 0, 11.3);
+  tl.fromTo('#clip', { scale: 1.08 }, { scale: 1, duration: 10.5, ease: 'none' }, 0);
+  tl.fromTo('.wm', { y: -24, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, ease: E }, 0.15);
+  tl.fromTo('.wm .bar', { scaleY: 0 }, { scaleY: 1, duration: .8, ease: E }, 0.45);
+  $$('#s1 .g1 [data-t]').forEach(el => reveal(el));
+  out('#s1 .g1', 6.42, 0.35);
+  $$('#s1 .g2 [data-t]').forEach(el => reveal(el));
+
+  // S2 intro (10.24–14.9) — circle mask
+  const s2 = $('#s2');
+  show(s2, 10.1, 15.8);
+  tl.fromTo(s2, { clipPath: 'circle(0% at 50% 62%)' }, { clipPath: 'circle(140% at 50% 62%)', duration: 1.1, ease: IO }, 10.1);
+  reveal($('#s2 .k')); reveal($('#s2 .logo'), 0.8); reveal($('#s2 .sub'));
+  tl.fromTo('#s2 .panel', { yPercent: 40, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 1.2, ease: E }, 11.7);
+  tl.fromTo('#s2 .panel img', { scale: 0.88, y: 60 }, { scale: 1.03, y: -20, duration: 4, ease: 'power2.out' }, 11.85);
+
+  // S3 bukan sekadar (14.9–20.8) — slide up
+  const s3 = $('#s3');
+  show(s3, 14.7, 21.6);
+  tl.fromTo(s3, { yPercent: 100 }, { yPercent: 0, duration: 0.8, ease: IO }, 14.65);
+  reveal($('#s3 .sa .h'));
+  out('#s3 .sa', 16.92, 0.35);
+  $$('#s3 .sb [data-t]').forEach(el => reveal(el));
+  tl.fromTo('#s3 .card', { y: 140, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.1, ease: E }, 15.0);
+  tl.fromTo('#s3 .card img', { scale: 1.12 }, { scale: 1, duration: 6, ease: 'power1.out' }, 15.0);
+
+  // S4 senyum (20.8–23.8) — mask wipe from bottom
+  const s4 = $('#s4');
+  show(s4, 20.6, 24.8);
+  tl.fromTo(s4, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8, ease: IO }, 20.6);
+  reveal($('#s4 .k')); reveal($('#s4 .h'));
+  tl.fromTo('#s4 .band img', { scale: 1.1, x: 30 }, { scale: 1, x: -10, duration: 4, ease: 'power1.out' }, 20.6);
+
+  // S5 setiap hari (23.8–29.2) — scale in
+  const s5 = $('#s5');
+  show(s5, 23.7, 30.2);
+  tl.fromTo(s5, { clipPath: 'inset(18% 12% 18% 12% round 60px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 0.9, ease: IO }, 23.7);
+  reveal($('#s5 .a'));
+  tl.fromTo('#s5 .div', { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: E }, 27.2);
+  reveal($('#s5 .b'));
+
+  // S6 dapatkan (29.2–34.5) — slide from right
+  const s6 = $('#s6');
+  show(s6, 29.1, 35.6);
+  tl.fromTo(s6, { xPercent: 100 }, { xPercent: 0, duration: 0.85, ease: IO }, 29.05);
+  tl.fromTo('#s6 .imgwrap img', { x: 80, scale: 1.05 }, { x: -10, scale: 1, duration: 5.5, ease: 'power1.out' }, 29.05);
+  reveal($('#s6 .k')); reveal($('#s6 .k2')); reveal($('#s6 .h'));
+  tl.fromTo('#s6 .pill', { scale: 0.86, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.7, ease: E }, 32.55);
+  reveal($('#s6 .pill [data-t]'), 0.5);
+
+  // S7 original (34.5–37.6) — circle mask
+  const s7 = $('#s7');
+  show(s7, 34.4, 38.6);
+  tl.fromTo(s7, { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(120% at 50% 50%)', duration: 0.9, ease: IO }, 34.4);
+  reveal($('#s7 .h'));
+  tl.fromTo('#s7 .badge', { scale: 0.7, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.8, ease: E }, 36.3);
+
+  // S8 soalan & CTA (37.6–42.4) — slide up
+  const s8 = $('#s8');
+  show(s8, 37.45, 43.4);
+  tl.fromTo(s8, { yPercent: 100 }, { yPercent: 0, duration: 0.8, ease: IO }, 37.4);
+  reveal($('#s8 .h')); reveal($('#s8 .k'));
+  tl.fromTo('#s8 .cta', { scale: 0.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.8, ease: E }, 39.9);
+  reveal($('#s8 .cta'), 0.5);
+  reveal($('#s8 .k2'));
+
+  // S9 penutup (42.4–46) — mask wipe from top
+  const s9 = $('#s9');
+  show(s9, 42.3);
+  tl.fromTo(s9, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8, ease: IO }, 42.3);
+  reveal($('#s9 .logo'), 0.8);
+  tl.fromTo('#s9 .rule', { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: E }, 43.0);
+  tl.fromTo('#s9 .imgwrap', { y: 80, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.1, ease: E }, 42.75);
+  tl.fromTo('#s9 .imgwrap img', { scale: 0.94 }, { scale: 1.02, duration: 3.3, ease: 'power1.out' }, 42.75);
+  reveal($('#s9 .h'));
+  fadeUp('#s9 .ctawrap', 45.3, 0.7, 30);
+  fadeUp('#s9 .foot', 44.2, 0.8, 20);
+  tl.set({}, {}, DUR); // pad to exactly 46s
+
+  /* ---------- clock (audio = master, perf clock after audio ends) ---------- */
+  const audio = $('#vo'), clip = $('#clip');
+  const playBtn = $('#playBtn'), fill = $('#fill'), timeEl = $('#time'), overlay = $('#startOverlay');
+  let playing = false, cur = 0, lastA = 0, lastPerf = 0;
+
+  function clock() {
+    if (!playing) return cur;
+    const now = performance.now();
+    if (!audio.paused && !audio.ended && audio.currentTime > 0) { lastA = audio.currentTime; lastPerf = now; return lastA; }
+    return lastA + (now - lastPerf) / 1000;
+  }
+  function render(t) {
+    cur = Math.max(0, Math.min(DUR, t));
+    tl.time(cur);
+    fill.style.width = (cur / DUR * 100) + '%';
+    timeEl.textContent = cur.toFixed(1) + ' / ' + DUR.toFixed(1) + 's';
+    // video sync (S1 only)
+    if (cur < 10.4) {
+      if (playing) { if (clip.paused) clip.play().catch(() => {}); if (Math.abs(clip.currentTime - cur) > 0.25) clip.currentTime = cur; }
+      else { clip.pause(); if (Math.abs(clip.currentTime - cur) > 0.05) clip.currentTime = cur; }
+    } else if (!clip.paused) clip.pause();
+  }
+  function loop() {
+    if (!playing) return;
+    const t = clock();
+    render(t);
+    if (t >= DUR) { pause(); render(DUR); return; }
+    requestAnimationFrame(loop);
+  }
+  function play() {
+    if (cur >= DUR - 0.01) seek(0);
+    playing = true; overlay.style.display = 'none'; playBtn.textContent = 'Jeda';
+    lastA = cur; lastPerf = performance.now();
+    if (cur < audio.duration || isNaN(audio.duration)) { audio.currentTime = cur; audio.play().catch(() => {}); }
+    requestAnimationFrame(loop);
+  }
+  function pause() { playing = false; audio.pause(); clip.pause(); playBtn.textContent = 'Main'; }
+  function seek(t) {
+    cur = Math.max(0, Math.min(DUR, t)); lastA = cur; lastPerf = performance.now();
+    if (!isNaN(audio.duration) && cur < audio.duration) audio.currentTime = cur;
+    else if (playing) audio.pause();
+    if (playing && cur < (audio.duration || 0) && audio.paused) audio.play().catch(() => {});
+    render(cur);
+  }
+  playBtn.onclick = () => playing ? pause() : play();
+  $('#replayBtn').onclick = () => { seek(0); play(); };
+  overlay.onclick = play;
+  $('#bar').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * DUR); };
+  document.addEventListener('keydown', e => { if (e.code === 'Space') { e.preventDefault(); playing ? pause() : play(); } });
+
+  /* ---------- fit 1080x1920 stage to viewport ---------- */
+  const stage = $('#stage'), frame = $('#frame'), vp = $('#viewport');
+  function fit() {
+    const s = Math.min((vp.clientWidth - 32) / 1080, (vp.clientHeight - 16) / 1920);
+    stage.style.transform = `scale(${s})`;
+    frame.style.width = 1080 * s + 'px'; frame.style.height = 1920 * s + 'px';
+  }
+  addEventListener('resize', fit); fit();
+
+  // hooks for frame-checking
+  window.__seek = t => { overlay.style.display = 'none'; render(t); };
+  document.fonts.ready.then(() => render(cur));
+  render(0.0001);
+})();
+</script>
+</body>
+</html>
