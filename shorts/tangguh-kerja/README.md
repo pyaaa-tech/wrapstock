@@ -1,6 +1,6 @@
 # Kenapa kita suka tangguh kerja? (YouTube Short)
 
-44-second vertical short (1080x1920, 30 fps) starring **Si Otak**, an original pink-brain character.
+45-second vertical short (1080x1920, 30 fps; 44 s programme + brand outro) starring **Si Otak**, an original pink-brain character.
 Built with [Remotion](https://www.remotion.dev). The ElevenLabs voiceover in `public/audio/vo.mp3` is the master
 timeline and is never trimmed.
 
@@ -40,6 +40,15 @@ python scripts/make_audio.py --music song.mp3 # or duck your own track under the
 ```
 
 Stems are written to `out/stems/` (music.wav, sfx.wav) for re-mixing elsewhere.
+
+## Brand outro
+
+`src/scenes/Outro.tsx`: right after the last voice line, a whip-pan lands on the cream dot background at
+44.0 s, the supplied Soyaa Soy PNG (`public/brand/soyaa-soy-logo.png`, used unmodified and drawn above the
+paper/grain overlays) pops in with a spring (0.3 -> 1.08 -> 1.0, -9 deg -> 0), six flat #EF85A0 sparkles
+twinkle around it, and it holds until the end (frame 1354), which hard-cuts back to frame 0.
+The only outro sound is a soft bubble "blup" on the pop (`blup()` in `scripts/make_audio.py`); music and SFX
+tails fade out within 0.12 s of the outro landing.
 
 ## Layout / safe zones
 

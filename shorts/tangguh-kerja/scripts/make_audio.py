@@ -20,9 +20,13 @@ import pyloudnorm as pyln
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
 SR = 48000
-DUR = 44.0
+DUR = 44.0  # main programme (voice + music + SFX); everything before the outro
 N = int(SR * DUR)
 FPS = 30
+OUTRO_LAND = 1320  # frame the brand outro lands and the logo pops (44.0 s)
+TOTAL_FRAMES = 1354  # must match DURATION in src/theme.ts (44.0 s + outro)
+NT = int(round(SR * TOTAL_FRAMES / FPS))
+OUTRO_FADE = 0.12  # music / SFX tails fade out over this long once the outro lands
 BPM = 120
 BEAT = 60 / BPM
 BAR = 4 * BEAT
@@ -79,15 +83,12 @@ def place(buf, sig, t0, gain=1.0, pan=0.0):
         l, r = pan_gains(pan)
         sig = np.vstack([sig * l, sig * r])
     sig = sig * gain
-    start = int(round(t0 * SR)) % N
-    n = sig.shape[1]
-    first = min(n, N - start)
-    buf[:, start : start + first] += sig[:, :first]
-    rest = sig[:, first:]
-    while rest.shape[1] > 0:  # wrap tails to the start (seamless loop)
-        k = min(rest.shape[1], N)
-        buf[:, :k] += rest[:, :k]
-        rest = rest[:, k:]
+    start = int(round(t0 * SR))
+    if start < 0:  # pre-roll cues (e.g. the clock tick at -0.5 s) keep their place at the end of the programme
+        start += N
+    end = min(buf.shape[1], start + sig.shape[1])
+    if end > start:
+        buf[:, start:end] += sig[:, : end - start]
 
 
 def soft_clip(x, drive=1.0):
@@ -317,9 +318,34 @@ def clack():
     return filt(noise(n), "band", [700, 4000]) * env_exp(n, 0.01, 0.0005) + np.sin(2 * np.pi * 320 * t) * env_exp(n, 0.02) * 0.5
 
 
+BLUP_PEAK_DB = -7.0
+
+
+def blup():
+    """Soft water-bubble: sine-like tone gliding ~260 -> 880 Hz in ~0.1 s, fast decay (~0.3 s total),
+    then a tiny softer second blip ~0.12 s after the first."""
+
+    def bubble(f0, f1, glide, dur, decay):
+        n = int(dur * SR)
+        t = ar(n)
+        f = f0 * (f1 / f0) ** np.clip(t / glide, 0, 1)
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        s = np.sin(ph) + 0.1 * np.sin(2 * ph)
+        env = np.clip(t / 0.004, 0, 1) * np.exp(-np.maximum(0, t - 0.06) / decay) * np.clip((dur - t) / 0.02, 0, 1)
+        return s * env
+
+    first = bubble(260, 880, 0.10, 0.30, 0.055)
+    second = bubble(430, 1150, 0.05, 0.14, 0.03) * 0.42
+    out = np.zeros(int(0.42 * SR))
+    out[: len(first)] += first
+    st = int(0.12 * SR)
+    out[st : st + len(second)] += second
+    return out
+
+
 # ----------------------------------------------------------------------------- SFX timeline
 def build_sfx():
-    buf = np.zeros((2, N))
+    buf = np.zeros((2, NT))
     P = lambda sig, fr, g, pan=0.0, offs=0.0: place(buf, sig, T(fr) + offs, g, pan)
 
     # whip-pans: whoosh centred on the whip's fastest frame (start - 4.5), panned with the motion
@@ -539,7 +565,7 @@ SMASH_T = None  # filled in main
 
 
 def build_music():
-    mus = {k: np.zeros((2, N)) for k in ("drums", "bass", "chords", "keys")}
+    mus = {k: np.zeros((2, NT)) for k in ("drums", "bass", "chords", "keys")}
 
     def add(stem, sig, t, g, pan=0.0):
         if STOP_AT <= t < STOP_END:
@@ -648,10 +674,7 @@ def reverb(x, decay=1.1, wet=0.18):
     out = np.zeros_like(x)
     for c in range(2):
         y = fftconvolve(x[c], ir[c])
-        # wrap the tail for a seamless loop
-        out[c] += y[:N]
-        tail = y[N:]
-        out[c, : len(tail)] += tail[:N]
+        out[c] += y[: x.shape[1]]
     return x * (1 - wet) + out * wet
 
 
@@ -684,7 +707,7 @@ def duck_envelope(voice):
         k = 1 - np.exp(-1 / (3 if a > cur else 35))
         cur += (a - cur) * k
         g[i] = cur
-    env = np.repeat(g, hop)[:N]
+    env = np.repeat(g, hop)[: len(voice)]
     return env
 
 
@@ -715,7 +738,7 @@ def main():
     SMASH_T = T(F("cuba"))
 
     voice = load_audio(os.path.join(ROOT, "public/audio/vo.mp3"))[0]
-    voice = np.pad(voice, (0, max(0, N - len(voice))))[:N]
+    voice = np.pad(voice, (0, max(0, NT - len(voice))))[:NT]
 
     print("building sfx...", flush=True)
     sfx = build_sfx()
@@ -723,8 +746,8 @@ def main():
 
     if args.music:
         m = load_audio(args.music, 2)
-        reps = int(np.ceil(N / m.shape[1])) + 1
-        m = np.tile(m, reps)[:, :N]
+        reps = int(np.ceil(NT / m.shape[1])) + 1
+        m = np.tile(m, reps)[:, :NT]
         fade = int(0.5 * SR)
         m[:, -fade:] *= np.linspace(1, 0, fade)
         m[:, :fade] *= np.linspace(0, 1, fade)
@@ -745,10 +768,25 @@ def main():
     s_l = meter.integrated_loudness(sfx.T) if np.abs(sfx).max() > 0 else -70
     print(f"music {m_l:.1f} LUFS raw, sfx {s_l:.1f} LUFS", flush=True)
 
+    # brand outro: no music or SFX on it, tails fade out right after it lands
+    t_out = T(OUTRO_LAND)
+    fade = np.clip(1 - (ar(NT) - t_out) / OUTRO_FADE, 0, 1)
+    music *= fade
+    sfx *= fade
+
     mix = np.vstack([voice, voice]) + music + sfx
-    pre = meter.integrated_loudness(mix.T)
-    mix *= 10 ** ((args.target_lufs - pre) / 20)
+    pre = meter.integrated_loudness(mix[:, :N].T)  # level the main programme exactly as before
+    gain = 10 ** ((args.target_lufs - pre) / 20)
+    mix *= gain
+    # the outro's only sound: one soft bubble "blup" exactly on the logo pop (dry, moderate level)
+    b = blup()
+    b *= 10 ** (BLUP_PEAK_DB / 20) / np.abs(b).max()
+    place(mix, b, t_out, 1.0, 0.0)
     mix = limiter(mix, -1.2)
+    vm = pyln.Meter(SR, block_size=0.4)
+    st = int(t_out * SR)
+    print(f"blup peak {BLUP_PEAK_DB} dBFS; momentary loudness blup {vm.integrated_loudness(mix[:, st : st + int(0.4 * SR)].T):.1f} LUFS "
+          f"vs loudest voice word {max(vm.integrated_loudness(mix[:, int(w['s'] * SR) : int(w['s'] * SR) + int(0.4 * SR)].T) for w in words):.1f} LUFS", flush=True)
     post = meter.integrated_loudness(mix.T)
     print(f"mix {pre:.1f} -> {post:.1f} LUFS, peak {20 * np.log10(np.abs(mix).max()):.2f} dBFS", flush=True)
 
@@ -758,9 +796,8 @@ def main():
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ar", str(SR), "-ac", "2", "-i", "-", path], input=pcm, check=True)
 
     write(os.path.join(ROOT, "public/audio/mix.wav"), mix)
-    g = 10 ** ((args.target_lufs - pre) / 20)
-    write(os.path.join(ROOT, "out/stems/music.wav"), music * g)
-    write(os.path.join(ROOT, "out/stems/sfx.wav"), sfx * g)
+    write(os.path.join(ROOT, "out/stems/music.wav"), music * gain)
+    write(os.path.join(ROOT, "out/stems/sfx.wav"), sfx * gain)
     print("wrote public/audio/mix.wav and out/stems/", flush=True)
 
 

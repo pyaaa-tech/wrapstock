@@ -17,6 +17,7 @@ import { S5SeeSaw } from "./scenes/S5SeeSaw";
 import { S5bMulaKecil } from "./scenes/S5bMulaKecil";
 import { S6Timer } from "./scenes/S6Timer";
 import { S7Komen } from "./scenes/S7Komen";
+import { OutroBackground, OutroBrand } from "./scenes/Outro";
 
 type Tr = "whip" | "zoom" | "match" | "smash";
 type SceneDef = {
@@ -42,6 +43,8 @@ export const SCENES: SceneDef[] = [
   { id: "s5b", start: S.s5b, Comp: S5bMulaKecil, tr: "smash" },
   { id: "s6", start: S.s6, Comp: S6Timer, tr: "zoom", zoomFrom: [290, 900], zoomTo: [CX, 430] },
   { id: "s7", start: S.s7, Comp: S7Komen, tr: "whip", dir: -1 },
+  // brand outro: quick whip-pan right after the last voice line, then a hard cut back to frame 0 (loop)
+  { id: "outro", start: S.outro, Comp: OutroBackground, tr: "whip", dir: 1 },
 ];
 
 const WHIP = 8; // frames, ends on the onset
@@ -125,9 +128,7 @@ export const Main: React.FC = () => {
     const nextStart = next ? next.start : DURATION;
     const visStart = s.tr === "whip" ? s.start - WHIP : s.start;
     if (f >= visStart && f < nextStart) {
-      // last scene whips out into the loop copy of scene 1
-      const nxt = next ?? { ...SCENES[0], start: DURATION };
-      const xf = transformFor(i, f, nxt, nextStart);
+      const xf = transformFor(i, f, next, nextStart);
       layers.push(
         <SceneLayer key={s.id} id={s.id} xf={xf}>
           <s.Comp f={f} cam={xf.x} />
@@ -135,16 +136,6 @@ export const Main: React.FC = () => {
       );
     }
   });
-  // Seamless loop: scene 1 whips in over the last frames, continuing into frame 0.
-  if (f >= DURATION - WHIP) {
-    const fl = f - DURATION;
-    const xf = transformFor(0, fl, SCENES[1], SCENES[1].start);
-    layers.push(
-      <SceneLayer key="s1-loop" id="s1loop" xf={xf}>
-        <S1Deadline f={fl} cam={xf.x} />
-      </SceneLayer>,
-    );
-  }
 
   const sh = shake(f, HITS, 20, 6);
   const smash = SCENES.find((s) => s.tr === "smash")!;
@@ -158,6 +149,8 @@ export const Main: React.FC = () => {
       {flash > 0 ? <AbsoluteFill style={{ background: C.white, opacity: flash }} /> : null}
       <Captions f={f} />
       <Overlays f={f} />
+      {/* logo above the paper/grain overlays so the artwork is shown exactly as supplied */}
+      <OutroBrand f={f} />
       {/* voice + music + SFX, built by scripts/make_audio.py (raw voice: audio/vo.mp3) */}
       <Audio src={staticFile("audio/mix.wav")} />
     </AbsoluteFill>

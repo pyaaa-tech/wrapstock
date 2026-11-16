@@ -1,5 +1,5 @@
 import { F } from "./lib/time";
-import { DURATION } from "./theme";
+import { DURATION, OUTRO_START } from "./theme";
 
 /**
  * Every cue is a voice onset (CTC forced alignment), so cuts, slams and pops land ON the word.
@@ -16,6 +16,7 @@ export const S = {
   s5b: F("cuba"), // "cuba buat sikit-sikit dulu." (smash cut)
   s6: F("tak2"), // "Tak lama pun. Lima minit pun jadilah."
   s7: F("kau3"), // "Kau pun pernah siapkan assignment sebab deadline, kan? Dapat catch up? Sila komen!"
+  outro: OUTRO_START, // brand outro: whip-pan lands, logo pops (right after "komen!")
   end: DURATION,
 };
 

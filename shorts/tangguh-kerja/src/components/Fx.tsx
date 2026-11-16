@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Img, random, staticFile } from "remotion";
 import { evolvePath, getLength, getPointAtLength } from "@remotion/paths";
-import { C } from "../theme";
+import { C, OUTRO_START } from "../theme";
 import { clamp01, easeOutCubic, ramp } from "../lib/anim";
 
 /** Draw-on stroke for an SVG path (arrows, underlines, strike-throughs). */
@@ -111,7 +111,8 @@ export const DustPuffs: React.FC<{ f: number; from: number; to: number; at: (fr:
 
 /** Paper texture + animated film grain + soft vignette. */
 export const Overlays: React.FC<{ f: number }> = ({ f }) => {
-  const g = Math.floor(((f % 1320) + 1320) / 2) % 6;
+  // grain sequence keyed to the 44 s programme so every pre-outro frame is unchanged
+  const g = Math.floor(((f % OUTRO_START) + OUTRO_START) / 2) % 6;
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <Img src={staticFile("tex/paper.jpg")} style={{ position: "absolute", width: 1080, height: 1920, mixBlendMode: "multiply", opacity: 0.6 }} />

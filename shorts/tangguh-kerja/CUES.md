@@ -4,7 +4,7 @@ Every cut, slam and pop lands on a spoken onset (CTC forced alignment, frames fl
 
 | Scene | Event | Word | Voice onset (s) | Frame @30fps |
 |---|---|---|---|---|
-| 1 | whip-pan in (loop) / scene 1 lands | – | 0.000 | 0 |
+| 1 | scene 1 starts (hard cut from the outro = loop point) | – | 0.000 | 0 |
 | 1 | Si Otak hop | Yoo | 0.160 | 4 |
 | 1 | Si Otak hop | yoo | 0.780 | 23 |
 | 1 | HARD PUNCH-IN + DEADLINE slam + shake | Deadline | 1.241 | 37 |
@@ -64,4 +64,7 @@ Every cut, slam and pop lands on a spoken onset (CTC forced alignment, frames fl
 | 7 | comment bubble 2 | catch | 42.503 | 1275 |
 | 7 | comment bubble 3 | Sila | 43.124 | 1293 |
 | 7 | comment bubble 4 + eyes drift to the duster | komen | 43.364 | 1300 |
-| 7 | whip-pan out into scene 1 (loop) | – | 43.733 | 1312 |
+| outro | whip-pan into the cream brand outro (right after the last word) | – | 43.733 | 1312 |
+| outro | Soyaa Soy logo pops (spring 0.3 -> 1.08 -> 1.0, -9deg -> 0) + bubble 'blup' | – | 44.000 | 1320 |
+| outro | 6 flat pink sparkles twinkle, one every 3 frames | – | 44.200 | 1326 |
+| outro | logo holds; hard cut back to frame 0 | – | 45.133 | 1354 |

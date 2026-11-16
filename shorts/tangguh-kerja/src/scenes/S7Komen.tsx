@@ -77,7 +77,7 @@ export const S7Komen: React.FC<SceneProps> = ({ f, cam }) => {
   const catchW = F("catch");
   const sila = F("sila");
   const komen = F("komen");
-  const push = clamp01((f - S.s7) / (S.end - S.s7));
+  const push = clamp01((f - S.s7) / (S.outro - S.s7));
 
   // turns to camera right after the whip lands
   const turn = 0.3 + 0.7 * pop(f, kau + 1, { damping: 9, stiffness: 200, mass: 0.7 });

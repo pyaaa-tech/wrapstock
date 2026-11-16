@@ -10,7 +10,7 @@ for w in words:
     keys.append(b if seen[b] == 1 else f"{b}{seen[b]}")
 by = {k: (d, w) for k, d, w in zip(keys, disp, words)}
 CUES = [
-  ("1", "whip-pan in (loop) / scene 1 lands", None, 0),
+  ("1", "scene 1 starts (hard cut from the outro = loop point)", None, 0),
   ("1", "Si Otak hop", "yoo", None), ("1", "Si Otak hop", "yoo2", None),
   ("1", "HARD PUNCH-IN + DEADLINE slam + shake", "deadline", None),
   ("1", "ESOK! slam + red pulse + shake", "esok", None),
@@ -49,7 +49,10 @@ CUES = [
   ("7", "KAU PUN?", "pun3", None), ("7", "wink", "kan", None),
   ("7", "comment bubble 1", "dapat", None), ("7", "comment bubble 2", "catch", None),
   ("7", "comment bubble 3", "sila", None), ("7", "comment bubble 4 + eyes drift to the duster", "komen", None),
-  ("7", "whip-pan out into scene 1 (loop)", None, 1312),
+  ("outro", "whip-pan into the cream brand outro (right after the last word)", None, 1312),
+  ("outro", "Soyaa Soy logo pops (spring 0.3 -> 1.08 -> 1.0, -9deg -> 0) + bubble 'blup'", None, 1320),
+  ("outro", "6 flat pink sparkles twinkle, one every 3 frames", None, 1326),
+  ("outro", "logo holds; hard cut back to frame 0", None, 1354),
 ]
 print("| Scene | Event | Word | Voice onset (s) | Frame @30fps |")
 print("|---|---|---|---|---|")

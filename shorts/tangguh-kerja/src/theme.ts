@@ -18,7 +18,8 @@ export const C = {
 export const W = 1080;
 export const H = 1920;
 export const FPS = 30;
-export const DURATION = 1320; // 44.0 s; voiceover is 43.964 s and is never trimmed
+export const OUTRO_START = 1320; // 44.0 s: programme ends, brand outro lands (voiceover is 43.964 s, never trimmed)
+export const DURATION = 1354; // 45.13 s = programme + 1.13 s logo hold (outro is ~1.4 s including its whip-pan)
 
 // Safe zones (Shorts UI): keep the bottom 20% and the right 12% clear.
 export const SAFE = {
