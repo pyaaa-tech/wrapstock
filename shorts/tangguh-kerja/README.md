@@ -24,6 +24,23 @@ Preview in the Studio: `npx remotion studio`.
 
 If the voiceover changes: update `data/transcript.txt`, re-run `align.py` and `make_timing.py`, re-render.
 
+## Soundtrack (music + SFX)
+
+`scripts/make_audio.py` builds `public/audio/mix.wav` (what the composition plays): the untouched voiceover,
+an original 120 BPM music bed (44 s = 22 bars, follows the scene arc, ducks ~9 dB under the voice) and
+synthesised SFX (whooshes on whip-pans/zooms, pops on keywords and comment bubbles, impacts on slams, clock
+ticks, alarm, sparkles, confetti, typing...). Everything is generated from scratch, so nothing needs licensing.
+SFX use the same word onsets as the picture. Tails wrap around 44 s so the audio loops seamlessly.
+The mix is mastered to -14 LUFS / -1 dBTP.
+
+```bash
+pip install numpy scipy pyloudnorm   # plus ffmpeg on PATH
+python scripts/make_audio.py                  # synth music bed
+python scripts/make_audio.py --music song.mp3 # or duck your own track under the voice instead
+```
+
+Stems are written to `out/stems/` (music.wav, sfx.wav) for re-mixing elsewhere.
+
 ## Layout / safe zones
 
 Keywords live in the top 35%, captions at ~62-70% height, and nothing important sits in the bottom 20% or the

@@ -158,7 +158,8 @@ export const Main: React.FC = () => {
       {flash > 0 ? <AbsoluteFill style={{ background: C.white, opacity: flash }} /> : null}
       <Captions f={f} />
       <Overlays f={f} />
-      <Audio src={staticFile("audio/vo.mp3")} />
+      {/* voice + music + SFX, built by scripts/make_audio.py (raw voice: audio/vo.mp3) */}
+      <Audio src={staticFile("audio/mix.wav")} />
     </AbsoluteFill>
   );
 };
