@@ -57,7 +57,7 @@ Every cut, slam and pop lands on a spoken onset (CTC forced alignment, frames fl
 | 8 | bubble 2 | catch | 42.639 | 1279 |
 | 8 | SILA KOMEN! + bubble 3 | Sila | 43.319 | 1299 |
 | 8 | bubble 4 + wink | komen | 43.579 | 1307 |
-| outro | silent whip-pan into the cream brand outro (right after the last word) | – | 43.933 | 1318 |
+| outro | whip-pan + whoosh (as in the first video) into the cream brand outro, right after the last word | – | 43.933 | 1318 |
 | outro | Soyaa Soy logo pops (spring 0.3 -> 1.08 -> 1.0, -9deg -> 0) + bubble 'blup' | – | 44.200 | 1326 |
 | outro | 6 flat pink sparkles twinkle, one every 3 frames | – | 44.400 | 1332 |
 | outro | logo holds; hard cut back to frame 0 | – | 45.333 | 1360 |

@@ -41,7 +41,7 @@ CUES = [
   ("7", "CAHAYA PAGI", "cahaya", None), ("7", "brain meter fills", "bantu", None), ("7", "power ON + ting + sparkles", "sedar", None),
   ("8", "WHIP-PAN lands, DAPAT CATCH UP? + bubble 1", "dapat", None), ("8", "bubble 2", "catch", None),
   ("8", "SILA KOMEN! + bubble 3", "sila", None), ("8", "bubble 4 + wink", "komen", None),
-  ("outro", "silent whip-pan into the cream brand outro (right after the last word)", None, 1318),
+  ("outro", "whip-pan + whoosh (as in the first video) into the cream brand outro, right after the last word", None, 1318),
   ("outro", "Soyaa Soy logo pops (spring 0.3 -> 1.08 -> 1.0, -9deg -> 0) + bubble 'blup'", None, 1326),
   ("outro", "6 flat pink sparkles twinkle, one every 3 frames", None, 1332),
   ("outro", "logo holds; hard cut back to frame 0", None, 1360),

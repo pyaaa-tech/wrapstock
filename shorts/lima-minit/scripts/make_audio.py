@@ -371,16 +371,23 @@ def power_up(dur=0.8):
     return (np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.3 * np.sin(4 * np.pi * np.cumsum(f) / SR)) * (t / dur) ** 1.5 * 0.7
 
 
-def build_sfx():
+def build_sfx(outro_whoosh=True):
     buf = np.zeros((2, NT))
     P = lambda sig, fr, g, pan=0.0, offs=0.0: place(buf, sig, T(fr) + offs, g, pan)
 
     # whip-pans: whoosh centred on the whip's fastest frame (start - 4.5), panned with the motion.
-    # (The whip into the brand outro is deliberately silent: the outro's only sound is the blup.)
     for start, d in [(F("sebenarnya"), -1), (F("lagi3"), 1), (F("mungkin"), -1), (F("lepas2"), 1), (F("dapat"), -1)]:
         w = whoosh(0.5, 0.58, 300, 3200, d)
         fade = np.clip((0.5 - ar(w.shape[1])) / 0.12, 0, 1)
         place(buf, w * fade, T(start - 4.5) - 0.29, 0.38)
+    # whip into the brand outro: same whoosh as the first video (its tail is faded as the outro lands).
+    # Generated without advancing the shared RNG, so every other sound stays byte-identical.
+    if outro_whoosh:
+        st = rng.bit_generator.state
+        w = whoosh(0.5, 0.58, 300, 3200, 1)
+        rng.bit_generator.state = st
+        fade = np.clip((0.5 - ar(w.shape[1])) / 0.12, 0, 1)
+        place(buf, w * fade, T(OUTRO_LAND - 4.5) - 0.29, 0.4)
     # scale-through zooms
     for start in [F("menariknya"), F("tapi")]:
         place(buf, zoom_whoosh(0.42), T(start) - 0.40, 0.36)
@@ -773,8 +780,11 @@ def main():
     voice = np.pad(voice, (0, max(0, NT - len(voice))))[:NT]
 
     print("building sfx...", flush=True)
-    sfx = build_sfx()
-    sfx = reverb(sfx, 0.7, 0.1)
+    # The programme level is measured without the outro whoosh, so adding it changes nothing else.
+    st0 = rng.bit_generator.state
+    sfx_ref = reverb(build_sfx(outro_whoosh=False), 0.7, 0.1)
+    rng.bit_generator.state = st0
+    sfx = reverb(build_sfx(outro_whoosh=True), 0.7, 0.1)
 
     if args.music:
         m = load_audio(args.music, 2)
@@ -818,9 +828,11 @@ def main():
     fade = np.clip(1 - (ar(NT) - t_out) / OUTRO_FADE, 0, 1)
     music *= fade
     sfx *= fade
+    sfx_ref *= fade
 
     mix = np.vstack([voice, voice]) + music + sfx
-    pre = meter.integrated_loudness(mix[:, :N].T)  # level the main programme exactly as before
+    ref = np.vstack([voice, voice]) + music + sfx_ref
+    pre = meter.integrated_loudness(ref[:, :N].T)  # level the main programme exactly as before (without the outro whoosh)
     gain = 10 ** ((args.target_lufs - pre) / 20)
     mix *= gain
     # the outro's only sound: one soft bubble "blup" exactly on the logo pop (dry, moderate level)
