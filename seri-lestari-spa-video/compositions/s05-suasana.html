@@ -43,7 +43,7 @@
 
       <!-- (c) haruman ... nak pejam mata -->
       <div id="s5c" class="fill">
-        <svg id="s5-waves" class="abs" style="left: 390px; top: 170px" width="300" height="300" viewBox="0 0 300 300">
+        <svg id="s5-waves" class="abs" style="left: 415px; top: 232px" width="250" height="250" viewBox="0 0 300 300">
           <path class="s5-wv st" style="stroke: #71876a" d="M150 290 C120 250 180 220 150 180 C120 140 180 110 150 70"/>
           <path class="s5-wv st" style="stroke: #71876a" d="M108 290 C84 256 132 230 108 196 C84 162 128 142 104 108"/>
           <path class="s5-wv st" style="stroke: #71876a" d="M192 290 C216 256 168 230 192 196 C216 162 172 142 196 108"/>
@@ -148,8 +148,8 @@
       tl.fromTo("#s5-eye", { scale: 0, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.2)" }, T(21.62));
       tl.fromTo("#s5-eyeshut", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
       // soften: heavy MATA melts into its light weight while the eye shuts
-      tl.to("#s5-mata", { opacity: 0, duration: 0.35, ease: "sine.inOut" }, T(21.98));
-      tl.to("#s5-mata2", { opacity: 1, duration: 0.35, ease: "sine.inOut" }, T(21.98));
+      tl.to("#s5-mata", { opacity: 0, duration: 0.1, ease: "power1.in" }, T(21.98));
+      tl.to("#s5-mata2", { opacity: 1, duration: 0.22, ease: "power1.out" }, T(22.08));
       tl.fromTo("#s5-eyeopen", { scaleY: 1, svgOrigin: "120 70" }, { scaleY: 0.06, svgOrigin: "120 70", duration: 0.22, ease: "power2.in" }, T(21.98));
       tl.to("#s5-eyeshut", { opacity: 1, duration: 0.08 }, T(22.16));
       tl.to("#s5-eyeopen", { opacity: 0, duration: 0.05 }, T(22.18));
