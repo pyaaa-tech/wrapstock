@@ -1,0 +1,17 @@
+{
+  "name": "seri-lestari-spa-video",
+  "version": "1.0.0",
+  "description": "Seri Lestari Spa \u2014 9:16 kinetic typography promo (HyperFrames)",
+  "scripts": {
+    "audio": "python3 scripts/build_audio.py",
+    "preview": "npx hyperframes preview",
+    "check": "npx hyperframes check",
+    "render": "npx hyperframes render -q delivery -f 30 -w 4 -o renders/seri-lestari-spa-kenapa-spa.mp4"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "gsap": "3.15.1",
+    "hyperframes": "0.9.84"
+  },
+  "private": true
+}

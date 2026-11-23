@@ -1,0 +1,103 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .s2-ppl { display: inline-block; width: 56px; height: 94px; margin-right: 6px; }
+    #s2-dots i { display: inline-block; width: 40px; height: 40px; border-radius: 50%; background: var(--wine); margin-left: 16px; }
+  </style>
+  <!-- SCENE 02 · QUESTION — "Urut tu sebenarnya semua orang boleh buat, kan? Tapi kenapa orang tetap pilih datang ke spa?" -->
+  <div id="root" data-composition-id="s02" data-width="1080" data-height="1920">
+    <div id="s2-stage" class="fill" style="opacity: 0">
+      <div class="fill" style="background: var(--cream)"></div>
+
+      <div id="s2-A" class="fill">
+        <div id="s2-urut" class="abs" style="left: 100px; top: 390px" data-layout-allow-overlap>
+          <div id="s2-urut1" class="sans ink" data-split style="font-size: 240px; font-stretch: 112%">URUT</div>
+          <div class="sans ink" style="font-size: 240px; font-stretch: 112%; margin-top: 96px"><span id="s2-tu" data-split>TU</span><span id="s2-dots"><i></i><i></i><i></i></span></div>
+        </div>
+        <div id="s2-seb" class="abs serif it ink" style="left: 112px; top: 862px; font-size: 96px">sebenarnya</div>
+      </div>
+
+      <div id="s2-B" class="fill">
+        <div id="s2-semua" class="abs sans" data-split style="left: 106px; top: 730px; font-size: 190px; color: transparent; -webkit-text-stroke: 5px #201a19">SEMUA</div>
+        <div id="s2-ppl" class="abs" style="left: 112px; top: 940px">
+          <svg class="s2-ppl" viewBox="0 0 60 100"><circle cx="30" cy="22" r="16" fill="#201a19"/><path d="M8 96 Q8 48 30 48 Q52 48 52 96Z" fill="#201a19"/></svg><svg class="s2-ppl" viewBox="0 0 60 100"><circle cx="30" cy="22" r="16" fill="#a9b99e" stroke="#201a19" stroke-width="4"/><path d="M8 96 Q8 48 30 48 Q52 48 52 96Z" fill="#a9b99e" stroke="#201a19" stroke-width="4"/></svg><svg class="s2-ppl" viewBox="0 0 60 100"><circle cx="30" cy="22" r="16" fill="#6b1d2c"/><path d="M8 96 Q8 48 30 48 Q52 48 52 96Z" fill="#6b1d2c"/></svg><svg class="s2-ppl" viewBox="0 0 60 100"><circle cx="30" cy="22" r="16" fill="#e8c2bd" stroke="#201a19" stroke-width="4"/><path d="M8 96 Q8 48 30 48 Q52 48 52 96Z" fill="#e8c2bd" stroke="#201a19" stroke-width="4"/></svg><svg class="s2-ppl" viewBox="0 0 60 100"><circle cx="30" cy="22" r="16" fill="#f4ecdf" stroke="#201a19" stroke-width="4"/><path d="M8 96 Q8 48 30 48 Q52 48 52 96Z" fill="#f4ecdf" stroke="#201a19" stroke-width="4"/></svg>
+        </div>
+        <div id="s2-orang" class="abs serif it wine" style="left: 440px; top: 880px; font-size: 200px">orang</div>
+        <div id="s2-boleh" class="abs sans ink" data-split style="left: 106px; top: 1084px; font-size: 190px">BOLEH</div>
+        <div id="s2-buat" class="abs sans ink" style="left: 108px; top: 1286px; font-size: 150px; background: var(--sage); border-radius: 30px; padding: 16px 30px 2px">BUAT</div>
+        <div id="s2-kan" class="abs hand wine" style="left: 620px; top: 1290px; font-size: 136px">kan?</div>
+      </div>
+
+      <div id="s2-C" class="fill">
+        <div id="s2-burst" class="abs" style="left: -760px; top: -250px; width: 2600px; height: 2600px; border-radius: 50%; background: var(--wine)" data-layout-ignore></div>
+        <div id="s2-tapi" class="abs sans creamc" data-split style="left: 108px; top: 510px; font-size: 112px">TAPI KENAPA</div>
+        <div id="s2-q" class="abs serif it pinkc" style="left: 112px; top: 650px; font-size: 72px"><span class="s2-qw" style="display:inline-block">orang</span> <span class="s2-qw" style="display:inline-block">tetap</span> <span class="s2-qw" style="display:inline-block">pilih</span> <span class="s2-qw" style="display:inline-block">datang</span> <span class="s2-qw" style="display:inline-block">ke</span></div>
+        <div id="s2-qbig" class="abs serif it" style="left: 690px; top: 680px; font-size: 600px; color: #c98f8c" data-layout-ignore>?</div>
+        <div id="s2-spa" class="abs sans creamc" style="left: 86px; top: 860px; font-size: 300px; font-stretch: 125%" data-layout-allow-overlap>SPA</div>
+        <div class="s2-qm abs serif it pinkc" style="left: 130px; top: 1190px; font-size: 110px">?</div>
+        <div class="s2-qm abs serif it pinkc" style="left: 300px; top: 1260px; font-size: 80px">?</div>
+        <div class="s2-qm abs serif it pinkc" style="left: 450px; top: 1180px; font-size: 64px">?</div>
+        <svg id="s2-arrow" class="abs" style="left: 560px; top: 1150px" width="240" height="200" viewBox="0 0 240 200">
+          <path class="st" style="stroke: #f4ecdf; stroke-width: 7" d="M215 185 C205 95 130 45 34 34"/>
+          <path class="st" style="stroke: #f4ecdf; stroke-width: 7" d="M64 12 L32 34 L58 60"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- S01 → S02 wipe: a tilted wine band sweeps up over the cut -->
+    <div id="s2-band" class="abs" style="left: -300px; top: 90px; width: 1680px; height: 2600px; background: var(--wine)" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const S = 3.25;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      KIT.split(document.getElementById("s2-stage"));
+      const C = (s) => document.querySelectorAll(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s2-band", { y: 2000, rotation: -8 }, { y: -2750, rotation: -8, duration: 0.56, ease: "power2.inOut" }, T(3.28));
+      tl.set("#s2-stage", { opacity: 1 }, T(3.56));
+
+      // "URUT TU..." — slams in from the right, letters skewed by speed
+      tl.fromTo(C("#s2-urut1"), { x: 260, skewX: -18, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: 0.5, ease: "expo.out", stagger: 0.045 }, N(3.4));
+      tl.fromTo(C("#s2-tu"), { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", stagger: 0.05 }, N(3.55));
+      tl.fromTo("#s2-dots i", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(3)", stagger: 0.1 }, N(3.76));
+      tl.fromTo("#s2-seb", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, N(3.88));
+
+      // the hook packs itself into the corner to make room
+      tl.fromTo("#s2-urut", { scale: 1, y: 0, transformOrigin: "0% 0%" }, { scale: 0.5, y: -20, duration: 0.6, ease: "expo.inOut" }, N(4.38));
+      tl.fromTo("#s2-seb", { scale: 1, y: 0, transformOrigin: "0% 0%" }, { scale: 0.8, y: -226, duration: 0.6, ease: "expo.inOut", immediateRender: false }, N(4.38));
+
+      // "semua orang boleh buat" — four words, four type treatments
+      tl.fromTo(C("#s2-semua"), { yPercent: -120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)", stagger: 0.04 }, N(4.52));
+      tl.fromTo(".s2-ppl", { y: 70, scale: 0, transformOrigin: "50% 100%" }, { y: 0, scale: 1, duration: 0.5, ease: "back.out(2.5)", stagger: 0.06 }, N(4.92));
+      tl.fromTo("#s2-orang", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, N(5.0));
+      tl.fromTo(C("#s2-boleh"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.035 }, N(5.3));
+      tl.fromTo("#s2-buat", { scale: 0, rotation: -20 }, { scale: 1, rotation: -4, duration: 0.5, ease: "back.out(2.2)" }, N(5.7));
+      tl.fromTo("#s2-kan", { opacity: 0, scale: 0.5, rotation: 14 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.45, ease: "back.out(3)" }, N(6.16));
+
+      // "Tapi —" the words collide into one point, and the wine bursts out of it
+      tl.fromTo("#s2-B", { scale: 1, rotation: 0, transformOrigin: "540px 1050px" }, { scale: 0, rotation: 25, duration: 0.32, ease: "power3.in" }, N(6.84));
+      tl.fromTo("#s2-A", { opacity: 1, y: 0 }, { opacity: 0, y: -60, duration: 0.3, ease: "power3.in" }, N(6.84));
+      tl.fromTo("#s2-burst", { scale: 0 }, { scale: 1, duration: 0.6, ease: "expo.out" }, N(7.0));
+      tl.fromTo(C("#s2-tapi"), { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", stagger: 0.025 }, N(7.0));
+      [7.61, 7.87, 8.15, 8.54, 8.97].forEach((t, i) => {
+        tl.fromTo(document.querySelectorAll(".s2-qw")[i], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(t) - 0.05);
+      });
+
+      // "SPA?" — the dominant slam
+      tl.fromTo("#s2-spa", { scale: 2.4, opacity: 0, rotation: -6 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.5, ease: "back.out(1.4)" }, N(9.2));
+      tl.fromTo("#s2-qbig", { opacity: 0, rotation: -40, scale: 0.4 }, { opacity: 1, rotation: 12, scale: 1, duration: 0.6, ease: "back.out(2)" }, N(9.3));
+      tl.fromTo("#s2-C", { scale: 1.035 }, { scale: 1, duration: 0.45, ease: "power2.out" }, N(9.36));
+      tl.fromTo(".s2-qm", { scale: 0, rotation: (i) => [-30, 20, -10][i] }, { scale: 1, rotation: (i) => [-14, 8, 18][i], duration: 0.4, ease: "back.out(3)", stagger: 0.09 }, N(9.46));
+      KIT.prep(document.querySelectorAll("#s2-arrow path"));
+      tl.to("#s2-arrow path", { strokeDashoffset: 0, duration: 0.4, ease: "power2.inOut", stagger: 0.3 }, N(9.5));
+
+      // exit: the wine page retracts upward, uncovering the next scene beneath
+      tl.fromTo("#s2-stage", { clipPath: "inset(0% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 100% 0%)", duration: 0.45, ease: "power3.inOut" }, N(9.78));
+
+      window.__timelines["s02"] = tl;
+    })();
+  </script>
+</template>

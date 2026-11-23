@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <!-- SCENE 01 · HOOK — "Hai, saya Aisyah dari Seri Lestari Spa." -->
+  <div id="root" data-composition-id="s01" data-width="1080" data-height="1920">
+    <div id="s1-stage" class="fill">
+      <div id="s1-blob" class="abs" style="left: 330px; top: 420px; width: 720px; height: 720px; opacity: 0.5" data-layout-ignore>
+        <svg viewBox="0 0 500 500" width="720" height="720"><path fill="#a9b99e" d="M421,307Q395,364,349,402Q303,440,239,449Q175,458,128,412Q81,366,70,301Q59,236,92,176Q125,116,188,86Q251,56,317,80Q383,104,415,172Q447,240,421,307Z"/></svg>
+      </div>
+
+      <div id="s1-pill" class="abs" style="left: 125px; top: 358px; width: 300px; height: 136px; border-radius: 70px; background: var(--wine)"></div>
+      <div id="s1-hai" class="abs sans wine" data-split data-layout-allow-overlap style="left: 0; top: 610px; width: 1080px; text-align: center; font-size: 330px; font-stretch: 112%">HAI!</div>
+
+      <div id="s1-spk1" class="spk wine" style="left: 900px; top: 560px; width: 80px; height: 80px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      <div id="s1-spk2" class="spk sagec" style="left: 960px; top: 700px; width: 52px; height: 52px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      <div id="s1-spk3" class="spk pinkc" style="left: 104px; top: 560px; width: 60px; height: 60px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+
+      <div id="s1-saya" class="abs serif it ink" style="left: 120px; top: 638px; font-size: 110px">saya</div>
+      <div class="abs mask" style="left: 106px; top: 758px; padding: 6px 8px 0">
+        <div id="s1-name" class="sans ink" data-split style="font-size: 188px">AISYAH</div>
+      </div>
+      <svg id="s1-squig" class="abs" style="left: 120px; top: 958px" width="560" height="36" viewBox="0 0 560 36">
+        <path class="st" style="stroke: var(--wine); stroke-width: 8" d="M4 18 Q24 2 44 18 T84 18 T124 18 T164 18 T204 18 T244 18 T284 18 T324 18 T364 18 T404 18 T444 18 T484 18 T524 18 T556 16"/>
+      </svg>
+
+      <div id="s1-dari" class="abs label ink" style="left: 124px; top: 1040px">— dari</div>
+      <div id="s1-brand" class="abs serif ink" style="left: 116px; top: 1082px; font-size: 140px"><span id="s1-seri" class="s1-w" data-split style="display: inline-block">Seri</span> <span id="s1-lestari" class="s1-w" data-split style="display: inline-block">Lestari</span></div>
+
+      <div id="s1-flower" class="abs" style="left: 124px; top: 1240px; width: 160px; height: 160px">
+        <svg viewBox="0 0 200 200" width="160" height="160">
+          <g fill="#e8c2bd" stroke="#201a19" stroke-width="6">
+            <g transform="rotate(0 100 100)"><ellipse class="s1-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+            <g transform="rotate(72 100 100)"><ellipse class="s1-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+            <g transform="rotate(144 100 100)"><ellipse class="s1-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+            <g transform="rotate(216 100 100)"><ellipse class="s1-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+            <g transform="rotate(288 100 100)"><ellipse class="s1-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+          </g>
+          <circle id="s1-fc" cx="100" cy="100" r="22" fill="#6b1d2c" stroke="#201a19" stroke-width="6"/>
+        </svg>
+      </div>
+      <div id="s1-spa" class="abs serif it wine" style="left: 292px; top: 1210px; font-size: 190px">Spa</div>
+      <div id="s1-spk4" class="spk wine" style="left: 600px; top: 1230px; width: 54px; height: 54px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const S = 0;                                   // host data-start (film s)
+      const T = (t) => Math.max(0, t - S);           // film time → scene time
+      const N = (t) => T(t + 0.2);                   // narration time → scene time
+      KIT.split(document.getElementById("s1-stage"));
+      const C = (s) => document.querySelectorAll(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      // frame 0 already holds the sage blob mid-bloom: the thumbnail is never empty
+      tl.fromTo("#s1-blob", { scale: 0.55, rotation: -30 }, { scale: 1, rotation: 8, duration: 1.3, ease: "elastic.out(1, 0.6)" }, 0);
+      tl.to("#s1-blob", { rotation: 30, duration: 2.3, ease: "none" }, 1.3);
+
+      // HAI! — letters spring up one by one (damping ~0.5: playful)
+      tl.fromTo(C("#s1-hai"),
+        { yPercent: 28, scale: 0.72, rotation: (i) => (KIT.rnd(i) - 0.5) * 40 },
+        { yPercent: 0, scale: 1, rotation: 0, duration: 0.55, ease: "back.out(2.4)", stagger: 0.05 }, 0);
+      tl.fromTo("#s1-spk1, #s1-spk2, #s1-spk3", { scale: 0, rotation: -90 },
+        { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(3)", stagger: 0.08 }, 0.36);
+      tl.to("#s1-spk1, #s1-spk2, #s1-spk3", { scale: 0, rotation: 90, duration: 0.3, ease: "power2.in", stagger: 0.05 }, 0.92);
+
+      // HAI! shrinks into a wine sticker; the name takes the stage
+      tl.to("#s1-hai", { x: -265, y: -326, scale: 0.3, rotation: -8, color: "#f4ecdf", duration: 0.62, ease: "expo.inOut" }, N(0.62));
+      tl.fromTo("#s1-pill", { scale: 0, rotation: 14 }, { scale: 1, rotation: -8, duration: 0.55, ease: "back.out(1.8)" }, N(0.92));
+
+      tl.fromTo("#s1-saya", { opacity: 0, y: 46, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "power3.out" }, N(0.77));
+      tl.fromTo(C("#s1-name"), { yPercent: 112 }, { yPercent: 0, duration: 0.7, ease: "expo.out", stagger: 0.05 }, N(1.0));
+      KIT.prep(document.querySelectorAll("#s1-squig path"));
+      tl.to("#s1-squig path", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, N(1.55));
+
+      // "dari Seri Lestari" — tracking closes in as each word lands (letter-spacing animation)
+      tl.fromTo("#s1-dari", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, N(1.82));
+      ["#s1-seri", "#s1-lestari"].forEach((w, k) => {
+        tl.fromTo(C(w), { opacity: 0, x: (i) => i * 34, y: 20 },
+          { opacity: 1, x: 0, y: 0, duration: 0.8, ease: "expo.out", stagger: 0.02 }, N(1.95) + k * 0.22);
+      });
+
+      // "Spa" — a flower opens beside it
+      tl.fromTo(".s1-pet", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.5, ease: "back.out(2.2)", stagger: 0.05 }, N(2.6));
+      tl.fromTo("#s1-fc", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.4, ease: "back.out(3)" }, N(2.75));
+      tl.fromTo("#s1-flower", { rotation: -40 }, { rotation: 0, duration: 0.9, ease: "power3.out" }, N(2.6));
+      tl.fromTo("#s1-spa", { opacity: 0, scale: 0.6, rotation: -12, y: 36 }, { opacity: 1, scale: 1, rotation: 0, y: 0, duration: 0.6, ease: "back.out(2)" }, N(2.68));
+      tl.fromTo("#s1-spk4", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(3)" }, N(2.95));
+
+      window.__timelines["s01"] = tl;
+    })();
+  </script>
+</template>

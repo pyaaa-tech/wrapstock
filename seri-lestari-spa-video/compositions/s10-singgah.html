@@ -1,0 +1,84 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .s10-bar { position: absolute; left: 0; width: 1080px; height: 660px; background: var(--wine); }
+    #s10-week { display: flex; gap: 16px; }
+    .s10-wk { width: 92px; height: 92px; border-radius: 50%; border: 4px solid #201a19; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 38px; letter-spacing: 0; color: var(--ink); background: var(--cream); }
+  </style>
+  <!-- SCENE 10 · CALL TO ACTION — "Jadi kalau minggu ni awak penat, singgahlah!" -->
+  <div id="root" data-composition-id="s10" data-width="1080" data-height="1920">
+    <div id="s10-stage" class="fill" style="opacity: 0">
+      <div class="fill" style="background: var(--cream)"></div>
+      <div id="s10-inner" class="fill">
+        <div class="s10-top abs" style="left: 140px; top: 390px">
+          <div id="s10-week"><span class="s10-wk label">I</span><span class="s10-wk label">S</span><span class="s10-wk label">R</span><span class="s10-wk label">K</span><span class="s10-wk label">J</span><span class="s10-wk label">S</span><span class="s10-wk label">A</span></div>
+        </div>
+        <div class="s10-top abs serif it ink" style="left: 116px; top: 540px; font-size: 92px"><span class="s10-w" style="display:inline-block">jadi</span> <span class="s10-w" style="display:inline-block">kalau</span></div>
+        <div class="s10-top abs serif ink" style="left: 116px; top: 645px; font-size: 92px"><span class="s10-w" style="display:inline-block">minggu</span> <span class="s10-w" style="display:inline-block">ni</span> <span class="s10-w" style="display:inline-block">awak</span></div>
+
+        <div id="s10-penatw" class="abs" data-layout-allow-overlap style="left: 104px; top: 820px">
+          <span id="s10-penat" class="sans ink" data-split style="font-size: 190px">PENAT</span><span id="s10-pq" class="serif it wine" style="display: inline-block; font-size: 220px">?</span>
+        </div>
+
+        <div id="s10-sing" class="abs sans wine" data-split style="left: 100px; top: 840px; font-size: 170px; font-stretch: 92%">SINGGAH</div>
+        <div id="s10-lah" class="abs sans wine" data-split style="left: 100px; top: 1014px; font-size: 290px">LAH!</div>
+        <div class="s10-bst spk wine" style="left: 840px; top: 880px; width: 70px; height: 70px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s10-bst spk sagec" style="left: 760px; top: 1040px; width: 46px; height: 46px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s10-bst spk pinkc" style="left: 80px; top: 790px; width: 54px; height: 54px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s10-bst spk wine" style="left: 520px; top: 800px; width: 34px; height: 34px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s10-bst spk sagec" style="left: 860px; top: 1220px; width: 40px; height: 40px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <svg id="s10-arrow" class="abs" style="left: 560px; top: 1250px" width="260" height="210" viewBox="0 0 260 210">
+          <path class="st" style="stroke-width: 7" d="M20 24 C120 6 220 56 200 170"/><path class="st" style="stroke-width: 7" d="M172 150 L200 176 L224 142"/>
+        </svg>
+      </div>
+    </div>
+    <!-- S09 → S10: three wine bars whip across to change the energy -->
+    <div id="s10-b1" class="s10-bar" style="top: 0" data-layout-ignore></div>
+    <div id="s10-b2" class="s10-bar" style="top: 640px" data-layout-ignore></div>
+    <div id="s10-b3" class="s10-bar" style="top: 1280px" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const S = 34.9;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      const q = (s) => document.querySelectorAll(s);
+      KIT.split(document.getElementById("s10-stage"));
+      const C = (s) => q(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(".s10-bar", { x: -1100 }, { x: 0, duration: 0.2, ease: "power3.in", stagger: 0.04 }, T(34.92));
+      tl.to(".s10-bar", { x: 1100, duration: 0.26, ease: "power3.out", stagger: 0.04 }, T(35.18));
+      tl.set("#s10-stage", { opacity: 1 }, T(35.17));
+
+      // the week, day by day (Isnin … Ahad); "minggu ni" lights it up
+      tl.fromTo(".s10-wk", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2.5)", stagger: 0.04 }, T(35.2));
+      [35.22, 35.38, 35.66, 36.0, 36.15].forEach((t, i) => {
+        tl.fromTo(q(".s10-w")[i], { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, T(t));
+      });
+      tl.to(".s10-wk", { backgroundColor: "#6b1d2c", color: "#f4ecdf", duration: 0.18, stagger: 0.05 }, T(35.66));
+
+      // PENAT? — pops in, then droops, tired
+      tl.fromTo(C("#s10-penat"), { scale: 0, y: 40 }, { scale: 1, y: 0, duration: 0.35, ease: "back.out(2)", stagger: 0.04 }, N(36.2));
+      tl.fromTo("#s10-pq", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.5)" }, N(36.38));
+      tl.to(C("#s10-penat"), { y: (i) => 12 + i * 10, rotation: (i) => [-6, 5, -8, 7, -10][i], duration: 0.35, ease: "power2.inOut" }, T(36.74));
+      tl.to("#s10-pq", { y: 40, rotation: 24, duration: 0.35, ease: "power2.inOut" }, T(36.74));
+      tl.fromTo("#s10-penatw", { y: 0, rotation: 0, opacity: 1 }, { y: 700, rotation: 12, opacity: 0, duration: 0.35, ease: "power3.in" }, T(36.98));
+
+      // SINGGAHLAH! — springs up, bright and friendly
+      tl.fromTo(C("#s10-sing"), { y: 260, scale: 0.3, rotation: (i) => (KIT.rnd(i + 3) - 0.5) * 50, opacity: 0 },
+        { y: 0, scale: 1, rotation: 0, opacity: 1, duration: 0.55, ease: "back.out(2.2)", stagger: 0.03 }, N(36.88));
+      tl.fromTo(C("#s10-lah"), { y: 300, scale: 0.3, rotation: (i) => (KIT.rnd(i + 9) - 0.5) * 50, opacity: 0 },
+        { y: 0, scale: 1, rotation: 0, opacity: 1, duration: 0.6, ease: "back.out(2.4)", stagger: 0.04 }, T(37.24));
+      tl.to(".s10-top", { opacity: 0.3, duration: 0.3, ease: "power2.out" }, T(37.05));
+      tl.fromTo("#s10-inner", { scale: 1.05 }, { scale: 1, duration: 0.4, ease: "power2.out" }, T(37.12));
+      tl.fromTo(".s10-bst", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(3)", stagger: 0.05 }, T(37.32));
+      KIT.prep(q("#s10-arrow path"));
+      tl.to("#s10-arrow path", { strokeDashoffset: 0, duration: 0.3, ease: "power2.inOut", stagger: 0.22 }, T(37.4));
+
+      tl.fromTo("#s10-inner", { y: 0, opacity: 1 }, { y: -240, opacity: 0, duration: 0.32, ease: "power3.in", immediateRender: false }, T(37.74));
+
+      window.__timelines["s10"] = tl;
+    })();
+  </script>
+</template>

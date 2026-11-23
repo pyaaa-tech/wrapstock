@@ -1,0 +1,70 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .s11-c { position: absolute; left: 0; width: 1080px; text-align: center; }
+  </style>
+  <!-- SCENE 11 · FINAL CTA — "DM kami untuk pertanyaan atau tempahan." -->
+  <div id="root" data-composition-id="s11" data-width="1080" data-height="1920">
+    <div id="s11-stage" class="fill">
+      <svg id="s11-bubble" class="abs" style="left: 405px; top: 390px" width="270" height="234" viewBox="0 0 300 260">
+        <path d="M60 30 H240 Q275 30 275 65 V160 Q275 195 240 195 H128 L74 238 L84 195 H60 Q25 195 25 160 V65 Q25 30 60 30Z" fill="#6b1d2c" stroke="#201a19" stroke-width="7" stroke-linejoin="round"/>
+        <circle class="s11-dot" cx="105" cy="112" r="15" fill="#f4ecdf"/><circle class="s11-dot" cx="150" cy="112" r="15" fill="#f4ecdf"/><circle class="s11-dot" cx="195" cy="112" r="15" fill="#f4ecdf"/>
+        <path id="s11-heart" d="M150 160 C95 124 100 72 128 72 C140 72 150 84 150 92 C150 84 160 72 172 72 C200 72 205 124 150 160Z" fill="#f4ecdf"/>
+      </svg>
+
+      <div class="s11-c mask sans" style="top: 690px; padding-top: 6px; font-size: 156px">
+        <span id="s11-dm" class="sans wine" data-split style="font-size: 156px">DM</span>
+        <span id="s11-kami" class="sans ink" data-split style="font-size: 156px">KAMI</span>
+      </div>
+      <div class="s11-c serif ink" style="top: 900px; font-size: 90px"><span class="s11-w" style="display:inline-block">untuk</span> <span class="s11-w it wine" style="display:inline-block">pertanyaan</span></div>
+      <div class="s11-c serif ink" style="top: 1000px; font-size: 90px"><span class="s11-w" style="display:inline-block">atau</span> <span class="s11-w it wine" style="display:inline-block">tempahan</span></div>
+
+      <!-- brand lockup: the final anchor -->
+      <div id="s11-rule" class="abs" style="left: 390px; top: 1180px; width: 300px; height: 3px; background: var(--ink)"></div>
+      <div id="s11-flower" class="abs" style="left: 490px; top: 1205px; width: 100px; height: 100px">
+        <svg viewBox="0 0 200 200" width="100" height="100"><g fill="#e8c2bd" stroke="#201a19" stroke-width="7">
+          <g transform="rotate(0 100 100)"><ellipse class="s11-pet" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(72 100 100)"><ellipse class="s11-pet" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(144 100 100)"><ellipse class="s11-pet" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(216 100 100)"><ellipse class="s11-pet" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(288 100 100)"><ellipse class="s11-pet" cx="100" cy="52" rx="30" ry="44"/></g>
+        </g><circle id="s11-fc" cx="100" cy="100" r="22" fill="#6b1d2c" stroke="#201a19" stroke-width="7"/></svg>
+      </div>
+      <div class="s11-c" style="top: 1316px"><span id="s11-brand" class="serif ink" data-split style="font-size: 120px">Seri Lestari</span></div>
+      <div class="s11-c" style="top: 1450px"><span id="s11-spa" class="label wine" data-split style="font-size: 40px; letter-spacing: 0.6em; padding-left: 0.6em">SPA</span></div>
+      <div id="s11-s1" class="spk wine" style="left: 640px; top: 1200px; width: 46px; height: 46px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      <div id="s11-s2" class="spk sagec" style="left: 400px; top: 1280px; width: 30px; height: 30px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const S = 37.7;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      const q = (s) => document.querySelectorAll(s);
+      KIT.split(document.getElementById("s11-stage"));
+      const C = (s) => q(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s11-bubble", { scale: 0, rotation: -25 }, { scale: 1, rotation: 0, duration: 0.55, ease: "back.out(2)" }, T(37.92));
+      tl.fromTo("#s11-heart", { scale: 0, svgOrigin: "150 116" }, { scale: 0, svgOrigin: "150 116", duration: 0.01 }, 0);
+      tl.fromTo(".s11-dot", { y: 0 }, { y: -16, duration: 0.22, ease: "sine.inOut", yoyo: true, repeat: 7, stagger: 0.1 }, T(38.3));
+      tl.to(".s11-dot", { scale: 0, svgOrigin: "150 112", duration: 0.2, ease: "power2.in" }, T(40.25));
+      tl.to("#s11-heart", { scale: 1, duration: 0.45, ease: "back.out(2.6)" }, T(40.35));
+
+      tl.fromTo(C("#s11-dm"), { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: "expo.out", stagger: 0.05 }, N(37.77));
+      tl.fromTo(C("#s11-kami"), { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: "expo.out", stagger: 0.05 }, N(37.77) + 0.12);
+      [38.8, 39.05, 39.68, 39.9].forEach((t, i) => {
+        tl.fromTo(q(".s11-w")[i], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(t));
+      });
+
+      // brand lockup settles in and holds
+      tl.fromTo("#s11-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, T(40.55));
+      tl.fromTo(".s11-pet", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.5, ease: "back.out(2.2)", stagger: 0.05 }, T(40.62));
+      tl.fromTo("#s11-fc", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.4, ease: "back.out(3)" }, T(40.78));
+      tl.fromTo("#s11-flower", { rotation: -60 }, { rotation: 0, duration: 1.0, ease: "power3.out" }, T(40.62));
+      tl.fromTo(C("#s11-brand"), { opacity: 0, x: (i) => (i - 5.5) * 18 }, { opacity: 1, x: 0, duration: 1.0, ease: "expo.out", stagger: 0.02 }, T(40.75));
+      tl.fromTo(C("#s11-spa"), { opacity: 0, x: (i) => (i - 1) * 40 }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out", stagger: 0.04 }, T(40.82));
+      tl.fromTo("#s11-s1, #s11-s2", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(3)", stagger: 0.15 }, T(41.4));
+      tl.fromTo("#s11-flower", { rotation: 0 }, { rotation: 40, duration: 1.4, ease: "none", immediateRender: false }, T(41.62));
+
+      window.__timelines["s11"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,74 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .s3-chip { position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 5px solid #201a19; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+    .s3-lab { position: absolute; width: 260px; text-align: center; }
+    .s3-circ { position: absolute; width: 3300px; height: 3300px; border-radius: 50%; left: -1410px; top: -420px; }
+  </style>
+  <!-- SCENE 03 · REVEAL — "Sebab bukan urutan je yang awak dapat." -->
+  <div id="root" data-composition-id="s03" data-width="1080" data-height="1920">
+    <div id="s3-stage" class="fill">
+      <div id="s3-sebab" class="abs serif it ink" style="left: 116px; top: 482px; font-size: 96px">sebab</div>
+      <div class="abs mask" style="left: 106px; top: 598px; padding: 4px 6px 0">
+        <div id="s3-bukan" class="sans ink" data-split style="font-size: 160px">BUKAN</div>
+      </div>
+      <div id="s3-je" class="abs" style="left: 712px; top: 552px; width: 180px; height: 180px; border-radius: 50%; background: var(--pink); border: 5px solid #201a19; box-sizing: border-box; text-align: center">
+        <span class="sans ink" style="font-size: 100px; line-height: 172px">JE</span>
+      </div>
+      <div id="s3-urutan" class="abs sans wine" data-split style="left: 100px; top: 780px; font-size: 190px; font-stretch: 88%">URUTAN</div>
+      <div id="s3-line" class="abs serif ink" style="left: 116px; top: 990px; font-size: 86px"><span class="s3-w" style="display:inline-block">yang</span> <span class="s3-w" style="display:inline-block">awak</span> <span class="s3-w it wine" style="display:inline-block">dapat.</span></div>
+
+      <!-- three tiny promises: comfort · privacy · experience -->
+      <div id="s3-c1" class="s3-chip" style="left: 150px; top: 1140px; background: var(--sage)">
+        <svg id="s3-pillow" viewBox="0 0 200 140" width="120" height="84"><path d="M28 30 Q100 8 172 30 Q192 70 172 110 Q100 132 28 110 Q8 70 28 30Z" fill="#f4ecdf" stroke="#201a19" stroke-width="8" stroke-linejoin="round"/><path d="M48 46 Q100 32 152 46 Q164 70 152 94 Q100 108 48 94 Q36 70 48 46Z" fill="none" stroke="#201a19" stroke-width="4" stroke-dasharray="7 9" stroke-linecap="round"/></svg>
+      </div>
+      <div id="s3-c2" class="s3-chip" style="left: 410px; top: 1140px; background: var(--pink)">
+        <svg viewBox="0 0 120 160" width="78" height="104"><rect x="10" y="8" width="100" height="146" rx="6" fill="#4e1420" stroke="#201a19" stroke-width="7"/><g id="s3-dpanel"><rect x="10" y="8" width="100" height="146" rx="6" fill="#f4ecdf" stroke="#201a19" stroke-width="7"/><circle cx="88" cy="84" r="7" fill="#201a19"/></g></svg>
+      </div>
+      <div id="s3-c3" class="s3-chip" style="left: 670px; top: 1140px; background: var(--cream)">
+        <svg viewBox="0 0 140 140" width="100" height="100"><path id="s3-trail" d="M16 122 C40 60 92 112 108 44" fill="none" stroke="#201a19" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 15"/><path id="s3-star" d="M112 8C114 26 118 30 136 32C118 34 114 38 112 56C110 38 106 34 88 32C106 30 110 26 112 8Z" fill="#6b1d2c"/></svg>
+      </div>
+      <div class="s3-plus abs serif ink" style="left: 352px; top: 1178px; font-size: 64px">+</div>
+      <div class="s3-plus abs serif ink" style="left: 612px; top: 1178px; font-size: 64px">+</div>
+      <div class="s3-lab label ink" style="left: 110px; top: 1346px; font-size: 28px">Selesa</div>
+      <div class="s3-lab label ink" style="left: 370px; top: 1346px; font-size: 28px">Privasi</div>
+      <div class="s3-lab label ink" style="left: 630px; top: 1346px; font-size: 28px">Pengalaman</div>
+    </div>
+    <!-- S03 → S04: the pillow chip blooms into the next scene (sage, then cream) -->
+    <div id="s3-cA" class="s3-circ" style="background: var(--sage)" data-layout-ignore></div>
+    <div id="s3-cB" class="s3-circ" style="background: var(--cream)" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const S = 10.0;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      KIT.split(document.getElementById("s3-stage"));
+      const C = (s) => document.querySelectorAll(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s3-sebab", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, N(10.02));
+      tl.fromTo(C("#s3-bukan"), { yPercent: 110 }, { yPercent: 0, duration: 0.55, ease: "expo.out", stagger: 0.04 }, N(10.36));
+      // "URUTAN" assembles from a wide spread (tracking closes via per-letter x)
+      tl.fromTo(C("#s3-urutan"), { x: (i) => i * 70 - 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.75, ease: "expo.out", stagger: 0.02 }, N(10.7));
+      // "JE" — the sticker that changes the meaning
+      tl.fromTo("#s3-je", { scale: 0, rotation: -60 }, { scale: 1, rotation: 12, duration: 0.55, ease: "back.out(2.6)" }, N(11.28));
+      [11.34, 11.62, 12.2].forEach((t, i) => {
+        tl.fromTo(document.querySelectorAll(".s3-w")[i], { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(t));
+      });
+
+      tl.fromTo(".s3-chip", { scale: 0, rotation: -25 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)", stagger: 0.22 }, N(11.56));
+      tl.fromTo(".s3-plus", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.22 }, N(11.7));
+      tl.fromTo(".s3-lab", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", stagger: 0.22 }, N(11.66));
+      tl.fromTo("#s3-pillow", { scaleY: 0.7, scaleX: 1.15 }, { scaleY: 1, scaleX: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, N(11.75));
+      tl.fromTo("#s3-dpanel", { scaleX: 0.45, svgOrigin: "10 80" }, { scaleX: 1, svgOrigin: "10 80", duration: 0.5, ease: "power2.inOut" }, N(12.05));
+      tl.fromTo("#s3-star", { scale: 0, rotation: -120, svgOrigin: "112 32" }, { scale: 1, rotation: 0, svgOrigin: "112 32", duration: 0.5, ease: "back.out(3)" }, N(12.2));
+
+      // the pillow chip becomes the world of the next scene
+      tl.fromTo("#s3-cA", { scale: 0 }, { scale: 1, duration: 0.42, ease: "power2.in" }, T(12.62));
+      tl.fromTo("#s3-cB", { scale: 0 }, { scale: 1, duration: 0.42, ease: "power2.in" }, T(12.72));
+
+      window.__timelines["s03"] = tl;
+    })();
+  </script>
+</template>

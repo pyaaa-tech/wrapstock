@@ -1,0 +1,66 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <!-- SCENE 04 · FIRST BENEFIT — "Pertama, tempat yang selesa." -->
+  <div id="root" data-composition-id="s04" data-width="1080" data-height="1920">
+    <div id="s4-stage" class="fill">
+      <div class="abs mask" style="left: 500px; top: 260px; width: 640px; height: 660px" data-layout-ignore>
+        <div id="s4-num" class="serif sagec" style="font-size: 760px; line-height: 0.85">01</div>
+      </div>
+      <div id="s4-label" class="abs label ink" style="left: 116px; top: 420px; font-size: 34px">Pertama —</div>
+
+      <svg id="s4-bed" class="abs" style="left: 84px; top: 560px" width="500" height="326" viewBox="0 0 460 300">
+        <rect x="20" y="60" width="46" height="200" rx="20" fill="#ebe0cd" stroke="#201a19" stroke-width="6"/>
+        <line x1="72" y1="226" x2="72" y2="272" stroke="#201a19" stroke-width="9" stroke-linecap="round"/>
+        <line x1="410" y1="226" x2="410" y2="272" stroke="#201a19" stroke-width="9" stroke-linecap="round"/>
+        <rect x="40" y="160" width="404" height="68" rx="24" fill="#f4ecdf" stroke="#201a19" stroke-width="6"/>
+        <g id="s4-blanket">
+          <path d="M196 148 H420 Q446 148 446 174 V210 Q446 230 426 230 H196 Z" fill="#a9b99e" stroke="#201a19" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M222 150 V228" stroke="#201a19" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g id="s4-pillow">
+          <path d="M80 112 Q130 96 182 112 Q194 134 182 156 Q130 170 80 156 Q68 134 80 112Z" fill="#e8c2bd" stroke="#201a19" stroke-width="6" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <div id="s4-spk1" class="spk wine" style="left: 470px; top: 570px; width: 56px; height: 56px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      <div id="s4-spk2" class="spk sagec" style="left: 548px; top: 650px; width: 34px; height: 34px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+
+      <div class="abs mask" style="left: 106px; top: 956px; padding: 4px 6px 0">
+        <div class="sans ink" style="font-size: 105px"><span class="s4-tw" style="display:inline-block">TEMPAT</span> <span class="s4-tw" style="display:inline-block">YANG</span></div>
+      </div>
+      <div id="s4-hl" class="abs" style="left: 90px; top: 1238px; width: 720px; height: 62px; border-radius: 31px; background: var(--sage); opacity: 0.75"></div>
+      <div id="s4-selesa" class="abs serif it wine" data-split style="left: 96px; top: 1048px; font-size: 280px">selesa</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const S = 13.05;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      KIT.split(document.getElementById("s4-stage"));
+      const C = (s) => document.querySelectorAll(s + " .ch");
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#s4-num", { yPercent: 100 }, { yPercent: 0, duration: 0.9, ease: "expo.out" }, T(13.1));
+      tl.fromTo("#s4-label", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, N(12.98));
+      tl.fromTo("#s4-bed", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, T(13.25));
+      // the pillow drops onto the bed and squashes
+      tl.fromTo("#s4-pillow", { y: -170 }, { y: 0, duration: 0.7, ease: "bounce.out" }, T(13.55));
+      tl.fromTo("#s4-pillow", { scaleY: 1, scaleX: 1, svgOrigin: "130 158" }, { scaleY: 0.82, scaleX: 1.08, svgOrigin: "130 158", duration: 0.08, yoyo: true, repeat: 1, ease: "sine.out", immediateRender: false }, T(13.8));
+      tl.fromTo("#s4-blanket", { scaleX: 0, svgOrigin: "446 190" }, { scaleX: 1, svgOrigin: "446 190", duration: 0.6, ease: "power3.out" }, T(13.9));
+
+      tl.fromTo(".s4-tw", { yPercent: 110 }, { yPercent: 0, duration: 0.55, ease: "expo.out", stagger: 0.15 }, N(13.8));
+      // "selesa" — each letter lands softly, like onto a pillow
+      tl.fromTo(C("#s4-selesa"), { y: -170 }, { y: 0, duration: 0.75, ease: "bounce.out", stagger: 0.06 }, N(14.05));
+      tl.fromTo(C("#s4-selesa"), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out", stagger: 0.06 }, N(14.05));
+      tl.fromTo("#s4-hl", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, N(14.45));
+      tl.fromTo("#s4-spk1, #s4-spk2", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(3)", stagger: 0.12 }, T(14.5));
+
+      // leave gently: float up and dissolve into the atmosphere scene
+      tl.fromTo("#s4-stage", { opacity: 1, y: 0 }, { opacity: 0, y: -140, duration: 0.45, ease: "power2.in" }, T(15.22));
+
+      window.__timelines["s04"] = tl;
+    })();
+  </script>
+</template>

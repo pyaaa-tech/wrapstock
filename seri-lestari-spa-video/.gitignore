@@ -1,0 +1,6 @@
+node_modules/
+.hyperframes/
+renders/render.log
+assets/audio/reference_mix.wav
+renders/work-*/
+renders/.*hf-transaction*/

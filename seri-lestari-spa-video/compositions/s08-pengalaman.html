@@ -1,0 +1,60 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <!-- SCENE 08 · THIRD BENEFIT — "Ketiga, pengalaman." -->
+  <div id="root" data-composition-id="s08" data-width="1080" data-height="1920">
+    <div id="s8-move" class="fill">
+      <div id="s8-bg" class="fill" style="background: var(--sage)"></div>
+      <div id="s8-content" class="fill">
+        <div class="abs mask" style="left: -70px; top: 250px; width: 780px; height: 660px" data-layout-ignore>
+          <div id="s8-num" class="serif" style="font-size: 760px; line-height: 0.85; color: #eef0e6">03</div>
+        </div>
+        <div id="s8-label" class="abs label ink" style="left: 600px; top: 420px; width: 384px; text-align: right; font-size: 34px">— Ketiga</div>
+
+        <svg class="abs" style="left: 0; top: 0" width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+          <defs>
+            <mask id="s8-mask" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1180" height="2100">
+              <path id="s8-mp" d="M120 640 C300 500 470 860 680 700 S1000 560 1000 900 C1000 1200 1010 1500 900 1640 S560 1760 540 1960" fill="none" stroke="#fff" stroke-width="44" stroke-linecap="round"/>
+            </mask>
+          </defs>
+          <path d="M120 640 C300 500 470 860 680 700 S1000 560 1000 900 C1000 1200 1010 1500 900 1640 S560 1760 540 1960" fill="none" stroke="#201a19" stroke-width="13" stroke-linecap="round" stroke-dasharray="0.1 30" mask="url(#s8-mask)"/>
+          <circle id="s8-start" cx="120" cy="640" r="18" fill="#6b1d2c"/>
+          <g id="s8-mid"><path d="M680 664C683 690 690 697 716 700C690 703 683 710 680 736C677 710 670 703 644 700C670 697 677 690 680 664Z" fill="#f4ecdf" stroke="#201a19" stroke-width="4"/></g>
+        </svg>
+
+        <div id="s8-p1" class="abs sans ink" style="left: 100px; top: 1090px; font-size: 185px">PENGA<span class="wine">-</span></div>
+        <div id="s8-p2" class="abs sans ink" style="left: 100px; top: 1262px; font-size: 185px">LAMAN</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const S = 27.4;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      const tl = gsap.timeline({ paused: true });
+
+      // editorial page-turn: a sage sheet slides in over the previous room
+      tl.fromTo("#s8-bg", { x: 1100, rotation: 5, transformOrigin: "0% 100%" }, { x: 0, rotation: 0, duration: 0.45, ease: "power3.inOut" }, T(27.45));
+      tl.fromTo("#s8-content", { x: 600, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T(27.62));
+      tl.fromTo("#s8-num", { yPercent: 100 }, { yPercent: 0, duration: 0.9, ease: "expo.out" }, T(27.8));
+      tl.fromTo("#s8-label", { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, N(27.59));
+
+      // the journey line draws itself and runs off the bottom of the frame
+      KIT.prep(document.querySelectorAll("#s8-mp"));
+      tl.fromTo("#s8-start", { scale: 0, svgOrigin: "120 640" }, { scale: 1, svgOrigin: "120 640", duration: 0.4, ease: "back.out(3)" }, T(27.9));
+      tl.to("#s8-mp", { strokeDashoffset: 0, duration: 1.55, ease: "sine.inOut" }, T(27.95));
+      tl.fromTo("#s8-mid", { scale: 0, rotation: -90, svgOrigin: "680 700" }, { scale: 1, rotation: 0, svgOrigin: "680 700", duration: 0.45, ease: "back.out(3)" }, T(28.35));
+
+      // split typography: two halves of one word meet from opposite sides
+      tl.fromTo("#s8-p1", { x: -1600 }, { x: 0, duration: 0.55, ease: "expo.out" }, N(28.44));
+      tl.fromTo("#s8-p2", { x: 1300 }, { x: 0, duration: 0.55, ease: "expo.out" }, N(28.5));
+
+      // camera pans down along the line into the journey
+      tl.fromTo("#s8-move", { y: 0 }, { y: -1920, duration: 0.55, ease: "power3.inOut" }, T(29.5));
+
+      window.__timelines["s08"] = tl;
+    })();
+  </script>
+</template>

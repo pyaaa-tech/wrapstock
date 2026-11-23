@@ -1,0 +1,165 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .s5-lid { position: absolute; left: -40px; width: 1160px; height: 1130px; background: var(--wine); }
+  </style>
+  <!-- SCENE 05 · ATMOSPHERE — "Bilik yang tenang, katil dan tuala yang bersih, dan haruman yang buat awak rasa nak pejam mata." -->
+  <div id="root" data-composition-id="s05" data-width="1080" data-height="1920">
+    <div id="s5-stage" class="fill">
+      <div id="s5-breath" class="abs" style="left: 140px; top: 560px; width: 800px; height: 800px; border-radius: 50%; background: var(--sage)" data-layout-ignore></div>
+
+      <!-- (a) bilik yang tenang -->
+      <div id="s5a" class="fill">
+        <div class="abs serif ink" style="left: 116px; top: 730px; font-size: 120px"><span class="s5-aw" style="display:inline-block">bilik</span> <span class="s5-aw" style="display:inline-block">yang</span></div>
+        <div id="s5-tenang" class="abs sans ink" data-split style="left: 110px; top: 880px; font-size: 140px; font-weight: 300; font-stretch: 125%; letter-spacing: 0.08em">TENANG</div>
+        <div class="s5-ts spk wine" style="left: 800px; top: 700px; width: 60px; height: 60px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s5-ts spk sagec" style="left: 150px; top: 640px; width: 40px; height: 40px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s5-ts spk wine" style="left: 720px; top: 1080px; width: 34px; height: 34px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      </div>
+
+      <!-- (b) katil & tuala yang bersih -->
+      <div id="s5b" class="fill">
+        <svg id="s5-rack" class="abs" style="left: 390px; top: 400px" width="300" height="380" viewBox="0 0 300 380">
+          <line id="s5-rod" x1="20" y1="22" x2="280" y2="22" stroke="#201a19" stroke-width="9" stroke-linecap="round"/>
+          <circle class="s5-cap" cx="20" cy="22" r="11" fill="#6b1d2c"/><circle class="s5-cap" cx="280" cy="22" r="11" fill="#6b1d2c"/>
+          <g id="s5-towel">
+            <rect x="66" y="22" width="168" height="300" rx="14" fill="#a9b99e" stroke="#201a19" stroke-width="6"/>
+            <rect x="66" y="22" width="168" height="46" rx="10" fill="#94a689" stroke="#201a19" stroke-width="6"/>
+            <rect x="69" y="250" width="162" height="11" fill="#6b1d2c"/>
+            <rect x="69" y="271" width="162" height="6" fill="#6b1d2c"/>
+            <path d="M84 324 V340 M102 324 V340 M120 324 V340 M138 324 V340 M156 324 V340 M174 324 V340 M192 324 V340 M210 324 V340" stroke="#201a19" stroke-width="4" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="abs sans ink" style="left: 110px; top: 830px; font-size: 112px; font-stretch: 85%"><span id="s5-katil" data-split>KATIL</span> <span id="s5-amp" class="serif it wine" style="display:inline-block; font-size: 150px; text-transform: none">&amp;</span> <span id="s5-tuala" data-split>TUALA</span></div>
+        <div id="s5-yang" class="abs serif it ink" style="left: 116px; top: 990px; font-size: 96px">yang</div>
+        <div class="abs mask" style="left: 104px; top: 1080px; padding: 4px 6px 0">
+          <div id="s5-bersih" class="sans ink" data-split style="font-size: 180px">BERSIH</div>
+        </div>
+        <div id="s5-gloss" class="abs sans" style="left: 110px; top: 1084px; font-size: 180px; color: transparent; background-image: linear-gradient(100deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 60%); background-size: 300% 100%; background-position: 120% 0; -webkit-background-clip: text; background-clip: text" data-layout-ignore>BERSIH</div>
+        <div class="s5-gl spk wine" style="left: 836px; top: 1060px; width: 50px; height: 50px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s5-gl spk sagec" style="left: 300px; top: 1060px; width: 32px; height: 32px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+        <div class="s5-gl spk wine" style="left: 620px; top: 1250px; width: 36px; height: 36px"><svg viewBox="0 0 100 100"><path d="M50 2C54 38 62 46 98 50C62 54 54 62 50 98C46 62 38 54 2 50C38 46 46 38 50 2Z"/></svg></div>
+      </div>
+
+      <!-- (c) haruman ... nak pejam mata -->
+      <div id="s5c" class="fill">
+        <svg id="s5-waves" class="abs" style="left: 390px; top: 170px" width="300" height="300" viewBox="0 0 300 300">
+          <path class="s5-wv st" style="stroke: #71876a" d="M150 290 C120 250 180 220 150 180 C120 140 180 110 150 70"/>
+          <path class="s5-wv st" style="stroke: #71876a" d="M108 290 C84 256 132 230 108 196 C84 162 128 142 104 108"/>
+          <path class="s5-wv st" style="stroke: #71876a" d="M192 290 C216 256 168 230 192 196 C216 162 172 142 196 108"/>
+        </svg>
+        <svg id="s5-bottle" class="abs" style="left: 440px; top: 470px" width="200" height="310" viewBox="0 0 220 340">
+          <path d="M85 78 V44 Q85 18 110 18 Q135 18 135 44 V78Z" fill="#6b1d2c" stroke="#201a19" stroke-width="6"/>
+          <rect x="72" y="76" width="76" height="30" rx="6" fill="#201a19"/>
+          <rect x="42" y="104" width="136" height="212" rx="44" fill="#d5ddcd" stroke="#201a19" stroke-width="6"/>
+          <rect x="49" y="200" width="122" height="110" rx="38" fill="#a9b99e"/>
+          <rect x="70" y="146" width="80" height="66" rx="10" fill="#f4ecdf" stroke="#201a19" stroke-width="4"/>
+          <path d="M110 200 C94 190 94 170 110 162 C126 170 126 190 110 200Z" fill="#71876a"/>
+        </svg>
+        <div id="s5-f1" class="abs" style="left: 250px; top: 300px; width: 90px; height: 90px">
+          <svg viewBox="0 0 200 200" width="90" height="90"><g fill="#e8c2bd" stroke="#201a19" stroke-width="8">
+            <g transform="rotate(0 100 100)"><ellipse class="s5-p1" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(72 100 100)"><ellipse class="s5-p1" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(144 100 100)"><ellipse class="s5-p1" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(216 100 100)"><ellipse class="s5-p1" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(288 100 100)"><ellipse class="s5-p1" cx="100" cy="52" rx="30" ry="44"/></g>
+          </g><circle cx="100" cy="100" r="22" fill="#6b1d2c" stroke="#201a19" stroke-width="8"/></svg>
+        </div>
+        <div id="s5-f2" class="abs" style="left: 740px; top: 250px; width: 76px; height: 76px">
+          <svg viewBox="0 0 200 200" width="76" height="76"><g fill="#f4ecdf" stroke="#201a19" stroke-width="8">
+            <g transform="rotate(0 100 100)"><ellipse class="s5-p2" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(72 100 100)"><ellipse class="s5-p2" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(144 100 100)"><ellipse class="s5-p2" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(216 100 100)"><ellipse class="s5-p2" cx="100" cy="52" rx="30" ry="44"/></g><g transform="rotate(288 100 100)"><ellipse class="s5-p2" cx="100" cy="52" rx="30" ry="44"/></g>
+          </g><circle cx="100" cy="100" r="22" fill="#a9b99e" stroke="#201a19" stroke-width="8"/></svg>
+        </div>
+        <div class="abs" style="left: 116px; top: 830px; display: flex; align-items: baseline; gap: 22px">
+          <span id="s5-dan" class="serif ink" style="font-size: 84px">dan</span>
+          <span id="s5-har" class="serif it wine" data-split style="font-size: 190px">haruman</span>
+        </div>
+        <div class="abs serif ink" style="left: 116px; top: 1060px; font-size: 80px"><span class="s5-cw" style="display:inline-block">yang</span> <span class="s5-cw" style="display:inline-block">buat</span> <span class="s5-cw" style="display:inline-block">awak</span> <span class="s5-cw" style="display:inline-block">rasa</span></div>
+        <div class="abs mask" style="left: 106px; top: 1160px; padding: 4px 6px 0">
+          <div id="s5-nak" class="sans ink" data-split style="font-size: 130px; font-stretch: 85%">NAK PEJAM</div>
+        </div>
+        <div class="abs mask" style="left: 104px; top: 1290px; width: 620px; height: 186px; padding: 4px 6px 0" data-layout-allow-overlap>
+          <div id="s5-mata" class="sans ink" data-split style="font-size: 200px">MATA</div>
+          <div id="s5-mata2" class="sans ink" style="position: absolute; left: 6px; top: 4px; font-size: 200px; font-weight: 300">MATA</div>
+        </div>
+        <svg id="s5-eye" class="abs" style="left: 700px; top: 1330px" width="170" height="100" viewBox="0 0 240 140">
+          <g id="s5-eyeopen">
+            <path d="M20 70 Q120 -10 220 70 Q120 150 20 70Z" fill="#f4ecdf" stroke="#201a19" stroke-width="7" stroke-linejoin="round"/>
+            <circle cx="120" cy="70" r="30" fill="#a9b99e" stroke="#201a19" stroke-width="6"/>
+            <circle cx="120" cy="70" r="13" fill="#201a19"/><circle cx="128" cy="62" r="5" fill="#f4ecdf"/>
+          </g>
+          <g id="s5-eyeshut" class="st" style="stroke-width: 7">
+            <path d="M20 66 Q120 136 220 66"/><path d="M62 96 L50 120 M100 108 L96 134 M140 108 L144 134 M178 96 L190 120"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!-- eyelids: the screen closes its eyes, onto the wine of the next scene -->
+    <div id="s5-lidT" class="s5-lid" style="top: -10px; border-radius: 0 0 50% 50% / 0 0 170px 170px" data-layout-ignore></div>
+    <div id="s5-lidB" class="s5-lid" style="top: 800px; border-radius: 50% 50% 0 0 / 170px 170px 0 0" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const S = 15.4;
+      const T = (t) => Math.max(0, t - S);
+      const N = (t) => T(t + 0.2);
+      KIT.split(document.getElementById("s5-stage"));
+      const C = (s) => document.querySelectorAll(s + " .ch");
+      const q = (s) => document.querySelectorAll(s);
+      const tl = gsap.timeline({ paused: true });
+
+      // a slow sage "breath" behind the whole atmosphere scene
+      tl.fromTo("#s5-breath", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 0.2, duration: 1.4, ease: "power2.out" }, T(15.45));
+      tl.fromTo("#s5-breath", { scale: 1 }, { scale: 1.06, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, T(16.9));
+
+      // (a) slow, floating arrivals for the calm line
+      tl.fromTo(".s5-aw", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out", stagger: 0.2 }, N(15.39));
+      tl.fromTo(C("#s5-tenang"), { opacity: 0, y: 30, x: (i) => -i * 16 }, { opacity: 1, y: 0, x: 0, duration: 1.2, ease: "power2.out", stagger: 0.05 }, N(15.92));
+      tl.fromTo(".s5-ts", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.5)", stagger: 0.15 }, T(16.3));
+      tl.fromTo("#s5a", { opacity: 1, y: 0 }, { opacity: 0, y: -120, duration: 0.4, ease: "power2.in" }, T(16.86));
+
+      // (b) towel unrolls; "BERSIH" gets a clean shine
+      KIT.prep(q("#s5-rod"));
+      tl.to("#s5-rod", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, T(16.98));
+      tl.fromTo(".s5-cap", { scale: 0, svgOrigin: "150 22" }, { scale: 1, svgOrigin: "150 22", duration: 0.01 }, T(17.0));
+      tl.fromTo("#s5-towel", { scaleY: 0, svgOrigin: "150 22" }, { scaleY: 1, svgOrigin: "150 22", duration: 0.9, ease: "elastic.out(1, 0.55)" }, T(17.28));
+      tl.fromTo(C("#s5-katil"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", stagger: 0.03 }, N(16.82));
+      tl.fromTo("#s5-amp", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.5)" }, N(17.15));
+      tl.fromTo(C("#s5-tuala"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", stagger: 0.03 }, N(17.25));
+      tl.fromTo("#s5-yang", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(17.72));
+      tl.fromTo(C("#s5-bersih"), { yPercent: 110 }, { yPercent: 0, duration: 0.55, ease: "expo.out", stagger: 0.04 }, N(17.96));
+      tl.fromTo("#s5-gloss", { backgroundPosition: "120% 0%" }, { backgroundPosition: "-20% 0%", duration: 0.7, ease: "power2.inOut" }, T(18.58));
+      tl.fromTo(".s5-gl", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(3)", stagger: 0.1 }, T(18.62));
+      tl.fromTo("#s5b", { opacity: 1, y: 0 }, { opacity: 0, y: -120, duration: 0.4, ease: "power2.in" }, T(18.95));
+
+      // (c) scent rises from the bottle; the punchline softens and the eyes close
+      tl.fromTo("#s5-bottle", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, T(19.05));
+      KIT.prep(q(".s5-wv"));
+      tl.to(".s5-wv", { strokeDashoffset: 0, duration: 1.0, ease: "sine.out", stagger: 0.15 }, T(19.3));
+      tl.fromTo("#s5-waves", { y: 0 }, { y: -22, duration: 1.8, ease: "sine.inOut" }, T(20.3));
+      tl.fromTo(".s5-p1", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.5, ease: "back.out(2)", stagger: 0.05 }, T(19.7));
+      tl.fromTo(".s5-p2", { scale: 0, svgOrigin: "100 100" }, { scale: 1, svgOrigin: "100 100", duration: 0.5, ease: "back.out(2)", stagger: 0.05 }, T(20.0));
+      tl.fromTo("#s5-f1, #s5-f2", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.3 }, T(19.68));
+      tl.fromTo("#s5-f1, #s5-f2", { rotation: -50 }, { rotation: 0, duration: 1.2, ease: "power3.out", stagger: 0.3 }, T(19.7));
+      tl.fromTo("#s5-dan", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(18.98));
+      tl.fromTo(C("#s5-har"), { opacity: 0, x: (i) => i * 30 }, { opacity: 1, x: 0, duration: 0.9, ease: "expo.out", stagger: 0.03 }, N(19.15));
+      [19.75, 19.95, 20.25, 20.85].forEach((t, i) => {
+        tl.fromTo(q(".s5-cw")[i], { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, N(t));
+      });
+      tl.fromTo(C("#s5-nak"), { yPercent: 110 }, { yPercent: 0, duration: 0.5, ease: "expo.out", stagger: 0.03 }, T(21.15));
+      tl.fromTo(C("#s5-mata"), { yPercent: 110 }, { yPercent: 0, duration: 0.5, ease: "expo.out", stagger: 0.04 }, T(21.55));
+      tl.fromTo("#s5-mata2", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.fromTo("#s5-eye", { scale: 0, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.2)" }, T(21.62));
+      tl.fromTo("#s5-eyeshut", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // soften: heavy MATA melts into its light weight while the eye shuts
+      tl.to("#s5-mata", { opacity: 0, duration: 0.35, ease: "sine.inOut" }, T(21.98));
+      tl.to("#s5-mata2", { opacity: 1, duration: 0.35, ease: "sine.inOut" }, T(21.98));
+      tl.fromTo("#s5-eyeopen", { scaleY: 1, svgOrigin: "120 70" }, { scaleY: 0.06, svgOrigin: "120 70", duration: 0.22, ease: "power2.in" }, T(21.98));
+      tl.to("#s5-eyeshut", { opacity: 1, duration: 0.08 }, T(22.16));
+      tl.to("#s5-eyeopen", { opacity: 0, duration: 0.05 }, T(22.18));
+
+      // eyelids: a sleepy half-blink, then shut
+      tl.fromTo("#s5-lidT", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 0.22, duration: 0.3, ease: "sine.inOut" }, T(21.98));
+      tl.fromTo("#s5-lidB", { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 0.22, duration: 0.3, ease: "sine.inOut" }, T(21.98));
+      tl.to("#s5-lidT, #s5-lidB", { scaleY: 1, duration: 0.28, ease: "power2.in" }, T(22.22));
+
+      window.__timelines["s05"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, initial-scale=1.0" />
+    <title>Seri Lestari Spa — Kenapa Spa?</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/MotionPathPlugin.min.js"></script>
+    <script src="assets/kit.js"></script>
+    <style>
+      /* ── Type: Archivo (variable wght 100–900, wdth 62–125) + Instrument Serif + Caveat ── */
+      @font-face {
+        font-family: "Archivo";
+        src: url("assets/fonts/archivo-var.woff2") format("woff2");
+        font-weight: 100 900;
+        font-stretch: 62% 125%;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/fonts/instrument-serif.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/fonts/instrument-serif-italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Caveat";
+        src: url("assets/fonts/caveat-700.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+
+      /* ── Palette (≈70% cream ground · 20% ink/wine · 10% sage/pink accents) ── */
+      :root {
+        --cream: #f4ecdf;
+        --cream2: #ebe0cd;
+        --ink: #201a19;
+        --wine: #6b1d2c;
+        --wine2: #4e1420;
+        --sage: #a9b99e;
+        --sageD: #71876a;
+        --pink: #e8c2bd;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--cream);
+      }
+      #main {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+      #ground {
+        position: absolute;
+        inset: 0;
+        background: var(--cream);
+      }
+
+      /* ── Shared utilities used inside every scene ── */
+      .abs { position: absolute; white-space: nowrap; }
+      .fill { position: absolute; inset: 0; }
+      .sans {
+        font-family: "Archivo", sans-serif;
+        font-weight: 900;
+        font-stretch: 100%;
+        line-height: 0.86;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      .serif {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+      .it { font-style: italic; }
+      .label {
+        font-family: "Archivo", sans-serif;
+        font-weight: 600;
+        font-stretch: 62%;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 30px;
+        line-height: 1;
+      }
+      .hand { font-family: "Caveat", cursive; font-weight: 700; line-height: 1; }
+      .ch { display: inline-block; }
+      .mask { overflow: hidden; }
+      .ink { color: var(--ink); }
+      .wine { color: var(--wine); }
+      .creamc { color: var(--cream); }
+      .pinkc { color: var(--pink); }
+      .sagec { color: var(--sageD); }
+      svg { overflow: visible; display: block; }
+      .st {
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .spk { position: absolute; }
+      .spk svg { width: 100%; height: 100%; fill: currentColor; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="main"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="43"
+      data-width="1080"
+      data-height="1920"
+      data-fps="30"
+    >
+      <div id="ground"></div>
+
+      <!-- ── Scenes (one per narration beat). Overlapping windows carry the transitions. ── -->
+      <div id="s01" class="clip" data-composition-id="s01" data-composition-src="compositions/s01-hook.html"
+        data-start="0" data-duration="3.6" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s02" class="clip" data-composition-id="s02" data-composition-src="compositions/s02-question.html"
+        data-start="3.25" data-duration="7.25" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 3"></div>
+      <div id="s03" class="clip" data-composition-id="s03" data-composition-src="compositions/s03-reveal.html"
+        data-start="10" data-duration="3.3" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 2"></div>
+      <div id="s04" class="clip" data-composition-id="s04" data-composition-src="compositions/s04-selesa.html"
+        data-start="13.05" data-duration="2.7" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 6"></div>
+      <div id="s05" class="clip" data-composition-id="s05" data-composition-src="compositions/s05-suasana.html"
+        data-start="15.4" data-duration="7.2" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 5"></div>
+      <div id="s06" class="clip" data-composition-id="s06" data-composition-src="compositions/s06-privasi.html"
+        data-start="22.48" data-duration="2.02" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 9"></div>
+      <div id="s07" class="clip" data-composition-id="s07" data-composition-src="compositions/s07-masa.html"
+        data-start="24" data-duration="3.95" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 8"></div>
+      <div id="s08" class="clip" data-composition-id="s08" data-composition-src="compositions/s08-pengalaman.html"
+        data-start="27.4" data-duration="2.7" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s09" class="clip" data-composition-id="s09" data-composition-src="compositions/s09-perjalanan.html"
+        data-start="29.5" data-duration="5.63" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 11"></div>
+      <div id="s10" class="clip" data-composition-id="s10" data-composition-src="compositions/s10-singgah.html"
+        data-start="34.9" data-duration="3.2" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 12"></div>
+      <div id="s11" class="clip" data-composition-id="s11" data-composition-src="compositions/s11-dm.html"
+        data-start="37.7" data-duration="5.3" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 13"></div>
+
+      <!-- ── Editorial header + paper grain over everything ── -->
+      <div id="hud" class="clip" data-composition-id="hud" data-composition-src="compositions/hud.html"
+        data-start="0" data-duration="43" data-track-index="3" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 50"></div>
+
+      <!-- ── Audio stems (built by scripts/build_audio.py; offsets baked in) ── -->
+      <audio id="voice" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="43"
+        data-track-index="4" data-volume="1"></audio>
+      <audio id="music" class="clip" src="assets/audio/music.wav" data-start="0" data-duration="43"
+        data-track-index="5" data-volume="1"></audio>
+      <audio id="sfx" class="clip" src="assets/audio/sfx.wav" data-start="0" data-duration="43"
+        data-track-index="6" data-volume="1"></audio>
+    </div>
+    <script>
+      gsap.registerPlugin(MotionPathPlugin);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
